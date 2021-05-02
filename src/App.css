@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+span {
+  color: red;
+}
+
+h1 {
+  color: rgb(0, 194, 129);
+}
+
+@media (min-width: 576px) {
+  .card-columns {
+    -webkit-column-count: 2 !important;
+    -moz-column-count: 2 !important;
+    column-count: 2 !important;
+    -webkit-column-gap: 1.25rem;
+    -moz-column-gap: 1.25rem;
+    column-gap: 1.25rem;
+    orphans: 1;
+    widows: 1;
+  }
+}
+
+.hotel-type {
+  color: orangered;
+  font-weight: bold;
+}
+
+.spinner-container {
+  display: block;
+  text-align: center;
+  padding-top: 45%;
+}
