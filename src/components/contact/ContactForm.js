@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import useAxiosNoAuth from "../../hooks/useAxiosNoAuth";
+import useAxios from "../../hooks/useAxios";
 import { Button, Form, Row, Col, Container } from "react-bootstrap";
 import FormError from "../common/FormError";
 
@@ -33,7 +33,7 @@ export default function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState(null);
 
-  const http = useAxiosNoAuth();
+  const http = useAxios();
 
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),

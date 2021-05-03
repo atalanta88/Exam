@@ -3,7 +3,7 @@ import { BASE_URL } from "../constants/api";
 
 const url = BASE_URL;
 
-export default function useAxios() {
+export default function useAxiosNoAuth() {
   const apiClient = axios.create({
     baseURL: url,
   });
