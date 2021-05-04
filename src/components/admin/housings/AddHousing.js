@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
-import useAxios from "../../../hooks/useAxios";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Form, Row, Col, Container } from "react-bootstrap";
 import FormError from "../../common/FormError";
+import axios from "axios";
+import AuthContext from "../../../context/AuthContext";
+import { API_HOUSINGS } from "../../../constants/api";
 
 const schema = yup.object().shape({
   name: yup
@@ -36,7 +38,9 @@ export default function AddHousing() {
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState(null);
 
-  const http = useAxios();
+  //const http = useAxios();
+  const [auth, setAuth] = useContext(AuthContext);
+  const url = API_HOUSINGS;
 
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
@@ -46,11 +50,13 @@ export default function AddHousing() {
     setSubmitting(true);
     setServerError(null);
 
+    const token = auth.jwt;
+
     console.log(data);
 
     try {
-      const response = await http.post("/housings", data);
-      console.log("response", response.data);
+      axios.defaults.headers.common = { Authorization: `bearer ${token}` };
+      await axios.post(url, data);
     } catch (error) {
       console.log("error", error);
       setServerError(error.toString());
