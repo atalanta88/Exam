@@ -87,6 +87,8 @@ export default function AddHousing() {
 
     console.log(data);
 
+    console.log(file);
+
     try {
       axios.defaults.headers.common = { Authorization: `bearer ${token}` };
       await axios.post(url, formData);
