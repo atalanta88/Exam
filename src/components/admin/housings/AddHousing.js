@@ -50,9 +50,9 @@ const schema = yup.object().shape({
 export default function AddHousing() {
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState(null);
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState([]);
   const handleInputChange = (event) => {
-    setFile(event.target.files[0]);
+    setFile([...file, event.target.files[0]]);
   };
 
   //const http = useAxios();
@@ -78,10 +78,10 @@ export default function AddHousing() {
     delete data["imagefour"];
 
     //Append picture and data
-    formData.append(`files.imageone`, file, file.name);
-    formData.append(`files.imagetwo`, file, file.name);
-    formData.append(`files.imagethree`, file, file.name);
-    formData.append(`files.imagefour`, file, file.name);
+    formData.append(`files.imageone`, file[0], file[0].name);
+    formData.append(`files.imagetwo`, file[1], file[1].name);
+    formData.append(`files.imagethree`, file[2], file[2].name);
+    formData.append(`files.imagefour`, file[3], file[3].name);
 
     formData.append("data", JSON.stringify(data));
 
