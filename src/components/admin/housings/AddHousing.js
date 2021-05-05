@@ -7,7 +7,6 @@ import FormError from "../../common/FormError";
 import axios from "axios";
 import AuthContext from "../../../context/AuthContext";
 import { API_HOUSINGS } from "../../../constants/api";
-import MediaDropdown from "./MediaDropdown";
 
 const schema = yup.object().shape({
   name: yup
@@ -34,12 +33,27 @@ const schema = yup.object().shape({
     .required("Please enter your message")
     .min(10, "The message must be at least 10 characters"),
 
-  imageone: yup.string().required(),
+  imageone: yup
+    .mixed()
+    .test("fileExists", "Please upload a file", (value) => !!value.length),
+  imagetwo: yup
+    .mixed()
+    .test("fileExists", "Please upload a file", (value) => !!value.length),
+  imagethree: yup
+    .mixed()
+    .test("fileExists", "Please upload a file", (value) => !!value.length),
+  imagefour: yup
+    .mixed()
+    .test("fileExists", "Please upload a file", (value) => !!value.length),
 });
 
 export default function AddHousing() {
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState(null);
+  const [file, setFile] = useState(null);
+  const handleInputChange = (event) => {
+    setFile(event.target.files[0]);
+  };
 
   //const http = useAxios();
   const [auth, setAuth] = useContext(AuthContext);
@@ -55,11 +69,27 @@ export default function AddHousing() {
 
     const token = auth.jwt;
 
+    // Create new formData object to hold data to send in API call
+    let formData = new FormData();
+    //Delete picture file which gets attached during yup validation
+    delete data["imageone"];
+    delete data["imagetwo"];
+    delete data["imagethree"];
+    delete data["imagefour"];
+
+    //Append picture and data
+    formData.append(`files.imageone`, file, file.name);
+    formData.append(`files.imagetwo`, file, file.name);
+    formData.append(`files.imagethree`, file, file.name);
+    formData.append(`files.imagefour`, file, file.name);
+
+    formData.append("data", JSON.stringify(data));
+
     console.log(data);
 
     try {
       axios.defaults.headers.common = { Authorization: `bearer ${token}` };
-      await axios.post(url, data);
+      await axios.post(url, formData);
     } catch (error) {
       console.log("error", error);
       setServerError(error.toString());
@@ -75,7 +105,6 @@ export default function AddHousing() {
       <Container>
         <Form disabled={submitting} onSubmit={handleSubmit(onSubmit)}>
           {serverError && <FormError>{serverError}</FormError>}
-
           <Row>
             <Col>
               <Form.Label>Housing name</Form.Label>
@@ -110,7 +139,6 @@ export default function AddHousing() {
               </Form.Group>
             </Col>
           </Row>
-
           <Form.Group controlId="formDescription">
             <Form.Label>Description</Form.Label>
             <Form.Control
@@ -120,8 +148,58 @@ export default function AddHousing() {
               rows={3}
             />
           </Form.Group>
-          <MediaDropdown ref={register} />
+          <Form.Group controlId="exampleForm.ControlTextarea1">
+            <Form.Label className="imageone">File</Form.Label>
 
+            <Form.Control
+              name="imageone"
+              type="file"
+              ref={register}
+              onChange={handleInputChange}
+            />
+            {errors.imageone && (
+              <span className="text-danger">{errors.imageone.message}</span>
+            )}
+          </Form.Group>
+          <Form.Group controlId="exampleForm.ControlTextarea2">
+            <Form.Label className="imagetwo">File</Form.Label>
+
+            <Form.Control
+              name="imagetwo"
+              type="file"
+              ref={register}
+              onChange={handleInputChange}
+            />
+            {errors.imagetwo && (
+              <span className="text-danger">{errors.imagetwo.message}</span>
+            )}
+          </Form.Group>{" "}
+          <Form.Group controlId="exampleForm.ControlTextarea3">
+            <Form.Label className="imagethree">File</Form.Label>
+
+            <Form.Control
+              name="imagethree"
+              type="file"
+              ref={register}
+              onChange={handleInputChange}
+            />
+            {errors.imagethree && (
+              <span className="text-danger">{errors.imagethree.message}</span>
+            )}
+          </Form.Group>{" "}
+          <Form.Group controlId="exampleForm.ControlTextarea4">
+            <Form.Label className="imagefour">File</Form.Label>
+
+            <Form.Control
+              name="imagefour"
+              type="file"
+              ref={register}
+              onChange={handleInputChange}
+            />
+            {errors.imagefour && (
+              <span className="text-danger">{errors.imagefour.message}</span>
+            )}
+          </Form.Group>
           <Form.Group name="buttonSend">
             <Button type="submit" value="Submit" variant="primary">
               {submitting ? "Submitting..." : "Submit"}
