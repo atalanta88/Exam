@@ -7,6 +7,7 @@ import FormError from "../../common/FormError";
 import axios from "axios";
 import AuthContext from "../../../context/AuthContext";
 import { API_HOUSINGS } from "../../../constants/api";
+import MediaDropdown from "./MediaDropdown";
 
 const schema = yup.object().shape({
   name: yup
@@ -33,12 +34,7 @@ const schema = yup.object().shape({
     .required("Please enter your message")
     .min(10, "The message must be at least 10 characters"),
 
-  //imageone: yup.string().required(),
-
-  imageone: yup.mixed().test("fileSize", "The file is too large", (value) => {
-    if (!value.length) return true; // attachment is optional
-    return value[0].size <= 2000000;
-  }),
+  imageone: yup.string().required(),
 });
 
 export default function AddHousing() {
@@ -124,11 +120,8 @@ export default function AddHousing() {
               rows={3}
             />
           </Form.Group>
-          <Form.Group controlId="formImageOne">
-            <Form.Label>Hotel image</Form.Label>
-            <Form.Control name="imageone" type="file" ref={register} />
-          </Form.Group>
-          {errors.imageone && <span>{errors.imageone.message}</span>}
+          <MediaDropdown ref={register} />
+
           <Form.Group name="buttonSend">
             <Button type="submit" value="Submit" variant="primary">
               {submitting ? "Submitting..." : "Submit"}
