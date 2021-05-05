@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 
-function PostItem({
+function HousingObject({
   id,
   name,
   adress,
@@ -22,7 +22,7 @@ function PostItem({
     <React.Fragment>
       <Col>
         <Card>
-          <Link to={`post/${id}`}>
+          <Link to={`housing/${id}`}>
             <Card.Img variant="top" src={imageone.url} />
           </Link>
           <Card.Body>
@@ -41,8 +41,8 @@ function PostItem({
   );
 }
 
-PostItem.propTypes = {
+HousingObject.propTypes = {
   slug: PropTypes.string.isRequired,
 };
 
-export default PostItem;
+export default HousingObject;

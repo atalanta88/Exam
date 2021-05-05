@@ -1,16 +1,14 @@
 import React from "react";
-
 import { useState, useEffect } from "react";
 import { Container, Row, CardColumns } from "react-bootstrap";
 import { API_HOUSINGS } from "../../constants/api";
-import PostItem from "./PostItem";
+import HousingObject from "./HousingObject";
 import Heading from "../Heading";
 import Loader from "../common/Loader";
 import ErrorMessage from "../common/ErrorMessage";
-//import SearchDropDown from "./functions/SearchDropDown";
 
-function PostList() {
-  const [posts, setPosts] = useState([]);
+function HousingList() {
+  const [housing, setHousingList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -22,7 +20,7 @@ function PostList() {
         if (response.ok) {
           const json = await response.json();
           console.log(json);
-          setPosts(json);
+          setHousingList(json);
         } else {
           setError("A server error occured");
         }
@@ -49,7 +47,7 @@ function PostList() {
       <Container>
         <Row>
           <CardColumns>
-            {posts.map(function (post) {
+            {housing.map(function (housing) {
               const {
                 id,
                 name,
@@ -63,10 +61,10 @@ function PostList() {
                 imagetwo,
                 imagethree,
                 imagefour,
-              } = post;
+              } = housing;
 
               return (
-                <PostItem
+                <HousingObject
                   key={id}
                   id={id}
                   name={name}
@@ -90,4 +88,4 @@ function PostList() {
   );
 }
 
-export default PostList;
+export default HousingList;

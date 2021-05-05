@@ -6,6 +6,5 @@ export const API_ENQUIRIES =
   "https://cryptic-reaches-17096.herokuapp.com/enquiries";
 export const API_CONTACTS =
   "https://cryptic-reaches-17096.herokuapp.com/contacts";
-export const API_POST_DETAILS =
+export const API_HOUSING_DETAILS =
   "https://cryptic-reaches-17096.herokuapp.com/housings";
-export const SEARCH_URL = "https://cryptic-reaches-17096.herokuapp.com/";

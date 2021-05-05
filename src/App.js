@@ -6,8 +6,8 @@ import AdminPage from "./components/admin/AdminPage";
 import NavbarLayout from "./components/layout/Nav";
 import { AuthProvider } from "./context/AuthContext";
 import "./App.css";
-import PostList from "./components/posts/PostList";
-import PostDetails from "./components/posts/PostDetails";
+import HousingList from "./components/posts/HousingList";
+import HousingDetails from "./components/posts/HousingDetails";
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
         <Router>
           <NavbarLayout />
           <Switch>
-            <Route exact path="/" exact component={PostList} />
-            <Route path="/post/:id" exact component={PostDetails} />
+            <Route exact path="/" exact component={HousingList} />
+            <Route path="/housing/:id" exact component={HousingDetails} />
             <Route path="/contact">
               <Contact />
             </Route>

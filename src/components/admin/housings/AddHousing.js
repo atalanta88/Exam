@@ -11,16 +11,16 @@ import { API_HOUSINGS } from "../../../constants/api";
 const schema = yup.object().shape({
   name: yup
     .string()
-    .required("Please enter your first name")
+    .required("Enter your first name")
     .min(2, "Your name needs to be atleast 3 characters"),
   adress: yup
     .string()
-    .required("Please enter your last name")
+    .required("Enter the housing adress")
     .min(2, "Your name needs to be atleast 4 characters"),
 
   type: yup
     .string()
-    .required("Please enter your first name")
+    .required("Enter housing type")
     .min(2, "Your name needs to be atleast 3 characters"),
 
   price: yup
@@ -30,7 +30,7 @@ const schema = yup.object().shape({
 
   description: yup
     .string()
-    .required("Please enter your message")
+    .required("Enter the housing description")
     .min(10, "The message must be at least 10 characters"),
 
   imageone: yup
@@ -55,7 +55,6 @@ export default function AddHousing() {
     setFile([...file, event.target.files[0]]);
   };
 
-  //const http = useAxios();
   const [auth, setAuth] = useContext(AuthContext);
   const url = API_HOUSINGS;
 
@@ -67,17 +66,7 @@ export default function AddHousing() {
     setSubmitting(true);
     setServerError(null);
 
-    const token = auth.jwt;
-
-    // Create new formData object to hold data to send in API call
     let formData = new FormData();
-    //Delete picture file which gets attached during yup validation
-    delete data["imageone"];
-    delete data["imagetwo"];
-    delete data["imagethree"];
-    delete data["imagefour"];
-
-    //Append picture and data
     formData.append(`files.imageone`, file[0], file[0].name);
     formData.append(`files.imagetwo`, file[1], file[1].name);
     formData.append(`files.imagethree`, file[2], file[2].name);
@@ -85,9 +74,12 @@ export default function AddHousing() {
 
     formData.append("data", JSON.stringify(data));
 
-    console.log(data);
+    delete data["imageone"];
+    delete data["imagetwo"];
+    delete data["imagethree"];
+    delete data["imagefour"];
 
-    console.log(file);
+    const token = auth.jwt;
 
     try {
       axios.defaults.headers.common = { Authorization: `bearer ${token}` };
@@ -149,8 +141,9 @@ export default function AddHousing() {
               ref={register}
               rows={3}
             />
+            {errors.description && <span>{errors.description.message}</span>}
           </Form.Group>
-          <Form.Group controlId="exampleForm.ControlTextarea1">
+          <Form.Group controlId="formImage.one">
             <Form.Label className="imageone">File</Form.Label>
 
             <Form.Control
@@ -163,7 +156,7 @@ export default function AddHousing() {
               <span className="text-danger">{errors.imageone.message}</span>
             )}
           </Form.Group>
-          <Form.Group controlId="exampleForm.ControlTextarea2">
+          <Form.Group controlId="formImage.two">
             <Form.Label className="imagetwo">File</Form.Label>
 
             <Form.Control
@@ -176,7 +169,7 @@ export default function AddHousing() {
               <span className="text-danger">{errors.imagetwo.message}</span>
             )}
           </Form.Group>{" "}
-          <Form.Group controlId="exampleForm.ControlTextarea3">
+          <Form.Group controlId="formImage.three">
             <Form.Label className="imagethree">File</Form.Label>
 
             <Form.Control
@@ -189,7 +182,7 @@ export default function AddHousing() {
               <span className="text-danger">{errors.imagethree.message}</span>
             )}
           </Form.Group>{" "}
-          <Form.Group controlId="exampleForm.ControlTextarea4">
+          <Form.Group controlId="formImage.four">
             <Form.Label className="imagefour">File</Form.Label>
 
             <Form.Control

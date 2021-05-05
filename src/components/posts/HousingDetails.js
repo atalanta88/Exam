@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useState, useEffect } from "react";
 import { Container, Carousel, Row, Col, ListGroup } from "react-bootstrap";
 import * as Icon from "react-bootstrap-icons";
@@ -8,11 +7,11 @@ import { useParams, useHistory } from "react-router-dom";
 import Heading from "../Heading";
 import DatePicker from "./functions/DatePicker";
 import ErrorMessage from "../common/ErrorMessage";
-import { API_POST_DETAILS } from "../../constants/api";
+import { API_HOUSING_DETAILS } from "../../constants/api";
 import AddEnquiry from "./functions/AddEnquiry";
 
-function PostDetails() {
-  const [post, setPost] = useState(null);
+function HousingDetails() {
+  const [housing, setHousingObject] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -23,7 +22,7 @@ function PostDetails() {
   if (!id) {
     history.push("/");
   }
-  const url = API_POST_DETAILS + "/" + id;
+  const url = API_HOUSING_DETAILS + "/" + id;
 
   useEffect(
     function () {
@@ -31,12 +30,11 @@ function PostDetails() {
         try {
           const response = await fetch(url);
           console.log(response);
-          //setPost(response);
 
           if (response.ok) {
             const json = await response.json();
             console.log(json);
-            setPost(json);
+            setHousingObject(json);
           } else {
             setError("An error occured");
           }
@@ -60,10 +58,10 @@ function PostDetails() {
   }
   return (
     <>
-      <div className="hotel-name-type">
-        <Heading title={post.name} />
+      <div className="housing-name-type">
+        <Heading title={housing.name} />
         <Container>
-          <p>{post.name}</p>
+          <p>{housing.name}</p>
         </Container>
       </div>
 
@@ -74,7 +72,7 @@ function PostDetails() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={post.imageone.url}
+              src={housing.imageone.url}
               alt="First slide"
             />
           </Carousel.Item>
@@ -82,7 +80,7 @@ function PostDetails() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={post.imagetwo.url}
+              src={housing.imagetwo.url}
               alt="Second slide"
             />
           </Carousel.Item>
@@ -90,7 +88,7 @@ function PostDetails() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={post.imagethree.url}
+              src={housing.imagethree.url}
               alt="Third slide"
             />
           </Carousel.Item>
@@ -98,19 +96,19 @@ function PostDetails() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={post.imagefour.url}
+              src={housing.imagefour.url}
               alt="Fourth slide"
             />
           </Carousel.Item>
         </Carousel>
       </Container>
       <Container>
-        <div className="hotel-description">
-          <h2>Hotel description</h2>
-          <p className="hotel-type">{post.type}</p>
-          <p>{post.description}</p>
+        <div className="housing-description">
+          <h2>Housing description</h2>
+          <p className="housing-type">{housing.type}</p>
+          <p>{housing.description}</p>
         </div>
-        <div className="hotel-info">
+        <div className="housing-info">
           <h3>About us</h3>
           <Row xs={1} lg={3}>
             <Col>
@@ -159,7 +157,7 @@ function PostDetails() {
             </Col>
           </Row>
         </div>
-        <div className="hotel-enquiries">
+        <div className="housing-enquiries">
           <h2>Anything on your mind?</h2>
           <p>
             Find more information under Q&A. If you cant find an answer there,
@@ -173,4 +171,4 @@ function PostDetails() {
   );
 }
 
-export default PostDetails;
+export default HousingDetails;
