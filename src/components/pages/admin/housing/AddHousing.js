@@ -87,6 +87,16 @@ export default function AddHousing() {
       axios.defaults.headers.common = { Authorization: `bearer ${token}` };
       const response = await axios.post(url, formData);
       console.log("response", response);
+      if (response.status === 200) {
+        return (
+          <>
+            <Alert variant="success">
+              <Alert.Heading>Hey, nice to see you</Alert.Heading>
+              <p>Aww yeah</p>
+            </Alert>
+          </>
+        );
+      }
     } catch (error) {
       console.log("error", error);
       setServerError(error.toString());
