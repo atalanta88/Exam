@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Form, Col, Container } from "react-bootstrap";
+import { Button, Form, Col, Container, Alert } from "react-bootstrap";
 import FormError from "../../../common/FormError";
 import axios from "axios";
 import AuthContext from "../../../../context/AuthContext";
@@ -66,6 +66,13 @@ export default function AddHousing() {
     setSubmitting(true);
     setServerError(null);
 
+    //Below code must be in this order(delete data on top), or else the code will return a server 500 error(internal server error)
+
+    delete data["imageone"];
+    delete data["imagetwo"];
+    delete data["imagethree"];
+    delete data["imagefour"];
+
     let formData = new FormData();
     formData.append(`files.imageone`, file[0], file[0].name);
     formData.append(`files.imagetwo`, file[1], file[1].name);
@@ -74,16 +81,12 @@ export default function AddHousing() {
 
     formData.append("data", JSON.stringify(data));
 
-    delete data["imageone"];
-    delete data["imagetwo"];
-    delete data["imagethree"];
-    delete data["imagefour"];
-
     const token = auth.jwt;
 
     try {
       axios.defaults.headers.common = { Authorization: `bearer ${token}` };
-      await axios.post(url, formData);
+      const response = await axios.post(url, formData);
+      console.log("response", response);
     } catch (error) {
       console.log("error", error);
       setServerError(error.toString());
@@ -91,6 +94,39 @@ export default function AddHousing() {
       setSubmitting(false);
     }
   }
+
+  /*    try {
+      axios.defaults.headers.common = { Authorization: `bearer ${token}` };
+      const response = await axios.post(url, formData);
+      console.log("response", response);
+      if (response.status === 200)
+        return (
+          <>
+            <Alert variant="success">
+              <Alert.Heading>Hey, nice to see you</Alert.Heading>
+              <p>Aww yeah</p>
+            </Alert>
+          </>
+        );
+    } catch (error) {
+      console.log("error", error);
+      setServerError(error.toString());
+    } finally {
+      setSubmitting(false);
+    }
+  }*/
+
+  /*    try {
+      axios.defaults.headers.common = { Authorization: `bearer ${token}` };
+      const response = await axios.post(url, formData);
+      console.log("response", response.formData);
+    } catch (error) {
+      console.log("error", error);
+      setServerError(error.toString());
+    } finally {
+      setSubmitting(false);
+    }
+  }*/
 
   console.log(errors);
 
