@@ -1,6 +1,6 @@
 import React from "react";
 
-import Heading from "../Heading";
+import Heading from "../../layout/Heading";
 import ContactForm from "./ContactForm";
 
 export default function Contact() {

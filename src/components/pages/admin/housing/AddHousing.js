@@ -2,11 +2,11 @@ import React, { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Form, Row, Col, Container } from "react-bootstrap";
-import FormError from "../../common/FormError";
+import { Button, Form, Col, Container } from "react-bootstrap";
+import FormError from "../../../common/FormError";
 import axios from "axios";
-import AuthContext from "../../../context/AuthContext";
-import { API_HOUSINGS } from "../../../constants/api";
+import AuthContext from "../../../../context/AuthContext";
+import { API_HOUSINGS } from "../../../../constants/api";
 
 const schema = yup.object().shape({
   name: yup
@@ -99,7 +99,7 @@ export default function AddHousing() {
       <Container>
         <Form disabled={submitting} onSubmit={handleSubmit(onSubmit)}>
           {serverError && <FormError>{serverError}</FormError>}
-          <Row>
+          <Form.Row>
             <Col>
               <Form.Label>Housing name</Form.Label>
               <Form.Group controlId="formName">
@@ -115,8 +115,8 @@ export default function AddHousing() {
                 {errors.adress && <span>{errors.adress.message}</span>}
               </Form.Group>
             </Col>
-          </Row>
-          <Row>
+          </Form.Row>
+          <Form.Row>
             <Col>
               <Form.Label>Type</Form.Label>
               <Form.Group controlId="formType">
@@ -132,7 +132,7 @@ export default function AddHousing() {
                 {errors.price && <span>{errors.price.message}</span>}
               </Form.Group>
             </Col>
-          </Row>
+          </Form.Row>
           <Form.Group controlId="formDescription">
             <Form.Label>Description</Form.Label>
             <Form.Control
@@ -143,58 +143,72 @@ export default function AddHousing() {
             />
             {errors.description && <span>{errors.description.message}</span>}
           </Form.Group>
-          <Form.Group controlId="formImage.one">
-            <Form.Label className="imageone">File</Form.Label>
+          <Form.Row>
+            <Col>
+              <Form.Group controlId="formImage.one">
+                <Form.Label className="imageone">Housing exterior</Form.Label>
+                <Form.Control
+                  name="imageone"
+                  type="file"
+                  ref={register}
+                  onChange={handleInputChange}
+                />
+                {errors.imageone && (
+                  <span className="text-danger">{errors.imageone.message}</span>
+                )}
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group controlId="formImage.two">
+                <Form.Label className="imagetwo">Housing interior</Form.Label>
+                <Form.Control
+                  name="imagetwo"
+                  type="file"
+                  ref={register}
+                  onChange={handleInputChange}
+                />
+                {errors.imagetwo && (
+                  <span className="text-danger">{errors.imagetwo.message}</span>
+                )}
+              </Form.Group>{" "}
+            </Col>{" "}
+          </Form.Row>
+          <Form.Row>
+            <Col>
+              <Form.Group controlId="formImage.three">
+                <Form.Label className="imagethree">Housing interior</Form.Label>
 
-            <Form.Control
-              name="imageone"
-              type="file"
-              ref={register}
-              onChange={handleInputChange}
-            />
-            {errors.imageone && (
-              <span className="text-danger">{errors.imageone.message}</span>
-            )}
-          </Form.Group>
-          <Form.Group controlId="formImage.two">
-            <Form.Label className="imagetwo">File</Form.Label>
+                <Form.Control
+                  name="imagethree"
+                  type="file"
+                  ref={register}
+                  onChange={handleInputChange}
+                />
+                {errors.imagethree && (
+                  <span className="text-danger">
+                    {errors.imagethree.message}
+                  </span>
+                )}
+              </Form.Group>{" "}
+            </Col>
+            <Col>
+              <Form.Group controlId="formImage.four">
+                <Form.Label className="imagefour">Housing interior</Form.Label>
 
-            <Form.Control
-              name="imagetwo"
-              type="file"
-              ref={register}
-              onChange={handleInputChange}
-            />
-            {errors.imagetwo && (
-              <span className="text-danger">{errors.imagetwo.message}</span>
-            )}
-          </Form.Group>{" "}
-          <Form.Group controlId="formImage.three">
-            <Form.Label className="imagethree">File</Form.Label>
-
-            <Form.Control
-              name="imagethree"
-              type="file"
-              ref={register}
-              onChange={handleInputChange}
-            />
-            {errors.imagethree && (
-              <span className="text-danger">{errors.imagethree.message}</span>
-            )}
-          </Form.Group>{" "}
-          <Form.Group controlId="formImage.four">
-            <Form.Label className="imagefour">File</Form.Label>
-
-            <Form.Control
-              name="imagefour"
-              type="file"
-              ref={register}
-              onChange={handleInputChange}
-            />
-            {errors.imagefour && (
-              <span className="text-danger">{errors.imagefour.message}</span>
-            )}
-          </Form.Group>
+                <Form.Control
+                  name="imagefour"
+                  type="file"
+                  ref={register}
+                  onChange={handleInputChange}
+                />
+                {errors.imagefour && (
+                  <span className="text-danger">
+                    {errors.imagefour.message}
+                  </span>
+                )}
+              </Form.Group>
+            </Col>
+          </Form.Row>
           <Form.Group name="buttonSend">
             <Button type="submit" value="Submit" variant="primary">
               {submitting ? "Submitting..." : "Submit"}

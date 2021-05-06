@@ -5,9 +5,9 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
-import FormError from "../common/FormError";
-import { BASE_URL, TOKEN_PATH } from "../../constants/api";
-import AuthContext from "../../context/AuthContext";
+import FormError from "../../common/FormError";
+import { BASE_URL, TOKEN_PATH } from "../../../constants/api";
+import AuthContext from "../../../context/AuthContext";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -15,8 +15,8 @@ import Container from "react-bootstrap/Container";
 const url = BASE_URL + TOKEN_PATH;
 
 const schema = yup.object().shape({
-  identifier: yup.string().required("Please enter your username"),
-  password: yup.string().required("Please enter your password"),
+  identifier: yup.string().required("Enter your username"),
+  password: yup.string().required("Enter your password"),
 });
 
 export default function LoginForm() {

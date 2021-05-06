@@ -1,8 +1,8 @@
 import React, { Container, Jumbotron } from "react-bootstrap";
-import Heading from "../Heading";
-import PostList from "./contact/PostList";
-import EnquiriesList from "./enquiries/PostList";
-import AddHousing from "./housings/AddHousing";
+import Heading from "../../layout/Heading";
+import ContactList from "./contact/ContactList";
+import EnquiriesList from "./enquiries/EnquiriesList";
+import AddHousing from "./housing/AddHousing";
 
 export default function AdminPage() {
   return (
@@ -11,7 +11,7 @@ export default function AdminPage() {
 
       <Jumbotron fluid>
         <Container>
-          <PostList />
+          <ContactList />
         </Container>
       </Jumbotron>
       <Jumbotron fluid>

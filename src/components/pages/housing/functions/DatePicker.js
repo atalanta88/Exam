@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import "bootsrap/dist/css/bootstrap.min.css";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { DateRangePicker } from "react-dates";

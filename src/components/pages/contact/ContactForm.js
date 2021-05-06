@@ -4,9 +4,9 @@ import { useForm } from "react-hook-form";
 
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import useAxios from "../../hooks/useAxios";
+import useAxios from "../../../hooks/useAxios";
 import { Button, Form, Row, Col, Container } from "react-bootstrap";
-import FormError from "../common/FormError";
+import FormError from "../../common/FormError";
 
 const schema = yup.object().shape({
   firstname: yup

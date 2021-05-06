@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Container, Row, CardColumns } from "react-bootstrap";
-import { API_HOUSINGS } from "../../constants/api";
+import { API_HOUSINGS } from "../../../constants/api";
 import HousingObject from "./HousingObject";
-import Heading from "../Heading";
-import Loader from "../common/Loader";
-import ErrorMessage from "../common/ErrorMessage";
+import Heading from "../../layout/Heading";
+import { BookLoaderComponent } from "../../common/Loader";
+import ErrorMessage from "../../common/ErrorMessage";
 
 function HousingList() {
   const [housing, setHousingList] = useState([]);
@@ -34,7 +34,7 @@ function HousingList() {
   }, []);
 
   if (loading) {
-    return <Loader />;
+    return <BookLoaderComponent />;
   }
 
   if (error) {

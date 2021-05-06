@@ -2,12 +2,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Container, Carousel, Row, Col, ListGroup } from "react-bootstrap";
 import * as Icon from "react-bootstrap-icons";
-import Loader from "../common/Loader";
+import { BookLoaderComponent } from "../../common/Loader";
 import { useParams, useHistory } from "react-router-dom";
-import Heading from "../Heading";
+import Heading from "../../layout/Heading";
 import DatePicker from "./functions/DatePicker";
-import ErrorMessage from "../common/ErrorMessage";
-import { API_HOUSING_DETAILS } from "../../constants/api";
+import ErrorMessage from "../../common/ErrorMessage";
+import { API_HOUSING_DETAILS } from "../../../constants/api";
 import AddEnquiry from "./functions/AddEnquiry";
 
 function HousingDetails() {
@@ -50,7 +50,7 @@ function HousingDetails() {
   );
 
   if (loading) {
-    return <Loader />;
+    return <BookLoaderComponent />;
   }
 
   if (error) {

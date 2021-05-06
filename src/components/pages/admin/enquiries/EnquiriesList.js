@@ -1,25 +1,25 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Accordion, Card, Button, Table } from "react-bootstrap";
-import { API_CONTACTS } from "../../../constants/api";
-import PostItem from "./PostItem";
-import Loader from "../../common/Loader";
-import ErrorMessage from "../../common/ErrorMessage";
+import { API_ENQUIRIES } from "../../../../constants/api";
+import EnquiryMessageObject from "./EnquiryMessageObject";
+import { Loader } from "../../../common/Loader";
+import ErrorMessage from "../../../common/ErrorMessage";
 
-function PostList() {
-  const [posts, setPosts] = useState([]);
+function EnquiriesList() {
+  const [enquiries, setEnquiryList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(function () {
     async function fetchData() {
       try {
-        const response = await fetch(API_CONTACTS);
+        const response = await fetch(API_ENQUIRIES);
 
         if (response.ok) {
           const json = await response.json();
           console.log(json);
-          setPosts(json);
+          setEnquiryList(json);
         } else {
           setError("A server error occured");
         }
@@ -46,7 +46,7 @@ function PostList() {
         <Card>
           <Card.Header>
             <Accordion.Toggle as={Button} variant="link" eventKey="0">
-              Contact messages
+              Enquiries messages
             </Accordion.Toggle>
           </Card.Header>
           <Accordion.Collapse eventKey="0">
@@ -54,19 +54,19 @@ function PostList() {
               <Table bordered>
                 <thead>
                   <tr>
-                    <th>Sender Name</th>
+                    <th>Housing name</th>
                   </tr>
                 </thead>
               </Table>
-              {posts.map(function (post) {
-                const { message, firstname, lastname, email } = post;
+              {enquiries.map(function (enquiry) {
+                const { message, name, email, housingname } = enquiry;
 
                 return (
-                  <PostItem
+                  <EnquiryMessageObject
                     message={message}
                     email={email}
-                    firstname={firstname}
-                    lastname={lastname}
+                    name={name}
+                    housingname={housingname}
                   />
                 );
               })}
@@ -78,4 +78,4 @@ function PostList() {
   );
 }
 
-export default PostList;
+export default EnquiriesList;

@@ -1,12 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import useAxiosNoAuth from "../../../hooks/useAxiosNoAuth";
+import useAxiosNoAuth from "../../../../hooks/useAxiosNoAuth";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-
 import { Modal, Button, Form } from "react-bootstrap";
-import FormError from "../../common/FormError";
+import FormError from "../../../common/FormError";
 
 const schema = yup.object().shape({
   name: yup

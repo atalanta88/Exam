@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Contact from "./components/contact/Contact";
-import Login from "./components/login/Login";
-import AdminPage from "./components/admin/AdminPage";
+import Contact from "./components/pages/contact/Contact";
+import Login from "./components/pages/login/Login";
+import AdminPage from "./components/pages/admin/AdminPage";
 import NavbarLayout from "./components/layout/Nav";
 import { AuthProvider } from "./context/AuthContext";
 import "./App.css";
-import HousingList from "./components/posts/HousingList";
-import HousingDetails from "./components/posts/HousingDetails";
+import HousingList from "./components/pages/housing/HousingList";
+import HousingDetails from "./components/pages/housing/HousingDetails";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Router>
           <NavbarLayout />
           <Switch>
-            <Route exact path="/" exact component={HousingList} />
+            <Route exact path="/housing" exact component={HousingList} />
             <Route path="/housing/:id" exact component={HousingDetails} />
             <Route path="/contact">
               <Contact />

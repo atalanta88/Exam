@@ -3,7 +3,7 @@ import { Accordion, Card } from "react-bootstrap";
 
 import PropTypes from "prop-types";
 
-function PostItem({ email, message, name, housingname }) {
+function EnquiryObject({ email, message, name, housingname }) {
   return (
     <>
       <Accordion>
@@ -32,8 +32,8 @@ function PostItem({ email, message, name, housingname }) {
   );
 }
 
-PostItem.propTypes = {
+EnquiryObject.propTypes = {
   slug: PropTypes.string.isRequired,
 };
 
-export default PostItem;
+export default EnquiryObject;

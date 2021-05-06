@@ -1,13 +1,13 @@
 import React from "react";
 
-import Heading from "../Heading";
-import Form from "./Form";
+import Heading from "../../layout/Heading";
+import LoginForm from "./LoginForm";
 
 export default function Login() {
   return (
     <>
       <Heading title="Login" />
-      <Form />
+      <LoginForm />
     </>
   );
 }
