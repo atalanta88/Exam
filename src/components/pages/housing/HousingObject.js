@@ -19,7 +19,7 @@ function HousingObject({
   imagefour,
 }) {
   return (
-    <React.Fragment>
+    <>
       <Col>
         <Card>
           <Link to={`housing/${id}`}>
@@ -37,7 +37,7 @@ function HousingObject({
           </Card.Footer>
         </Card>
       </Col>
-    </React.Fragment>
+    </>
   );
 }
 
@@ -46,3 +46,25 @@ HousingObject.propTypes = {
 };
 
 export default HousingObject;
+
+/*  return (
+    <>
+      <Col>
+        <Card>
+          <Link to={`housing/${id}`}>
+            <Card.Img variant="top" src={imageone.url} />
+          </Link>
+          <Card.Body>
+            <p className="hotel-type">{type}</p>
+            <Card.Title>{name}</Card.Title>
+            <Card.Text>{description}</Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">
+              Average cost per night {price} NOK
+            </small>
+          </Card.Footer>
+        </Card>
+      </Col>
+    </>
+  );*/

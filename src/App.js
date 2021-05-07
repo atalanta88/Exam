@@ -8,6 +8,7 @@ import { AuthProvider } from "./context/AuthContext";
 import "./App.css";
 import HousingList from "./components/pages/housing/HousingList";
 import HousingDetails from "./components/pages/housing/HousingDetails";
+import FooterLayout from "./components/layout/Footer";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <AdminPage />
             </Route>
           </Switch>
+          <FooterLayout />
         </Router>
       </AuthProvider>
     </>

@@ -6,6 +6,18 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Modal, Button, Form } from "react-bootstrap";
 import FormError from "../../../common/FormError";
+import Swal from "sweetalert2";
+
+const Toast = Swal.mixin({
+  showConfirmButton: false,
+  timer: 3000,
+  showConfirmButton: true,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener("mouseenter", Swal.stopTimer);
+    toast.addEventListener("mouseleave", Swal.resumeTimer);
+  },
+});
 
 const schema = yup.object().shape({
   name: yup
@@ -45,6 +57,12 @@ export default function AddEnquiry() {
     try {
       const response = await http.post("/Enquiries", data);
       console.log("response", response.data);
+      if (response.data) {
+        return Toast.fire({
+          icon: "success",
+          title: "Message sent",
+        });
+      }
     } catch (error) {
       console.log("error", error);
       setServerError(error.toString());

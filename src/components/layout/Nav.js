@@ -6,7 +6,6 @@ import AuthContext from "../../context/AuthContext";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
-import Image from "react-bootstrap/Image";
 import * as Icon from "react-bootstrap-icons";
 
 import { LinkContainer } from "react-router-bootstrap";

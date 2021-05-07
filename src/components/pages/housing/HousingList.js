@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Container, Row, CardColumns } from "react-bootstrap";
+import { Container, Row, CardColumns, CardDeck } from "react-bootstrap";
 import { API_HOUSINGS } from "../../../constants/api";
 import HousingObject from "./HousingObject";
 import Heading from "../../layout/Heading";
@@ -46,7 +46,7 @@ function HousingList() {
       <Heading title="Home" />
       <Container>
         <Row>
-          <CardColumns>
+          <CardDeck>
             {housing.map(function (housing) {
               const {
                 id,
@@ -81,7 +81,7 @@ function HousingList() {
                 />
               );
             })}
-          </CardColumns>
+          </CardDeck>
         </Row>
       </Container>
     </>

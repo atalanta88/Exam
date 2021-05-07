@@ -8,6 +8,19 @@ import useAxios from "../../../hooks/useAxios";
 import { Button, Form, Row, Col, Container } from "react-bootstrap";
 import FormError from "../../common/FormError";
 
+import Swal from "sweetalert2";
+
+const Toast = Swal.mixin({
+  showConfirmButton: false,
+  timer: 3000,
+  showConfirmButton: true,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener("mouseenter", Swal.stopTimer);
+    toast.addEventListener("mouseleave", Swal.resumeTimer);
+  },
+});
+
 const schema = yup.object().shape({
   firstname: yup
     .string()
@@ -48,6 +61,12 @@ export default function ContactForm() {
     try {
       const response = await http.post("/Contacts", data);
       console.log("response", response.data);
+      if (response.data) {
+        return Toast.fire({
+          icon: "success",
+          title: "Message sent",
+        });
+      }
     } catch (error) {
       console.log("error", error);
       setServerError(error.toString());

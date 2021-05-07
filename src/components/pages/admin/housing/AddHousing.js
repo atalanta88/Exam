@@ -19,16 +19,6 @@ const Toast = Swal.mixin({
     toast.addEventListener("mouseleave", Swal.resumeTimer);
   },
 });
-const ToastFail = Swal.mixin({
-  showConfirmButton: false,
-  timer: 3000,
-  showConfirmButton: true,
-  timerProgressBar: true,
-  didOpen: (toast) => {
-    toast.addEventListener("mouseenter", Swal.stopTimer);
-    toast.addEventListener("mouseleave", Swal.resumeTimer);
-  },
-});
 
 const schema = yup.object().shape({
   name: yup
@@ -113,11 +103,6 @@ export default function AddHousing() {
         return Toast.fire({
           icon: "success",
           title: "Housing added successfully",
-        });
-      } else {
-        return ToastFail.fire({
-          icon: "error",
-          title: "Housing not added",
         });
       }
     } catch (error) {
