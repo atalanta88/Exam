@@ -8,28 +8,27 @@ import axios from "axios";
 import AuthContext from "../../../../context/AuthContext";
 import { API_HOUSINGS } from "../../../../constants/api";
 import Swal from "sweetalert2";
-//import withReactContent from "sweetalert2-react-content";
-
-//const MySwal = withReactContent(Swal);
 
 const Toast = Swal.mixin({
   showConfirmButton: false,
   timer: 3000,
   showConfirmButton: true,
   timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener("mouseenter", Swal.stopTimer);
+    toast.addEventListener("mouseleave", Swal.resumeTimer);
+  },
 });
-
-/*const Toast = Swal.mixin({
-  toast: true,
-  position: "top-end",
+const ToastFail = Swal.mixin({
   showConfirmButton: false,
   timer: 3000,
+  showConfirmButton: true,
   timerProgressBar: true,
   didOpen: (toast) => {
     toast.addEventListener("mouseenter", Swal.stopTimer);
     toast.addEventListener("mouseleave", Swal.resumeTimer);
   },
-});*/
+});
 
 const schema = yup.object().shape({
   name: yup
@@ -85,11 +84,6 @@ export default function AddHousing() {
     resolver: yupResolver(schema),
   });
 
-  /*
-    async function onSubmit(data, event) {
-    event.preventDefault();
-    */
-
   async function onSubmit(data) {
     setSubmitting(true);
     setServerError(null);
@@ -120,6 +114,11 @@ export default function AddHousing() {
           icon: "success",
           title: "Housing added successfully",
         });
+      } else {
+        return ToastFail.fire({
+          icon: "error",
+          title: "Housing not added",
+        });
       }
     } catch (error) {
       console.log("error", error);
@@ -128,39 +127,6 @@ export default function AddHousing() {
       setSubmitting(false);
     }
   }
-
-  /*    try {
-      axios.defaults.headers.common = { Authorization: `bearer ${token}` };
-      const response = await axios.post(url, formData);
-      console.log("response", response);
-      if (response.status === 200)
-        return (
-          <>
-            <Alert variant="success">
-              <Alert.Heading>Hey, nice to see you</Alert.Heading>
-              <p>Aww yeah</p>
-            </Alert>
-          </>
-        );
-    } catch (error) {
-      console.log("error", error);
-      setServerError(error.toString());
-    } finally {
-      setSubmitting(false);
-    }
-  }*/
-
-  /*    try {
-      axios.defaults.headers.common = { Authorization: `bearer ${token}` };
-      const response = await axios.post(url, formData);
-      console.log("response", response.formData);
-    } catch (error) {
-      console.log("error", error);
-      setServerError(error.toString());
-    } finally {
-      setSubmitting(false);
-    }
-  }*/
 
   console.log(errors);
 
@@ -289,130 +255,3 @@ export default function AddHousing() {
     </>
   );
 }
-
-/*import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import useAxios from "../../../hooks/useAxios";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Form, Row, Col, Container } from "react-bootstrap";
-import FormError from "../../common/FormError";
-
-const schema = yup.object().shape({
-  name: yup
-    .string()
-    .required("Please enter your first name")
-    .min(2, "Your name needs to be atleast 3 characters"),
-  adress: yup
-    .string()
-    .required("Please enter your last name")
-    .min(2, "Your name needs to be atleast 4 characters"),
-
-  type: yup
-    .string()
-    .required("Please enter your first name")
-    .min(2, "Your name needs to be atleast 3 characters"),
-
-  price: yup
-    .number()
-    .required("Enter a price")
-    .integer("Enter a price without commas"),
-
-  description: yup
-    .string()
-    .required("Please enter your message")
-    .min(10, "The message must be at least 10 characters"),
-});
-
-export default function AddHousing() {
-  const [submitting, setSubmitting] = useState(false);
-  const [serverError, setServerError] = useState(null);
-
-  const http = useAxios();
-
-  const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(schema),
-  });
-
-  async function onSubmit(data) {
-    setSubmitting(true);
-    setServerError(null);
-
-    console.log(data);
-
-    try {
-      const response = await http.post("/housings", data);
-      console.log("response", response.data);
-    } catch (error) {
-      console.log("error", error);
-      setServerError(error.toString());
-    } finally {
-      setSubmitting(false);
-    }
-  }
-
-  console.log(errors);
-
-  return (
-    <>
-      <Container>
-        <Form disabled={submitting} onSubmit={handleSubmit(onSubmit)}>
-          {serverError && <FormError>{serverError}</FormError>}
-
-          <Row>
-            <Col>
-              <Form.Label>Housing name</Form.Label>
-              <Form.Group controlId="formName">
-                <Form.Control name="name" ref={register} />
-                {errors.name && <span>{errors.name.message}</span>}
-              </Form.Group>
-            </Col>
-
-            <Col>
-              <Form.Label>Housing adress</Form.Label>
-              <Form.Group controlId="formAdress">
-                <Form.Control name="adress" ref={register} />
-                {errors.adress && <span>{errors.adress.message}</span>}
-              </Form.Group>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Form.Label>Type</Form.Label>
-              <Form.Group controlId="formType">
-                <Form.Control name="type" ref={register} />
-                {errors.type && <span>{errors.type.message}</span>}
-              </Form.Group>
-            </Col>
-
-            <Col>
-              <Form.Label>Price</Form.Label>
-              <Form.Group controlId="formPrice">
-                <Form.Control name="price" ref={register} />
-                {errors.price && <span>{errors.price.message}</span>}
-              </Form.Group>
-            </Col>
-          </Row>
-
-          <Form.Group controlId="formDescription">
-            <Form.Label>Description</Form.Label>
-            <Form.Control
-              name="description"
-              as="textarea"
-              ref={register}
-              rows={3}
-            />
-          </Form.Group>
-          {errors.description && <span>{errors.description.message}</span>}
-          <Form.Group name="buttonSend">
-            <Button type="submit" value="Submit" variant="primary">
-              {submitting ? "Submitting..." : "Submit"}
-            </Button>
-          </Form.Group>
-        </Form>
-      </Container>
-    </>
-  );
-}*/
-
-/**/
