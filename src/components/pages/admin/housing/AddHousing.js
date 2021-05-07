@@ -7,6 +7,29 @@ import FormError from "../../../common/FormError";
 import axios from "axios";
 import AuthContext from "../../../../context/AuthContext";
 import { API_HOUSINGS } from "../../../../constants/api";
+import Swal from "sweetalert2";
+//import withReactContent from "sweetalert2-react-content";
+
+//const MySwal = withReactContent(Swal);
+
+const Toast = Swal.mixin({
+  showConfirmButton: false,
+  timer: 3000,
+  showConfirmButton: true,
+  timerProgressBar: true,
+});
+
+/*const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener("mouseenter", Swal.stopTimer);
+    toast.addEventListener("mouseleave", Swal.resumeTimer);
+  },
+});*/
 
 const schema = yup.object().shape({
   name: yup
@@ -62,6 +85,11 @@ export default function AddHousing() {
     resolver: yupResolver(schema),
   });
 
+  /*
+    async function onSubmit(data, event) {
+    event.preventDefault();
+    */
+
   async function onSubmit(data) {
     setSubmitting(true);
     setServerError(null);
@@ -88,14 +116,10 @@ export default function AddHousing() {
       const response = await axios.post(url, formData);
       console.log("response", response);
       if (response.status === 200) {
-        return (
-          <>
-            <Alert variant="success">
-              <Alert.Heading>Hey, nice to see you</Alert.Heading>
-              <p>Aww yeah</p>
-            </Alert>
-          </>
-        );
+        return Toast.fire({
+          icon: "success",
+          title: "Housing added successfully",
+        });
       }
     } catch (error) {
       console.log("error", error);
