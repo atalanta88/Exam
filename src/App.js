@@ -17,17 +17,21 @@ function App() {
         <Router>
           <NavbarLayout />
           <Switch>
-            <Route exact path="/housing" exact component={HousingList} />
-            <Route path="/housing/:id" exact component={HousingDetails} />
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/admin" exact>
-              <AdminPage />
-            </Route>
+            <div id="container">
+              <div id="main-content">
+                <Route exact path="/housing" exact component={HousingList} />
+                <Route path="/housing/:id" exact component={HousingDetails} />
+                <Route path="/contact">
+                  <Contact />
+                </Route>
+                <Route path="/login">
+                  <Login />
+                </Route>
+                <Route path="/admin" exact>
+                  <AdminPage />
+                </Route>
+              </div>
+            </div>
           </Switch>
           <FooterLayout />
         </Router>

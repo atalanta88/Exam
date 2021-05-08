@@ -7,6 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import * as Icon from "react-bootstrap-icons";
+import logo from "../../media/Capture.PNG";
 
 import { LinkContainer } from "react-router-bootstrap";
 
@@ -26,8 +27,8 @@ function NavbarLayout() {
         <Navbar.Brand href="/">
           <img
             alt=""
-            src="/logo.svg"
-            width="30"
+            src={logo}
+            width="60"
             height="30"
             className="d-inline-block align-top"
           />{" "}

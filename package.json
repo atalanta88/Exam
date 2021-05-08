@@ -25,6 +25,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-select": "^4.3.0",
+    "react-social-icons": "^5.3.0",
     "strapi-provider-upload-aws-s3": "^3.6.1",
     "sweetalert2": "^10.16.7",
     "sweetalert2-react-content": "^3.3.2",
