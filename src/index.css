@@ -1,3 +1,4 @@
+/*
 html,
 body {
   height: 100%;
@@ -7,9 +8,8 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Montserrat", sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -23,7 +23,7 @@ code {
   color: red;
 }
 .footer {
-  background-color: rgb(255, 238, 181);
+  background-color: rgb(31, 31, 31);
   flex-shrink: 0;
 }
 
@@ -45,3 +45,23 @@ code {
   background-color: transparent;
   border: transparent;
 }
+
+hr.footer-hr {
+  width: 100%;
+  float: center;
+  border: 0;
+  height: 10px;
+  border: 0;
+  box-shadow: 0 11px 15px -16px #8d8d8d inset;
+}
+
+.footer-copyright {
+  background-color: rgb(24, 24, 24);
+  padding: 5px 0px;
+  margin-top: 30px;
+}
+.footer-copyright p {
+  margin: 0 auto !important;
+  color: rgb(163, 163, 163);
+}
+*/

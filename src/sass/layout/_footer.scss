@@ -1,0 +1,31 @@
+.footer {
+    background-color: rgb(31, 31, 31);
+    flex-shrink: 0;
+  }
+  
+  .footer-card {
+    background-color: transparent;
+    border: transparent;
+  }
+  .list-group-item {
+    background-color: transparent;
+    border: transparent;
+  }
+  
+  hr.footer-hr {
+    width: 100%;
+    float: center;
+    border: 0;
+    height: 10px;
+    border: 0;
+    box-shadow: 0 11px 15px -16px #8d8d8d inset;
+  }
+  
+  .footer-copyright {
+    background-color: rgb(24, 24, 24);
+    padding: 5px 0px;
+    margin-top: 30px;
+  }
+  .footer-copyright p {
+    margin: 0 auto !important;
+  }

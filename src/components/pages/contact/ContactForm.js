@@ -1,14 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import useAxios from "../../../hooks/useAxios";
 import { Button, Form, Row, Col, Container } from "react-bootstrap";
 import FormError from "../../common/FormError";
-
 import Swal from "sweetalert2";
+import * as Icon from "react-bootstrap-icons";
 
 const Toast = Swal.mixin({
   showConfirmButton: false,
@@ -79,50 +78,59 @@ export default function ContactForm() {
 
   return (
     <>
-      <Container>
-        <Form disabled={submitting} onSubmit={handleSubmit(onSubmit)}>
-          {serverError && <FormError>{serverError}</FormError>}
+      <div className="contact-wrapper">
+        <Container className="contact-container">
+          <h3>Let's talk</h3>
+          <Form disabled={submitting} onSubmit={handleSubmit(onSubmit)}>
+            {serverError && <FormError>{serverError}</FormError>}
+            <Row>
+              <Col>
+                <Form.Label>First name</Form.Label>
+                <Form.Group controlId="formFirstName">
+                  <Form.Control name="firstname" ref={register} />
+                  {errors.firstname && (
+                    <FormError>{errors.firstname.message}</FormError>
+                  )}
+                </Form.Group>
+              </Col>
 
-          <Row>
-            <Col>
-              <Form.Label>First name</Form.Label>
-              <Form.Group controlId="formFirstName">
-                <Form.Control name="firstname" ref={register} />
-                {errors.firstname && <span>{errors.firstname.message}</span>}
-              </Form.Group>
-            </Col>
+              <Col>
+                <Form.Label>Last name</Form.Label>
+                <Form.Group controlId="formLastName">
+                  <Form.Control name="lastname" ref={register} />
+                  {errors.lastname && (
+                    <FormError>{errors.lastname.message}</FormError>
+                  )}
+                </Form.Group>
+              </Col>
+            </Row>
+            <Form.Label>Email address</Form.Label>
+            <Form.Group controlId="formEmail">
+              <Form.Control name="email" ref={register} />
+              {errors.email && <FormError>{errors.email.message}</FormError>}
+            </Form.Group>
 
-            <Col>
-              <Form.Label>Last name</Form.Label>
-              <Form.Group controlId="formLastName">
-                <Form.Control name="lastname" ref={register} />
-                {errors.lastname && <span>{errors.lastname.message}</span>}
-              </Form.Group>
-            </Col>
-          </Row>
-          <Form.Label>Email address</Form.Label>
-          <Form.Group controlId="formEmail">
-            <Form.Control name="email" ref={register} />
-            {errors.email && <span>{errors.email.message}</span>}
-          </Form.Group>
-
-          <Form.Group controlId="formMessage">
-            <Form.Label>Message</Form.Label>
-            <Form.Control
-              name="message"
-              as="textarea"
-              ref={register}
-              rows={3}
-            />
-          </Form.Group>
-          {errors.message && <span>{errors.message.message}</span>}
-          <Form.Group name="buttonSend">
-            <Button type="submit" value="Submit" variant="primary">
-              {submitting ? "Submitting..." : "Submit"}
-            </Button>
-          </Form.Group>
-        </Form>
-      </Container>
+            <Form.Group controlId="formMessage">
+              <Form.Label>Message</Form.Label>
+              <Form.Control
+                name="message"
+                as="textarea"
+                ref={register}
+                rows={3}
+              />
+              {errors.message && (
+                <FormError>{errors.message.message}</FormError>
+              )}
+            </Form.Group>
+            <Form.Group name="buttonSend">
+              <Button type="submit" value="Submit" variant="btn-submit">
+                {submitting ? "Submitting..." : "Submit"}
+                <Icon.ChevronRight color="white" size={20} />
+              </Button>
+            </Form.Group>
+          </Form>
+        </Container>
+      </div>
     </>
   );
 }

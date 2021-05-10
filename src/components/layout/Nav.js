@@ -4,10 +4,11 @@ import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import Navbar from "react-bootstrap/Navbar";
+
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import * as Icon from "react-bootstrap-icons";
-import logo from "../../media/Capture.PNG";
+import logo from "../../media/Capture.png";
 
 import { LinkContainer } from "react-router-bootstrap";
 
@@ -23,21 +24,20 @@ function NavbarLayout() {
 
   return (
     <>
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">
+      <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar.Brand href="/home">
           <img
             alt=""
             src={logo}
-            width="60"
+            width="100"
             height="30"
             className="d-inline-block align-top"
           />{" "}
-          Holidaze
         </Navbar.Brand>{" "}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <LinkContainer to="/">
+            <LinkContainer to="/home">
               <Nav.Link>Home</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/housing">
@@ -53,7 +53,6 @@ function NavbarLayout() {
               <LinkContainer to="/admin">
                 <Nav.Link>
                   <Icon.PersonCheckFill color="cyan" size={30} />
-                  Dashboard
                 </Nav.Link>
               </LinkContainer>{" "}
               <Button variant="primary" type="submit" onClick={logout}>
@@ -66,9 +65,6 @@ function NavbarLayout() {
                 <Nav.Link>
                   {" "}
                   <Icon.PersonFill color="cyan" size={30} />
-                  <Button variant="primary" type="submit">
-                    Login
-                  </Button>
                 </Nav.Link>
               </LinkContainer>
             </>

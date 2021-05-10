@@ -7,6 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Modal, Button, Form } from "react-bootstrap";
 import FormError from "../../../common/FormError";
 import Swal from "sweetalert2";
+import * as Icon from "react-bootstrap-icons";
 
 const Toast = Swal.mixin({
   showConfirmButton: false,
@@ -98,7 +99,7 @@ export default function AddEnquiry() {
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control name="email" ref={register} />
-              {errors.email && <span>{errors.email.message}</span>}
+              {errors.email && <FormError>{errors.email.message}</FormError>}
             </Form.Group>
             <Form.Group controlId="formName">
               <Form.Label>Establishment</Form.Label>
@@ -120,8 +121,9 @@ export default function AddEnquiry() {
                 <FormError>{errors.message.message}</FormError>
               )}
             </Form.Group>
-            <Button type="submit" value="Submit" variant="primary">
+            <Button type="submit" value="Submit" variant="btn-submit">
               {submitting ? "Submitting..." : "Submit"}
+              <Icon.ChevronRight color="white" size={20} />
             </Button>
           </Form>
         </Modal.Body>

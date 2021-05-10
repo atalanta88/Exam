@@ -2,12 +2,13 @@ import React, { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Form, Col, Container, Alert } from "react-bootstrap";
+import { Button, Form, Col, Container } from "react-bootstrap";
 import FormError from "../../../common/FormError";
 import axios from "axios";
 import AuthContext from "../../../../context/AuthContext";
 import { API_HOUSINGS } from "../../../../constants/api";
 import Swal from "sweetalert2";
+import * as Icon from "react-bootstrap-icons";
 
 const Toast = Swal.mixin({
   showConfirmButton: false,
@@ -125,7 +126,7 @@ export default function AddHousing() {
               <Form.Label>Housing name</Form.Label>
               <Form.Group controlId="formName">
                 <Form.Control name="name" ref={register} />
-                {errors.name && <span>{errors.name.message}</span>}
+                {errors.name && <FormError>{errors.name.message}</FormError>}
               </Form.Group>
             </Col>
 
@@ -133,7 +134,9 @@ export default function AddHousing() {
               <Form.Label>Housing adress</Form.Label>
               <Form.Group controlId="formAdress">
                 <Form.Control name="adress" ref={register} />
-                {errors.adress && <span>{errors.adress.message}</span>}
+                {errors.adress && (
+                  <FormError>{errors.adress.message}</FormError>
+                )}
               </Form.Group>
             </Col>
           </Form.Row>
@@ -142,7 +145,7 @@ export default function AddHousing() {
               <Form.Label>Type</Form.Label>
               <Form.Group controlId="formType">
                 <Form.Control name="type" ref={register} />
-                {errors.type && <span>{errors.type.message}</span>}
+                {errors.type && <FormError>{errors.type.message}</FormError>}
               </Form.Group>
             </Col>
 
@@ -150,7 +153,7 @@ export default function AddHousing() {
               <Form.Label>Price</Form.Label>
               <Form.Group controlId="formPrice">
                 <Form.Control name="price" ref={register} />
-                {errors.price && <span>{errors.price.message}</span>}
+                {errors.price && <FormError>{errors.price.message}</FormError>}
               </Form.Group>
             </Col>
           </Form.Row>
@@ -162,7 +165,9 @@ export default function AddHousing() {
               ref={register}
               rows={3}
             />
-            {errors.description && <span>{errors.description.message}</span>}
+            {errors.description && (
+              <FormError>{errors.description.message}</FormError>
+            )}
           </Form.Group>
           <Form.Row>
             <Col>
@@ -175,7 +180,7 @@ export default function AddHousing() {
                   onChange={handleInputChange}
                 />
                 {errors.imageone && (
-                  <span className="text-danger">{errors.imageone.message}</span>
+                  <FormError>{errors.imageone.message}</FormError>
                 )}
               </Form.Group>
             </Col>
@@ -189,7 +194,7 @@ export default function AddHousing() {
                   onChange={handleInputChange}
                 />
                 {errors.imagetwo && (
-                  <span className="text-danger">{errors.imagetwo.message}</span>
+                  <FormError>{errors.imagetwo.message}</FormError>
                 )}
               </Form.Group>{" "}
             </Col>{" "}
@@ -206,9 +211,7 @@ export default function AddHousing() {
                   onChange={handleInputChange}
                 />
                 {errors.imagethree && (
-                  <span className="text-danger">
-                    {errors.imagethree.message}
-                  </span>
+                  <FormError>{errors.imagethree.message}</FormError>
                 )}
               </Form.Group>{" "}
             </Col>
@@ -223,16 +226,15 @@ export default function AddHousing() {
                   onChange={handleInputChange}
                 />
                 {errors.imagefour && (
-                  <span className="text-danger">
-                    {errors.imagefour.message}
-                  </span>
+                  <FormError>{errors.imagefour.message}</FormError>
                 )}
               </Form.Group>
             </Col>
           </Form.Row>
           <Form.Group name="buttonSend">
-            <Button type="submit" value="Submit" variant="primary">
+            <Button type="submit" value="Submit" variant="btn-submit">
               {submitting ? "Submitting..." : "Submit"}
+              <Icon.ChevronRight color="white" size={20} />
             </Button>
           </Form.Group>
         </Form>

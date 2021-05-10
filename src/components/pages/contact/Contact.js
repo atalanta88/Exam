@@ -6,8 +6,10 @@ import ContactForm from "./ContactForm";
 export default function Contact() {
   return (
     <>
-      <Heading title="Contact" />
-      <ContactForm />
+      <div className="hero-wrapper">
+        <Heading title="Contact" />
+        <ContactForm />
+      </div>
     </>
   );
 }

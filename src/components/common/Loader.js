@@ -12,7 +12,7 @@ export const BookLoaderComponent = () => {
 
 export function Loader() {
   return (
-    <div className="spinner-container">
+    <div className="d-flex justify-content-center">
       <Spinner animation="grow" variant="info" />
     </div>
   );

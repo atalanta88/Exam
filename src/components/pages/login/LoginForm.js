@@ -11,6 +11,7 @@ import AuthContext from "../../../context/AuthContext";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import * as Icon from "react-bootstrap-icons";
 
 const url = BASE_URL + TOKEN_PATH;
 
@@ -71,8 +72,9 @@ export default function LoginForm() {
                 <FormError>{errors.password.message}</FormError>
               )}
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="btn-submit" type="submit">
               {submitting ? "Loggin in..." : "Login"}{" "}
+              <Icon.ChevronRight color="white" size={20} />
             </Button>
           </fieldset>
         </Form>
