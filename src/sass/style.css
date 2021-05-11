@@ -1,9 +1,30 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-container {
+  text-align: center;
 }
 
 h1 {
-  color: #48ff00;
+  color: #4b4b4b;
+}
+
+.contact-container h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 3rem !important;
+  padding-bottom: 1rem;
+}
+
+.contact-container h1 span {
+  color: violet;
+  font-size: 70px;
+}
+
+.contact-container p {
+  color: #ffffff;
+  margin-bottom: 2rem;
 }
 
 .nav-link {
@@ -22,6 +43,7 @@ h1 {
 .footer .list-group-item {
   text-transform: uppercase;
   color: white;
+  font-size: 0.85rem;
 }
 
 .footer a {
@@ -58,7 +80,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -114,6 +137,7 @@ hr.footer-hr {
   border: 0;
   -webkit-box-shadow: 0 11px 15px -16px #8d8d8d inset;
           box-shadow: 0 11px 15px -16px #8d8d8d inset;
+  margin-top: 0px;
 }
 
 .footer-copyright {
@@ -127,45 +151,140 @@ hr.footer-hr {
 }
 
 .navbar {
-  background-color: #1f1f1f;
+  background-color: #1f1f1f !important;
 }
 
 .navbar-brand {
   padding-right: 5% !important;
 }
 
-/*
-.navbar-toggler.collapsed {
-
-}
-*/
-.navbar-toggler.collapsed {
-  color: #e90000 !important;
-  border-color: rgba(0, 0, 0, 0);
+.btn-primary-color {
+  color: white;
+  background: #00beaf;
+  border: transparent;
 }
 
-.navbar-toggler {
-  padding: .25rem .75rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: .25rem;
+.btn-primary-color:hover {
+  color: white;
+  background: #009e91;
 }
 
-span.navbar-toggler-icon {
-  fill: green !important;
-  color: #e90000 !important;
+.btn-primary-color:active {
+  color: white;
+  background: #009e91;
+  border-color: transparent;
 }
 
-@media (min-width: 576px) {
-  .card-columns {
-    -webkit-column-count: 2 !important;
-    column-count: 2 !important;
-    -webkit-column-gap: 1.25rem;
-    column-gap: 1.25rem;
-    orphans: 1;
-    widows: 1;
+.btn-primary-color.focus, .btn-primary:focus {
+  color: white;
+  background: #009e91;
+  border-color: transparent;
+}
+
+.btn.focus, .btn:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-btn-submit {
+  color: white;
+  background: #00beaf;
+  border: transparent;
+}
+
+.btn-btn-submit:hover {
+  color: white;
+  background: #009e91;
+}
+
+.btn-btn-submit svg {
+  margin-left: 10px;
+}
+
+.btn-btn-submit:hover svg {
+  margin-left: 20px;
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
+}
+
+.svg-icon {
+  position: relative;
+  display: inline;
+  padding-right: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .svg-icon {
+    display: block;
   }
+}
+
+.contact-container {
+  padding-top: 7rem;
+}
+
+.hero-wrapper-contact {
+  background-image: url("../../media/pexels-stein-egil-liland-6463525.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.modal-dialog {
+  margin-top: 8rem !important;
+}
+
+.hero-wrapper-contact hr {
+  border-top: 2px solid white;
+  margin-bottom: 2rem;
+  max-width: 5%;
+}
+
+.list-group-item {
+  padding: 0.1rem 0.25rem;
+}
+
+.housing-container .card-body {
+  padding: 0rem;
+}
+
+.housing-col {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.login-container {
+  max-width: 350px;
+  padding: 0rem 0rem;
+  padding-top: 10rem;
+}
+
+.login-background {
+  padding: 2rem 1rem;
+  background: white;
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 2px;
+}
+
+.login-container img {
+  margin-bottom: 2rem;
+  max-width: 10rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.hero-wrapper-login {
+  background-image: url("../../media/pexels-evie-shaffer-2748757.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,18 +1,32 @@
-.contact-container{
-    max-width: 450px;
-    padding: 30px 20px;
-    background: rgb(255, 255, 255);
-    border-radius: 1rem;
-
-    
+.contact-container {
+  padding-top: 7rem;
 }
 
-.contact-wrapper{
-    margin: 0 10px;
+.hero-wrapper-contact {
+  background-image: url("../../media/pexels-stein-egil-liland-6463525.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  height: 100vh;
 }
 
-.hero-wrapper{
-background-color: rgb(43, 168, 226);
-height: 100vh;
+.modal-dialog {
+  margin-top: 8rem !important;
+}
 
+.hero-wrapper-contact hr {
+  border-top: 2px solid rgb(255, 255, 255);
+  margin-bottom: 2rem;
+  max-width: 5%;
+}
+
+.list-group-item {
+  padding: 0.1rem 0.25rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .list-group-item {
+  }
 }

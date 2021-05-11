@@ -1,73 +1,74 @@
 body {
+  font-family: "Poppins", sans-serif;
+}
 
-    font-family: 'Poppins', sans-serif;  
-
-  }
+.contact-container {
+  text-align: center;
+}
 
 //Headers
 
-  
-  h1 {
-    color: orange;
+h1 {
+  color: rgb(75, 75, 75);
+}
+
+.contact-container h1 {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 3rem !important;
+  padding-bottom: 1rem;
+  span {
+    color: violet;
+    font-size: 70px;
   }
+}
 
 //Paragraphs
-
-
+.contact-container p {
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
 
 //Links
 .nav-link {
-    text-transform: uppercase;
-    color: rgb(160, 160, 160) !important;
-    
-
-
+  text-transform: uppercase;
+  color: rgb(160, 160, 160) !important;
 }
-.nav-link.active{
-    color: rgb(228, 228, 228) !important;
-
-
+.nav-link.active {
+  color: rgb(228, 228, 228) !important;
 }
 
 .nav-link:hover {
-    color: rgb(228, 228, 228) !important;
-
-
+  color: rgb(228, 228, 228) !important;
 }
 
-.footer .list-group-item{
-    text-transform: uppercase;
-    color: white;
-    font-size: 0.85rem;
-
+.footer .list-group-item {
+  text-transform: uppercase;
+  color: white;
+  font-size: 0.85rem;
 }
 .footer a {
-    text-decoration: underline 3px rgba(255, 255, 255, 0);
-    transition: text-decoration-color 300ms;
-
+  text-decoration: underline 3px rgba(255, 255, 255, 0);
+  transition: text-decoration-color 300ms;
 }
 .footer a:hover {
-    color: #ffffff;
-    text-decoration-color: orange;
-
+  color: #ffffff;
+  text-decoration-color: orange;
 }
-
 
 //Other
 
-
 .hotel-type {
-    color: orangered;
-    font-weight: bold;
-  }
+  color: orangered;
+  font-weight: bold;
+}
 
-  .form-error {
-    color: red;
-    font-size: 14px;
+.form-error {
+  color: red;
+  font-size: 14px;
+}
 
-  }
-
-  .footer-copyright p {
-    color: rgb(163, 163, 163);
-    font-size: 14px;
-  }
+.footer-copyright p {
+  color: rgb(163, 163, 163);
+  font-size: 14px;
+}

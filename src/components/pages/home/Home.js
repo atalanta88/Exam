@@ -9,5 +9,9 @@ import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 
 export default function HomePage() {
-  return <></>;
+  return (
+    <>
+      <Heading size="1" content="Support" />
+    </>
+  );
 }

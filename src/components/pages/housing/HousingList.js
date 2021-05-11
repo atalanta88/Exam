@@ -43,45 +43,43 @@ function HousingList() {
 
   return (
     <>
-      <Heading title="Home" />
-      <Container>
-        <Row>
-          <CardDeck>
-            {housing.map(function (housing) {
-              const {
-                id,
-                name,
-                adress,
-                description,
-                price,
-                slug,
-                type,
-                images,
-                imageone,
-                imagetwo,
-                imagethree,
-                imagefour,
-              } = housing;
+      <Heading size="1" content="Support" />
+      <Container className="housing-container">
+        <Row xs={1}>
+          {housing.map(function (housing) {
+            const {
+              id,
+              name,
+              adress,
+              description,
+              price,
+              slug,
+              type,
+              images,
+              imageone,
+              imagetwo,
+              imagethree,
+              imagefour,
+            } = housing;
 
-              return (
-                <HousingObject
-                  key={id}
-                  id={id}
-                  name={name}
-                  adress={adress}
-                  description={description}
-                  price={price}
-                  slug={slug}
-                  type={type}
-                  images={images}
-                  imageone={imageone}
-                  imagetwo={imagetwo}
-                  imagethree={imagethree}
-                  imagefour={imagefour}
-                />
-              );
-            })}
-          </CardDeck>
+            return (
+              <HousingObject
+                key={id}
+                id={id}
+                name={name}
+                adress={adress}
+                description={description}
+                price={price}
+                slug={slug}
+                type={type}
+                images={images}
+                imageone={imageone}
+                imagetwo={imagetwo}
+                imagethree={imagethree}
+                imagefour={imagefour}
+              />
+            );
+          })}
         </Row>
       </Container>
     </>

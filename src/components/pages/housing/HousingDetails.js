@@ -59,7 +59,8 @@ function HousingDetails() {
   return (
     <>
       <div className="housing-name-type">
-        <Heading title={housing.name} />
+        <Heading size="1" content={housing.name} />
+
         <Container>
           <p>{housing.name}</p>
         </Container>
@@ -110,48 +111,36 @@ function HousingDetails() {
         </div>
         <div className="housing-info">
           <h3>About us</h3>
-          <Row xs={1} lg={3}>
+          <Row xs={2}>
             <Col>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <Icon.Wifi color="cyan" size={30} />
+                  <div className="svg-icon">
+                    <Icon.Wifi color="cyan" size={30} />
+                  </div>
                   Free internet
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <Icon.Egg color="cyan" size={30} />
+                  <div className="svg-icon">
+                    <Icon.EggFried color="cyan" size={30} />
+                  </div>
                   Breakfast included
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Icon.Key color="cyan" size={30} />
-                  Car rental
                 </ListGroup.Item>
               </ListGroup>
             </Col>
             <Col>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <Icon.Check color="cyan" size={30} />
+                  <div className="svg-icon">
+                    <Icon.CheckCircle color="cyan" size={30} />
+                  </div>
                   Roomservice
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <Icon.Droplet color="cyan" size={30} />
-                  Cleaning
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Icon.ShieldLock color="cyan" size={30} />
-                  Safe
-                </ListGroup.Item>
-              </ListGroup>
-            </Col>
-            <Col>
-              <ListGroup variant="flush">
-                <ListGroup.Item>
-                  <Icon.Star color="cyan" size={30} />
-                  4-Stars
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Icon.Building color="cyan" size={30} />
-                  Historical
+                  <div className="svg-icon">
+                    <Icon.FilePpt color="cyan" size={30} />
+                  </div>
+                  Free parking
                 </ListGroup.Item>
               </ListGroup>
             </Col>

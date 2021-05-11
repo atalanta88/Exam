@@ -3,11 +3,12 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import useAxios from "../../../hooks/useAxios";
-import { Button, Form, Row, Col, Container } from "react-bootstrap";
+import useAxiosNoAuth from "../../../hooks/useAxiosNoAuth";
+import { Button, Form, Row, Col, Container, Modal } from "react-bootstrap";
 import FormError from "../../common/FormError";
 import Swal from "sweetalert2";
 import * as Icon from "react-bootstrap-icons";
+import Heading from "../../layout/Heading";
 
 const Toast = Swal.mixin({
   showConfirmButton: false,
@@ -45,7 +46,7 @@ export default function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState(null);
 
-  const http = useAxios();
+  const http = useAxiosNoAuth();
 
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
@@ -73,64 +74,83 @@ export default function ContactForm() {
       setSubmitting(false);
     }
   }
-
   console.log(errors);
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <>
-      <div className="contact-wrapper">
-        <Container className="contact-container">
-          <h3>Let's talk</h3>
-          <Form disabled={submitting} onSubmit={handleSubmit(onSubmit)}>
-            {serverError && <FormError>{serverError}</FormError>}
-            <Row>
-              <Col>
-                <Form.Label>First name</Form.Label>
-                <Form.Group controlId="formFirstName">
-                  <Form.Control name="firstname" ref={register} />
-                  {errors.firstname && (
-                    <FormError>{errors.firstname.message}</FormError>
-                  )}
-                </Form.Group>
-              </Col>
+      <Button variant="primary-color" size="lg" onClick={handleShow}>
+        Contact us
+      </Button>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>
+            {" "}
+            <Heading size="3" content="Let's talk" />
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Container>
+            <Form disabled={submitting} onSubmit={handleSubmit(onSubmit)}>
+              {serverError && <FormError>{serverError}</FormError>}
+              <Row>
+                <Col>
+                  <Form.Label>First name</Form.Label>
+                  <Form.Group controlId="formFirstName">
+                    <Form.Control name="firstname" ref={register} />
+                    {errors.firstname && (
+                      <FormError>{errors.firstname.message}</FormError>
+                    )}
+                  </Form.Group>
+                </Col>
 
-              <Col>
-                <Form.Label>Last name</Form.Label>
-                <Form.Group controlId="formLastName">
-                  <Form.Control name="lastname" ref={register} />
-                  {errors.lastname && (
-                    <FormError>{errors.lastname.message}</FormError>
-                  )}
-                </Form.Group>
-              </Col>
-            </Row>
-            <Form.Label>Email address</Form.Label>
-            <Form.Group controlId="formEmail">
-              <Form.Control name="email" ref={register} />
-              {errors.email && <FormError>{errors.email.message}</FormError>}
-            </Form.Group>
+                <Col>
+                  <Form.Label>Last name</Form.Label>
+                  <Form.Group controlId="formLastName">
+                    <Form.Control name="lastname" ref={register} />
+                    {errors.lastname && (
+                      <FormError>{errors.lastname.message}</FormError>
+                    )}
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Form.Label>Email address</Form.Label>
+              <Form.Group controlId="formEmail">
+                <Form.Control name="email" ref={register} />
+                {errors.email && <FormError>{errors.email.message}</FormError>}
+              </Form.Group>
 
-            <Form.Group controlId="formMessage">
-              <Form.Label>Message</Form.Label>
-              <Form.Control
-                name="message"
-                as="textarea"
-                ref={register}
-                rows={3}
-              />
-              {errors.message && (
-                <FormError>{errors.message.message}</FormError>
-              )}
-            </Form.Group>
-            <Form.Group name="buttonSend">
-              <Button type="submit" value="Submit" variant="btn-submit">
-                {submitting ? "Submitting..." : "Submit"}
-                <Icon.ChevronRight color="white" size={20} />
-              </Button>
-            </Form.Group>
-          </Form>
-        </Container>
-      </div>
+              <Form.Group controlId="formMessage">
+                <Form.Label>Message</Form.Label>
+                <Form.Control
+                  name="message"
+                  as="textarea"
+                  ref={register}
+                  rows={3}
+                />
+                {errors.message && (
+                  <FormError>{errors.message.message}</FormError>
+                )}
+              </Form.Group>
+              <Form.Group name="buttonSend">
+                <Button type="submit" value="Submit" variant="btn-submit">
+                  {submitting ? "Submitting..." : "Submit"}
+                  <Icon.ChevronRight color="white" size={20} />
+                </Button>
+              </Form.Group>
+            </Form>
+          </Container>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }

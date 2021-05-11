@@ -79,7 +79,7 @@ export default function AddEnquiry() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary-color" onClick={handleShow}>
         Send us a message
       </Button>
 

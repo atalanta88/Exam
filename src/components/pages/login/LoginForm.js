@@ -11,7 +11,8 @@ import AuthContext from "../../../context/AuthContext";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import * as Icon from "react-bootstrap-icons";
+import Image from "react-bootstrap/Image";
+import logo from "../../../media/Capture.png";
 
 const url = BASE_URL + TOKEN_PATH;
 
@@ -53,31 +54,37 @@ export default function LoginForm() {
 
   return (
     <>
-      <Container>
-        <Form onSubmit={handleSubmit(onSubmit)}>
-          {loginError && <FormError>{loginError}</FormError>}
-          <fieldset disabled={submitting}>
-            <Form.Label>Username</Form.Label>
-            <Form.Group controlId="formBasicUsername">
-              <Form.Control name="identifier" ref={register}></Form.Control>
-              {errors.identifier && (
-                <FormError>{errors.identifier.message}</FormError>
-              )}
-            </Form.Group>
+      <Container className="login-container">
+        {" "}
+        <div className="login-background">
+          <Image src={logo} fluid />
+          <Form onSubmit={handleSubmit(onSubmit)}>
+            {loginError && <FormError>{loginError}</FormError>}
+            <fieldset disabled={submitting}>
+              <Form.Label>Username</Form.Label>
+              <Form.Group controlId="formBasicUsername">
+                <Form.Control name="identifier" ref={register}></Form.Control>
+                {errors.identifier && (
+                  <FormError>{errors.identifier.message}</FormError>
+                )}
+              </Form.Group>
 
-            <Form.Label>Password</Form.Label>
-            <Form.Group controlId="formBasicPassword">
-              <Form.Control name="password" ref={register}></Form.Control>
-              {errors.password && (
-                <FormError>{errors.password.message}</FormError>
-              )}
-            </Form.Group>
-            <Button variant="btn-submit" type="submit">
-              {submitting ? "Loggin in..." : "Login"}{" "}
-              <Icon.ChevronRight color="white" size={20} />
-            </Button>
-          </fieldset>
-        </Form>
+              <Form.Label>Password</Form.Label>
+              <Form.Group controlId="formBasicPassword">
+                <Form.Control name="password" ref={register}></Form.Control>
+                {errors.password && (
+                  <FormError>{errors.password.message}</FormError>
+                )}
+              </Form.Group>
+              <Form.Group controlId="formBasicCheckbox">
+                <Form.Check type="checkbox" label="Remember me" />
+              </Form.Group>
+              <Button variant="btn-submit" type="submit" block>
+                {submitting ? "Loggin in..." : "Login"}{" "}
+              </Button>
+            </fieldset>
+          </Form>
+        </div>
       </Container>
     </>
   );

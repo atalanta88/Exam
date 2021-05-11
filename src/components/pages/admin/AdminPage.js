@@ -7,7 +7,7 @@ import AddHousing from "./housing/AddHousing";
 export default function AdminPage() {
   return (
     <>
-      <Heading title="Admin inbox" />
+      <Heading size="1" content="Support" />
 
       <Jumbotron fluid>
         <Container>

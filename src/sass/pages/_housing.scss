@@ -1,13 +1,8 @@
-@media (min-width: 576px) {
-    .card-columns {
-      -webkit-column-count: 2 !important;
-      -moz-column-count: 2 !important;
-      column-count: 2 !important;
-      -webkit-column-gap: 1.25rem;
-      -moz-column-gap: 1.25rem;
-      column-gap: 1.25rem;
-      orphans: 1;
-      widows: 1;
-    }
-  }
-  
+.housing-container .card-body {
+  padding: 0rem;
+}
+
+.housing-col {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}

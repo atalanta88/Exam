@@ -1,3 +1,35 @@
+.btn-primary-color{
+    color: white;
+    background: #00beaf; 
+border: transparent;
+
+}
+.btn-primary-color:hover{
+    color: white;
+    background: #009e91; 
+}
+.btn-primary-color:active{
+    color: white;
+    background: #009e91; 
+    border-color: transparent;
+
+}
+
+.btn-primary-color.focus, .btn-primary:focus {
+    color: white;
+    background: #009e91; 
+    border-color: transparent;
+
+}
+
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+
+
+
 .btn-btn-submit{
     color: white;
     background: #00beaf; 
