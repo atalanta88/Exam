@@ -1,9 +1,14 @@
 body {
   font-family: "Poppins", sans-serif;
+  color: #484848;
 }
 
 .contact-container {
   text-align: center;
+}
+
+p {
+  overflow: hidden;
 }
 
 h1 {
@@ -22,9 +27,50 @@ h1 {
   font-size: 70px;
 }
 
+.housing-container .card-title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.housing-container .form-label {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1000px) {
+  .housing-container .card-title {
+    margin-top: 0.5rem;
+    margin-bottom: 0px;
+  }
+  .housing-container .card-title span {
+    color: #313131;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+}
+
+.housing-details-container p {
+  max-width: 75ch;
+}
+
+.housing-details-container .housing-type {
+  color: hotpink;
+}
+
+.housing-enquiries p {
+  max-width: 75ch;
+}
+
 .contact-container p {
   color: #ffffff;
   margin-bottom: 2rem;
+}
+
+a {
+  color: #484848;
+}
+
+a:hover {
+  color: #484848;
 }
 
 .nav-link {
@@ -62,8 +108,19 @@ h1 {
 }
 
 .hotel-type {
-  color: orangered;
-  font-weight: bold;
+  position: relative;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 2px;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 1rem;
+}
+
+.hotel-type span {
+  background-color: #008a67;
+  padding: 0px 4px;
 }
 
 .form-error {
@@ -74,6 +131,35 @@ h1 {
 .footer-copyright p {
   color: #a3a3a3;
   font-size: 14px;
+}
+
+.about-us-column p {
+  margin-bottom: 2rem;
+}
+
+.about-us-column h3 {
+  margin-top: 0rem;
+}
+
+.housing-info {
+  margin-top: 1.5rem;
+}
+
+.housing-info .col {
+  padding-right: 0px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .about-us-column p {
+    margin-bottom: 2rem;
+  }
+  .about-us-column h3 {
+    margin-top: 1rem;
+  }
+}
+
+.datepicker-wrapper .form-label {
+  font-weight: bold;
 }
 
 html,
@@ -175,16 +261,44 @@ hr.footer-hr {
   border-color: transparent;
 }
 
-.btn-primary-color.focus, .btn-primary:focus {
+.btn-primary-color.focus,
+.btn-primary:focus {
   color: white;
   background: #009e91;
   border-color: transparent;
 }
 
-.btn.focus, .btn:focus {
+.btn.focus,
+.btn:focus {
   outline: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.housing-container .btn {
+  margin-bottom: 1rem;
+}
+
+.housing-container a {
+  text-decoration: none !important;
+}
+
+.housing-container .card-body .btn {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 575px) {
+  .btn.sm-block {
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .housing-container .card-body .btn {
+    margin-top: 1rem;
+  }
 }
 
 .btn-btn-submit {
@@ -204,20 +318,18 @@ hr.footer-hr {
 
 .btn-btn-submit:hover svg {
   margin-left: 20px;
-  -webkit-transition: all .1s ease-in;
-  transition: all .1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.accordion-container .btn {
+  margin-bottom: 0px;
 }
 
 .svg-icon {
   position: relative;
   display: inline;
   padding-right: 10px;
-}
-
-@media only screen and (max-width: 768px) {
-  .svg-icon {
-    display: block;
-  }
 }
 
 .contact-container {
@@ -247,13 +359,83 @@ hr.footer-hr {
   padding: 0.1rem 0.25rem;
 }
 
+.housing-container {
+  margin-top: 5rem;
+}
+
 .housing-container .card-body {
   padding: 0rem;
+}
+
+.housing-container .card:hover {
+  background: #fff;
+  -webkit-box-shadow: 0px 5px 6px rgba(219, 219, 219, 0.5);
+          box-shadow: 0px 5px 6px rgba(219, 219, 219, 0.5);
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.housing-enquiries {
+  margin-bottom: 4rem;
+  margin-top: 3rem;
 }
 
 .housing-col {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.housing-col hr {
+  max-width: 97%;
+}
+
+.datepicker-container .form-label {
+  display: block;
+}
+
+.datepicker-wrapper {
+  padding-top: 20px;
+  border-radius: 5px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  max-width: 750px;
+  display: block;
+  display: inline-block;
+}
+
+.housing-container .col-md-2 {
+  margin-top: 15px !important;
+}
+
+.housing-details-container {
+  margin-top: 5rem;
+}
+
+.accordion-container .card-header {
+  padding: 0px;
+}
+
+.form-checkbox {
+  margin-top: 1rem !important;
+}
+
+.carousel-column {
+  padding: 0px;
+}
+
+.about-us-column {
+  padding-left: 4rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .about-us-column {
+    padding-left: 1.5rem;
+  }
+  .housing-details-container {
+    margin-top: 2rem;
+  }
 }
 
 .login-container {

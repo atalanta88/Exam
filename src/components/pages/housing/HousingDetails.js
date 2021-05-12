@@ -58,103 +58,105 @@ function HousingDetails() {
   }
   return (
     <>
-      <div className="housing-name-type">
+      <Container className="housing-details-container">
         <Heading size="1" content={housing.name} />
 
-        <Container>
-          <p>{housing.name}</p>
-        </Container>
-      </div>
+        <Row xs={1} lg={2}>
+          <Col className="carousel-column" xs={12} lg={8}>
+            {" "}
+            <Carousel fade>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={housing.imageone.url}
+                  alt="First slide"
+                />
+              </Carousel.Item>
 
-      <DatePicker />
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={housing.imagetwo.url}
+                  alt="Second slide"
+                />
+              </Carousel.Item>
 
-      <Container>
-        <Carousel fade>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={housing.imageone.url}
-              alt="First slide"
-            />
-          </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={housing.imagethree.url}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
 
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={housing.imagetwo.url}
-              alt="Second slide"
-            />
-          </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={housing.imagefour.url}
+                  alt="Fourth slide"
+                />
+              </Carousel.Item>
+            </Carousel>
+          </Col>
+          <Col className="about-us-column" xs={12} lg={4}>
+            {" "}
+            <div className="housing-description">
+              <Heading size="3" content="About us" />
 
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={housing.imagethree.url}
-              alt="Third slide"
-            />
-          </Carousel.Item>
-
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={housing.imagefour.url}
-              alt="Fourth slide"
-            />
-          </Carousel.Item>
-        </Carousel>
+              <p className="housing-type">{housing.type}</p>
+              <p>{housing.description}</p>
+            </div>
+            <div className="housing-info">
+              <Row xs={2}>
+                <Col>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item>
+                      <div className="svg-icon">
+                        <Icon.Wifi color="black" size={16} />
+                      </div>
+                      Free internet
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                      <div className="svg-icon">
+                        <Icon.EggFried color="black" size={16} />
+                      </div>
+                      Breakfast included
+                    </ListGroup.Item>
+                  </ListGroup>
+                </Col>
+                <Col>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item>
+                      <div className="svg-icon">
+                        <Icon.CheckCircle color="black" size={16} />
+                      </div>
+                      Roomservice
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                      <div className="svg-icon">
+                        <Icon.FilePpt color="black" size={16} />
+                      </div>
+                      Free parking
+                    </ListGroup.Item>
+                  </ListGroup>
+                </Col>
+              </Row>
+            </div>
+          </Col>
+        </Row>
       </Container>
       <Container>
-        <div className="housing-description">
-          <h2>Housing description</h2>
-          <p className="housing-type">{housing.type}</p>
-          <p>{housing.description}</p>
-        </div>
-        <div className="housing-info">
-          <h3>About us</h3>
-          <Row xs={2}>
-            <Col>
-              <ListGroup variant="flush">
-                <ListGroup.Item>
-                  <div className="svg-icon">
-                    <Icon.Wifi color="cyan" size={30} />
-                  </div>
-                  Free internet
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <div className="svg-icon">
-                    <Icon.EggFried color="cyan" size={30} />
-                  </div>
-                  Breakfast included
-                </ListGroup.Item>
-              </ListGroup>
-            </Col>
-            <Col>
-              <ListGroup variant="flush">
-                <ListGroup.Item>
-                  <div className="svg-icon">
-                    <Icon.CheckCircle color="cyan" size={30} />
-                  </div>
-                  Roomservice
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <div className="svg-icon">
-                    <Icon.FilePpt color="cyan" size={30} />
-                  </div>
-                  Free parking
-                </ListGroup.Item>
-              </ListGroup>
-            </Col>
-          </Row>
-        </div>
+        <DatePicker />
+      </Container>
+      <Container>
         <div className="housing-enquiries">
-          <h2>Anything on your mind?</h2>
+          <Heading size="3" content="Anything on your mind?" />
           <p>
             Find more information under Q&A. If you cant find an answer there,
             please send a question to the establishement.
           </p>
+          <AddEnquiry />
         </div>
-        <div className="mb-2"></div>
-        <AddEnquiry />
       </Container>
     </>
   );

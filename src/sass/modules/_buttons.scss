@@ -1,51 +1,75 @@
-.btn-primary-color{
-    color: white;
-    background: #00beaf; 
-border: transparent;
-
+.btn-primary-color {
+  color: white;
+  background: #00beaf;
+  border: transparent;
 }
-.btn-primary-color:hover{
-    color: white;
-    background: #009e91; 
+.btn-primary-color:hover {
+  color: white;
+  background: #009e91;
 }
-.btn-primary-color:active{
-    color: white;
-    background: #009e91; 
-    border-color: transparent;
-
+.btn-primary-color:active {
+  color: white;
+  background: #009e91;
+  border-color: transparent;
 }
 
-.btn-primary-color.focus, .btn-primary:focus {
-    color: white;
-    background: #009e91; 
-    border-color: transparent;
-
+.btn-primary-color.focus,
+.btn-primary:focus {
+  color: white;
+  background: #009e91;
+  border-color: transparent;
 }
 
-.btn.focus, .btn:focus {
-    outline: 0;
-    box-shadow: none;
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
 }
 
-
-
-
-.btn-btn-submit{
-    color: white;
-    background: #00beaf; 
-border: transparent;
-}
-.btn-btn-submit:hover{
-    color: white;
-    background: #009e91; 
+.housing-container .btn {
+  margin-bottom: 1rem;
 }
 
-.btn-btn-submit svg{
-    margin-left: 10px;
-
+.housing-container a {
+  text-decoration: none !important;
 }
-.btn-btn-submit:hover svg{
-    margin-left: 20px;
-    transition: all .1s ease-in;
 
+.housing-container .card-body .btn {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 575px) {
+  .btn.sm-block {
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .housing-container .card-body .btn {
+    margin-top: 1rem;
+  }
+}
+
+.btn-btn-submit {
+  color: white;
+  background: #00beaf;
+  border: transparent;
+}
+.btn-btn-submit:hover {
+  color: white;
+  background: #009e91;
+}
+
+.btn-btn-submit svg {
+  margin-left: 10px;
+}
+.btn-btn-submit:hover svg {
+  margin-left: 20px;
+  transition: all 0.1s ease-in;
+}
+
+.accordion-container .btn {
+  margin-bottom: 0px;
 }

@@ -1,8 +1,75 @@
+.housing-container {
+  margin-top: 5rem;
+}
+
 .housing-container .card-body {
   padding: 0rem;
+}
+
+.housing-container .card:hover {
+  background: #fff;
+  box-shadow: 0px 5px 6px rgba(219, 219, 219, 0.5);
+
+  transition: all 0.2s ease-in;
+}
+
+.housing-enquiries {
+  margin-bottom: 4rem;
+  margin-top: 3rem;
 }
 
 .housing-col {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
+  padding-right: 0px;
+  padding-left: 0px;
+  hr {
+    max-width: 97%;
+  }
+}
+
+.datepicker-container .form-label {
+  display: block;
+}
+
+.datepicker-wrapper {
+  padding-top: 20px;
+  border-radius: 5px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  max-width: 750px;
+  display: block;
+  display: inline-block;
+}
+
+.housing-container .col-md-2 {
+  margin-top: 15px !important;
+}
+
+.housing-details-container {
+  margin-top: 5rem;
+}
+
+.accordion-container .card-header {
+  padding: 0px;
+}
+.form-checkbox {
+  margin-top: 1rem !important;
+}
+
+.carousel-column {
+  padding: 0px;
+}
+
+.about-us-column {
+  padding-left: 4rem;
+}
+@media only screen and (max-width: 1000px) {
+  .about-us-column {
+    padding-left: 1.5rem;
+  }
+
+  .housing-details-container {
+    margin-top: 2rem;
+  }
 }
