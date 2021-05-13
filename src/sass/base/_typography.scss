@@ -38,16 +38,16 @@ h1 {
   font-weight: bold;
 }
 
+.housing-container .card-title span {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: rgb(49, 49, 49);
+}
+
 @media only screen and (max-width: 1000px) {
   .housing-container .card-title {
     margin-top: 0.5rem;
     margin-bottom: 0px;
-  }
-
-  .housing-container .card-title span {
-    color: rgb(49, 49, 49);
-    font-size: 1.1rem;
-    font-weight: bold;
   }
 }
 
@@ -56,7 +56,8 @@ h1 {
     max-width: 75ch;
   }
   .housing-type {
-    color: hotpink;
+    color: rgb(255, 136, 0);
+    font-weight: bold;
   }
 }
 
@@ -161,4 +162,10 @@ a:hover {
 
 .datepicker-wrapper .form-label {
   font-weight: bold;
+}
+
+.modal-dialog {
+  p {
+    padding-left: 2rem;
+  }
 }

@@ -1,32 +1,28 @@
 .footer {
-    background-color: rgb(31, 31, 31);
-    flex-shrink: 0;
-  }
-  
-  .footer-card {
-    background-color: transparent;
-    border: transparent;
-  }
-  .list-group-item {
-    background-color: transparent;
-    border: transparent;
-  }
-  
-  hr.footer-hr {
-    width: 100%;
-    float: center;
-    border: 0;
-    height: 10px;
-    border: 0;
-    box-shadow: 0 11px 15px -16px #8d8d8d inset;
-    margin-top: 0px;
-  }
-  
+  background-color: rgb(31, 31, 31);
+  flex-shrink: 0;
+  padding-top: 2rem;
+}
+
+.footer-card {
+  background-color: transparent;
+  border: transparent;
+}
+.list-group-item {
+  background-color: transparent;
+  border: transparent;
+}
+
+.footer-copyright {
+  background-color: rgb(24, 24, 24);
+  padding: 5px 0px;
+  margin-top: 30px;
+}
+.footer-copyright p {
+  margin: 0 auto !important;
+}
+@media only screen and (max-width: 575px) {
   .footer-copyright {
-    background-color: rgb(24, 24, 24);
-    padding: 5px 0px;
-    margin-top: 30px;
+    padding-bottom: 4rem;
   }
-  .footer-copyright p {
-    margin: 0 auto !important;
-  }
+}

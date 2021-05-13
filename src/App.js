@@ -4,6 +4,7 @@ import Contact from "./components/pages/contact/Contact";
 import Login from "./components/pages/login/Login";
 import AdminPage from "./components/pages/admin/AdminPage";
 import Home from "./components/pages/home/Home";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 import NavbarLayout from "./components/layout/Nav";
 import { AuthProvider } from "./context/AuthContext";
@@ -18,6 +19,7 @@ function App() {
     <>
       <AuthProvider>
         <Router>
+          <ScrollToTop />
           <NavbarLayout />
           <Switch>
             <div id="container">

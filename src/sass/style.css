@@ -36,15 +36,16 @@ h1 {
   font-weight: bold;
 }
 
+.housing-container .card-title span {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #313131;
+}
+
 @media only screen and (max-width: 1000px) {
   .housing-container .card-title {
     margin-top: 0.5rem;
     margin-bottom: 0px;
-  }
-  .housing-container .card-title span {
-    color: #313131;
-    font-size: 1.1rem;
-    font-weight: bold;
   }
 }
 
@@ -53,7 +54,8 @@ h1 {
 }
 
 .housing-details-container .housing-type {
-  color: hotpink;
+  color: #ff8800;
+  font-weight: bold;
 }
 
 .housing-enquiries p {
@@ -162,6 +164,10 @@ a:hover {
   font-weight: bold;
 }
 
+.modal-dialog p {
+  padding-left: 2rem;
+}
+
 html,
 body {
   margin: 0;
@@ -203,6 +209,7 @@ body {
   background-color: #1f1f1f;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  padding-top: 2rem;
 }
 
 .footer-card {
@@ -215,17 +222,6 @@ body {
   border: transparent;
 }
 
-hr.footer-hr {
-  width: 100%;
-  float: center;
-  border: 0;
-  height: 10px;
-  border: 0;
-  -webkit-box-shadow: 0 11px 15px -16px #8d8d8d inset;
-          box-shadow: 0 11px 15px -16px #8d8d8d inset;
-  margin-top: 0px;
-}
-
 .footer-copyright {
   background-color: #181818;
   padding: 5px 0px;
@@ -236,12 +232,28 @@ hr.footer-hr {
   margin: 0 auto !important;
 }
 
+@media only screen and (max-width: 575px) {
+  .footer-copyright {
+    padding-bottom: 4rem;
+  }
+}
+
 .navbar {
   background-color: #1f1f1f !important;
 }
 
 .navbar-brand {
   padding-right: 5% !important;
+}
+
+@media only screen and (max-width: 575px) {
+  .fixed-bottom-nav {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+  }
 }
 
 .btn-primary-color {
@@ -332,6 +344,49 @@ hr.footer-hr {
   padding-right: 10px;
 }
 
+.admin-page-wrapper {
+  margin-top: 5rem;
+}
+
+.admin-page-wrapper .card-deck {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .admin-page-wrapper {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.modal-dialog .modal-body {
+  padding: 0rem;
+}
+
+.modal-dialog .card-header {
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: none;
+  padding-left: 1rem;
+}
+
+.modal-dialog .card-header:hover {
+  background-color: rgba(224, 224, 224, 0.082);
+}
+
+.modal-dialog .card-body {
+  padding: 0rem;
+}
+
+.modal-dialog .inner-accordion-card-body.card-body .card {
+  border: 1px solid rgba(59, 59, 59, 0);
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.card-header-remove-background-color.card-header {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
 .contact-container {
   padding-top: 7rem;
 }
@@ -361,6 +416,12 @@ hr.footer-hr {
 
 .housing-container {
   margin-top: 5rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .housing-container {
+    margin-top: 2rem;
+  }
 }
 
 .housing-container .card-body {
@@ -436,6 +497,10 @@ hr.footer-hr {
   .housing-details-container {
     margin-top: 2rem;
   }
+}
+
+.bottom-container {
+  background-color: blue;
 }
 
 .login-container {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Accordion, Card, Button, Table } from "react-bootstrap";
+import { Card, Button, Modal } from "react-bootstrap";
 import { API_ENQUIRIES } from "../../../../constants/api";
 import EnquiryMessageObject from "./EnquiryMessageObject";
 import { Loader } from "../../../common/Loader";
@@ -10,6 +10,9 @@ function EnquiriesList() {
   const [enquiries, setEnquiryList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const handleClose = () => setLgShow(false);
+  const [lgShow, setLgShow] = useState(false);
 
   useEffect(function () {
     async function fetchData() {
@@ -42,22 +45,25 @@ function EnquiriesList() {
 
   return (
     <>
-      <Accordion>
-        <Card>
-          <Card.Header>
-            <Accordion.Toggle as={Button} variant="link" eventKey="0">
-              Enquiries messages
-            </Accordion.Toggle>
-          </Card.Header>
-          <Accordion.Collapse eventKey="0">
+      <Button variant="primary-color" onClick={() => setLgShow(true)}>
+        Enquiries
+      </Button>
+      <Modal
+        size="lg"
+        show={lgShow}
+        onHide={() => setLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+            Enquiry messages
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {" "}
+          <Card>
+            <Card.Header></Card.Header>
             <Card.Body className="accordion-card-body">
-              <Table bordered>
-                <thead>
-                  <tr>
-                    <th>Housing name</th>
-                  </tr>
-                </thead>
-              </Table>
               {enquiries.map(function (enquiry) {
                 const { message, name, email, housingname } = enquiry;
 
@@ -71,9 +77,14 @@ function EnquiriesList() {
                 );
               })}
             </Card.Body>
-          </Accordion.Collapse>
-        </Card>
-      </Accordion>
+          </Card>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }

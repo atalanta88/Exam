@@ -1,12 +1,19 @@
 //navbar navbar-expand-lg navbar-light bg-light
 
 .navbar {
-    background-color: rgb(31, 31, 31) !important;
+  background-color: rgb(31, 31, 31) !important;
 }
 
 .navbar-brand {
-    padding-right: 5% !important;
+  padding-right: 5% !important;
 }
 
-
-
+@media only screen and (max-width: 575px) {
+  .fixed-bottom-nav {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+  }
+}

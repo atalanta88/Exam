@@ -52,38 +52,12 @@ function HousingList() {
   return (
     <>
       <Container className="housing-container">
+        <Heading size="1" content="Find a place to stay!" />
+
         <Row xs={1} md={2}>
           <Col xs={0} md={2}>
             {" "}
             <Form>
-              <Accordion className="accordion-container">
-                <Card>
-                  <Card.Header>
-                    <Accordion.Toggle
-                      as={Button}
-                      variant="primary-color"
-                      eventKey="1"
-                      block
-                    >
-                      Show filter
-                    </Accordion.Toggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey="1">
-                    <Card.Body>
-                      <Form>
-                        <Form.Control as="select" custom>
-                          <option>Popular</option>
-                          <option>Price high to low</option>
-                          <option>Price low to high</option>
-                          <option>Name</option>
-                          <option>Offer</option>
-                        </Form.Control>
-                      </Form>
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-              </Accordion>
-
               <Row xs={2} md={1}>
                 <Col>
                   <Form.Group
@@ -112,6 +86,33 @@ function HousingList() {
                   </Form.Group>{" "}
                 </Col>
               </Row>
+              <Accordion className="accordion-container">
+                <Card>
+                  <Card.Header>
+                    <Accordion.Toggle
+                      as={Button}
+                      variant="primary-color"
+                      eventKey="1"
+                      block
+                    >
+                      Sort
+                    </Accordion.Toggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="1">
+                    <Card.Body>
+                      <Form>
+                        <Form.Control as="select" custom>
+                          <option>Popular</option>
+                          <option>Price high to low</option>
+                          <option>Price low to high</option>
+                          <option>Name</option>
+                          <option>Offer</option>
+                        </Form.Control>
+                      </Form>
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>
             </Form>
           </Col>
           <Col xs={12} md={10}>

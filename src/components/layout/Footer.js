@@ -3,20 +3,11 @@ import { Row, Col, Container, ListGroup, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../media/Capture.png";
 import { SocialIcon } from "react-social-icons";
-function FooterFadedLine() {
-  return (
-    <>
-      <hr className="footer-hr" />
-    </>
-  );
-}
 
 function FooterLayout() {
   return (
     <>
       <footer class="footer">
-        <FooterFadedLine />
-
         <Container className="footer-container">
           <Row xs={1} md={3}>
             <Col>
@@ -82,7 +73,7 @@ function FooterLayout() {
 
           <Row>
             <Col></Col>
-            <Col>
+            <Col className="footer-image-column">
               <Link to="/home">
                 <Card.Img src={logo} />
               </Link>

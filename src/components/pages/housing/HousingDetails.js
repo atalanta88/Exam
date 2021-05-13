@@ -147,8 +147,7 @@ function HousingDetails() {
       </Container>
       <Container>
         <DatePicker />
-      </Container>
-      <Container>
+
         <div className="housing-enquiries">
           <Heading size="3" content="Anything on your mind?" />
           <p>

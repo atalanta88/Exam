@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Form, Col, Container } from "react-bootstrap";
+import { Button, Form, Col, Container, Modal, Card } from "react-bootstrap";
 import FormError from "../../../common/FormError";
 import axios from "axios";
 import AuthContext from "../../../../context/AuthContext";
@@ -24,7 +24,7 @@ const Toast = Swal.mixin({
 const schema = yup.object().shape({
   name: yup
     .string()
-    .required("Enter your first name")
+    .required("Enter the housing name")
     .min(2, "Your name needs to be atleast 3 characters"),
   adress: yup
     .string()
@@ -38,8 +38,9 @@ const schema = yup.object().shape({
 
   price: yup
     .number()
-    .required("Enter a price")
-    .integer("Enter a price without commas"),
+    .required("Must be a whole number")
+    .integer("Must be a whole number")
+    .typeError("Must be a whole number"),
 
   description: yup
     .string()
@@ -67,6 +68,9 @@ export default function AddHousing() {
   const handleInputChange = (event) => {
     setFile([...file, event.target.files[0]]);
   };
+
+  const handleClose = () => setLgShow(false);
+  const [lgShow, setLgShow] = useState(false);
 
   const [auth, setAuth] = useContext(AuthContext);
   const url = API_HOUSINGS;
@@ -118,127 +122,169 @@ export default function AddHousing() {
 
   return (
     <>
-      <Container>
-        <Form disabled={submitting} onSubmit={handleSubmit(onSubmit)}>
-          {serverError && <FormError>{serverError}</FormError>}
-          <Form.Row>
-            <Col>
-              <Form.Label>Housing name</Form.Label>
-              <Form.Group controlId="formName">
-                <Form.Control name="name" ref={register} />
-                {errors.name && <FormError>{errors.name.message}</FormError>}
-              </Form.Group>
-            </Col>
+      <Button variant="primary-color" onClick={() => setLgShow(true)}>
+        Add new housing
+      </Button>
+      <Modal
+        size="lg"
+        show={lgShow}
+        onHide={() => setLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+            Enquiry messages
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {" "}
+          <Card>
+            <Card.Header></Card.Header>
+            <Card.Body>
+              <Container>
+                <Form disabled={submitting} onSubmit={handleSubmit(onSubmit)}>
+                  {serverError && <FormError>{serverError}</FormError>}
+                  <Form.Row>
+                    <Col>
+                      <Form.Label>Housing name</Form.Label>
+                      <Form.Group controlId="formName">
+                        <Form.Control name="name" ref={register} />
+                        {errors.name && (
+                          <FormError>{errors.name.message}</FormError>
+                        )}
+                      </Form.Group>
+                    </Col>
 
-            <Col>
-              <Form.Label>Housing adress</Form.Label>
-              <Form.Group controlId="formAdress">
-                <Form.Control name="adress" ref={register} />
-                {errors.adress && (
-                  <FormError>{errors.adress.message}</FormError>
-                )}
-              </Form.Group>
-            </Col>
-          </Form.Row>
-          <Form.Row>
-            <Col>
-              <Form.Label>Type</Form.Label>
-              <Form.Group controlId="formType">
-                <Form.Control name="type" ref={register} />
-                {errors.type && <FormError>{errors.type.message}</FormError>}
-              </Form.Group>
-            </Col>
+                    <Col>
+                      <Form.Label>Housing adress</Form.Label>
+                      <Form.Group controlId="formAdress">
+                        <Form.Control name="adress" ref={register} />
+                        {errors.adress && (
+                          <FormError>{errors.adress.message}</FormError>
+                        )}
+                      </Form.Group>
+                    </Col>
+                  </Form.Row>
+                  <Form.Row>
+                    <Col>
+                      <Form.Label>Type</Form.Label>
+                      <Form.Group controlId="formType">
+                        <Form.Control name="type" ref={register} />
+                        {errors.type && (
+                          <FormError>{errors.type.message}</FormError>
+                        )}
+                      </Form.Group>
+                    </Col>
 
-            <Col>
-              <Form.Label>Price</Form.Label>
-              <Form.Group controlId="formPrice">
-                <Form.Control name="price" ref={register} />
-                {errors.price && <FormError>{errors.price.message}</FormError>}
-              </Form.Group>
-            </Col>
-          </Form.Row>
-          <Form.Group controlId="formDescription">
-            <Form.Label>Description</Form.Label>
-            <Form.Control
-              name="description"
-              as="textarea"
-              ref={register}
-              rows={3}
-            />
-            {errors.description && (
-              <FormError>{errors.description.message}</FormError>
-            )}
-          </Form.Group>
-          <Form.Row>
-            <Col>
-              <Form.Group controlId="formImage.one">
-                <Form.Label className="imageone">Housing exterior</Form.Label>
-                <Form.Control
-                  name="imageone"
-                  type="file"
-                  ref={register}
-                  onChange={handleInputChange}
-                />
-                {errors.imageone && (
-                  <FormError>{errors.imageone.message}</FormError>
-                )}
-              </Form.Group>
-            </Col>
-            <Col>
-              <Form.Group controlId="formImage.two">
-                <Form.Label className="imagetwo">Housing interior</Form.Label>
-                <Form.Control
-                  name="imagetwo"
-                  type="file"
-                  ref={register}
-                  onChange={handleInputChange}
-                />
-                {errors.imagetwo && (
-                  <FormError>{errors.imagetwo.message}</FormError>
-                )}
-              </Form.Group>{" "}
-            </Col>{" "}
-          </Form.Row>
-          <Form.Row>
-            <Col>
-              <Form.Group controlId="formImage.three">
-                <Form.Label className="imagethree">Housing interior</Form.Label>
+                    <Col>
+                      <Form.Label>Price</Form.Label>
+                      <Form.Group controlId="formPrice">
+                        <Form.Control name="price" ref={register} />
+                        {errors.price && (
+                          <FormError>{errors.price.message}</FormError>
+                        )}
+                      </Form.Group>
+                    </Col>
+                  </Form.Row>
+                  <Form.Group controlId="formDescription">
+                    <Form.Label>Description</Form.Label>
+                    <Form.Control
+                      name="description"
+                      as="textarea"
+                      ref={register}
+                      rows={3}
+                    />
+                    {errors.description && (
+                      <FormError>{errors.description.message}</FormError>
+                    )}
+                  </Form.Group>
+                  <Form.Row>
+                    <Col>
+                      <Form.Group controlId="formImage.one">
+                        <Form.Label className="imageone">
+                          Housing exterior
+                        </Form.Label>
+                        <Form.Control
+                          name="imageone"
+                          type="file"
+                          ref={register}
+                          onChange={handleInputChange}
+                        />
+                        {errors.imageone && (
+                          <FormError>{errors.imageone.message}</FormError>
+                        )}
+                      </Form.Group>
+                    </Col>
+                    <Col>
+                      <Form.Group controlId="formImage.two">
+                        <Form.Label className="imagetwo">
+                          Housing interior
+                        </Form.Label>
+                        <Form.Control
+                          name="imagetwo"
+                          type="file"
+                          ref={register}
+                          onChange={handleInputChange}
+                        />
+                        {errors.imagetwo && (
+                          <FormError>{errors.imagetwo.message}</FormError>
+                        )}
+                      </Form.Group>{" "}
+                    </Col>{" "}
+                  </Form.Row>
+                  <Form.Row>
+                    <Col>
+                      <Form.Group controlId="formImage.three">
+                        <Form.Label className="imagethree">
+                          Housing interior
+                        </Form.Label>
 
-                <Form.Control
-                  name="imagethree"
-                  type="file"
-                  ref={register}
-                  onChange={handleInputChange}
-                />
-                {errors.imagethree && (
-                  <FormError>{errors.imagethree.message}</FormError>
-                )}
-              </Form.Group>{" "}
-            </Col>
-            <Col>
-              <Form.Group controlId="formImage.four">
-                <Form.Label className="imagefour">Housing interior</Form.Label>
+                        <Form.Control
+                          name="imagethree"
+                          type="file"
+                          ref={register}
+                          onChange={handleInputChange}
+                        />
+                        {errors.imagethree && (
+                          <FormError>{errors.imagethree.message}</FormError>
+                        )}
+                      </Form.Group>{" "}
+                    </Col>
+                    <Col>
+                      <Form.Group controlId="formImage.four">
+                        <Form.Label className="imagefour">
+                          Housing interior
+                        </Form.Label>
 
-                <Form.Control
-                  name="imagefour"
-                  type="file"
-                  ref={register}
-                  onChange={handleInputChange}
-                />
-                {errors.imagefour && (
-                  <FormError>{errors.imagefour.message}</FormError>
-                )}
-              </Form.Group>
-            </Col>
-          </Form.Row>
-          <Form.Group name="buttonSend">
-            <Button type="submit" value="Submit" variant="btn-submit">
-              {submitting ? "Submitting..." : "Submit"}
-              <Icon.ChevronRight color="white" size={20} />
-            </Button>
-          </Form.Group>
-        </Form>
-      </Container>
+                        <Form.Control
+                          name="imagefour"
+                          type="file"
+                          ref={register}
+                          onChange={handleInputChange}
+                        />
+                        {errors.imagefour && (
+                          <FormError>{errors.imagefour.message}</FormError>
+                        )}
+                      </Form.Group>
+                    </Col>
+                  </Form.Row>
+                  <Form.Group name="buttonSend">
+                    <Button type="submit" value="Submit" variant="btn-submit">
+                      {submitting ? "Submitting..." : "Submit"}
+                      <Icon.ChevronRight color="white" size={20} />
+                    </Button>
+                  </Form.Group>
+                </Form>
+              </Container>
+            </Card.Body>
+          </Card>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }

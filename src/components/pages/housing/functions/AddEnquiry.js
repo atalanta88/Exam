@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import useAxiosNoAuth from "../../../../hooks/useAxiosNoAuth";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Modal, Button, Form } from "react-bootstrap";
+import { Modal, Button, Form, Container } from "react-bootstrap";
 import FormError from "../../../common/FormError";
 import Swal from "sweetalert2";
 import * as Icon from "react-bootstrap-icons";
@@ -82,50 +82,51 @@ export default function AddEnquiry() {
       <Button variant="primary-color" onClick={handleShow}>
         Send us a message
       </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Enquiry</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {" "}
-          <Form disabled={submitting} onSubmit={handleSubmit(onSubmit)}>
-            {serverError && <FormError>{serverError}</FormError>}
-            <Form.Group controlId="formName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control name="name" ref={register} />
-              {errors.name && <FormError>{errors.name.message}</FormError>}
-            </Form.Group>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control name="email" ref={register} />
-              {errors.email && <FormError>{errors.email.message}</FormError>}
-            </Form.Group>
-            <Form.Group controlId="formName">
-              <Form.Label>Establishment</Form.Label>
-              <Form.Control name="housingname" ref={register} />
+          <Container>
+            <Form disabled={submitting} onSubmit={handleSubmit(onSubmit)}>
+              {serverError && <FormError>{serverError}</FormError>}
+              <Form.Group controlId="formName">
+                <Form.Label>Name</Form.Label>
+                <Form.Control name="name" ref={register} />
+                {errors.name && <FormError>{errors.name.message}</FormError>}
+              </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control name="email" ref={register} />
+                {errors.email && <FormError>{errors.email.message}</FormError>}
+              </Form.Group>
+              <Form.Group controlId="formName">
+                <Form.Label>Establishment</Form.Label>
+                <Form.Control name="housingname" ref={register} />
 
-              {errors.housingname && (
-                <FormError>{errors.housingname.message}</FormError>
-              )}
-            </Form.Group>
-            <Form.Group controlId="textarea">
-              <Form.Label>Your message</Form.Label>
-              <Form.Control
-                name="message"
-                ref={register}
-                as="textarea"
-                rows={3}
-              />
-              {errors.message && (
-                <FormError>{errors.message.message}</FormError>
-              )}
-            </Form.Group>
-            <Button type="submit" value="Submit" variant="btn-submit">
-              {submitting ? "Submitting..." : "Submit"}
-              <Icon.ChevronRight color="white" size={20} />
-            </Button>
-          </Form>
+                {errors.housingname && (
+                  <FormError>{errors.housingname.message}</FormError>
+                )}
+              </Form.Group>
+              <Form.Group controlId="textarea">
+                <Form.Label>Your message</Form.Label>
+                <Form.Control
+                  name="message"
+                  ref={register}
+                  as="textarea"
+                  rows={3}
+                />
+                {errors.message && (
+                  <FormError>{errors.message.message}</FormError>
+                )}
+              </Form.Group>
+              <Button type="submit" value="Submit" variant="btn-submit">
+                {submitting ? "Submitting..." : "Submit"}
+                <Icon.ChevronRight color="white" size={20} />
+              </Button>
+            </Form>
+          </Container>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
