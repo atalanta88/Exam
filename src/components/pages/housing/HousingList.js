@@ -14,7 +14,7 @@ import HousingObject from "./HousingObject";
 import Heading from "../../layout/Heading";
 import { BookLoaderComponent } from "../../common/Loader";
 import ErrorMessage from "../../common/ErrorMessage";
-
+/*HUSK Å FORANDRE BOOK LOADER NAVNET*/
 function HousingList() {
   const [housing, setHousingList] = useState([]);
   const [loading, setLoading] = useState(true);

@@ -1,5 +1,5 @@
 import React from "react";
-import SearchDropDown from "../housing/functions/SearchDropDown";
+//import SearchDropDown from "../housing/functions/SearchDropDown";
 import Typeahead from "../housing/functions/test";
 
 import Heading from "../../layout/Heading";
@@ -16,9 +16,6 @@ export default function HomePage() {
       <Heading size="1" content="Support" />
       <Container>
         <Typeahead />
-      </Container>
-      <Container>
-        <SearchDropDown />
       </Container>
     </>
   );
