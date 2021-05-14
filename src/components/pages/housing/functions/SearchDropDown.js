@@ -1,74 +1,170 @@
+import { Typeahead } from "react-bootstrap-typeahead";
+import { useState, useEffect } from "react";
+import { API_HOUSINGS } from "../../../../constants/api";
+
+const SearchDropDown = () => {
+  const [options, setOptions] = useState([]);
+
+  //fetch function
+
+  useEffect(function () {
+    async function getHotels() {
+      try {
+        const response = await fetch(API_HOUSINGS);
+        const result = await response.json();
+        const options = result.map((hotel) => ({
+          avatar_url: hotel.imageone.formats.thumbnail.url,
+          id: hotel.id,
+          name: hotel.name,
+        }));
+        setOptions(options);
+      } catch (error) {}
+    }
+    getHotels();
+  }, []);
+
+  //filter function
+  const filterByCallback = (option, props) =>
+    option.name.toLowerCase().indexOf(props.text.toLowerCase()) !== -1;
+
+  return (
+    <>
+      <Typeahead
+        filterBy={filterByCallback}
+        id="custom-filtering-example"
+        labelKey="name"
+        options={options}
+        placeholder="Search for housing..."
+        renderMenuItemChildren={(option) => (
+          <>
+            <img
+              alt={option.name}
+              src={option.avatar_url}
+              style={{
+                height: "24px",
+                marginRight: "10px",
+                width: "24px",
+              }}
+            />
+            <span>{option.name}</span>
+          </>
+        )}
+      />
+    </>
+  );
+};
+
+export default SearchDropDown;
+
+/*import fetch from "isomorphic-fetch";
 import React, { useState } from "react";
 import { AsyncTypeahead } from "react-bootstrap-typeahead";
-import axios from "axios";
-import SearchResultMenuItem from "./SearchResultMenuItem";
+import { API_HOUSINGS } from "../../../../constants/api";
 
-//Needs to be a class based component, as we have to handle state
-function SearchDropDown() {
-  state = {
-    term: "",
-    options: [],
-    isLoading: false,
-  };
+const SearchDropDown = () => {
+  const [options, setOptions] = useState([]);
 
-  onFormSubimit = (event) => {
-    //Arrow function makes sure the value of 'this' is always the instance of the search bar
-    event.preventDefault(); //Stops browser from submitting form automatically and refreshing the pagee
-    this.props.onSubmit(this.state.term);
-  };
-
-  onHandleSearch = async (term) => {
-    this.setState({ isLoading: true });
-    const response = await axios.get(
-      "https://api.themoviedb.org/3/search/movie?api_key=c055530078ac3b21b64e0bf8a0b3b9e1&language=en-US&page=1&include_adult=false",
-      {
-        params: { query: term },
-      }
-    );
-
-    //Extract details from the search
-    const searchResults = response.data.results.map((i) => ({
-      title: i.original_title,
-      id: i.id,
-    }));
-
-    this.setState({
-      isLoading: false,
-      options: searchResults,
+  fetch(`${API_HOUSINGS}`)
+    .then((resp) => resp.json())
+    .then(({ items }) => {
+      const options = items.map((housing) => ({
+        avatar_url: housing.imageone.formats.thumbnail.url,
+        id: housing.id,
+        name: housing.name,
+      }));
+      setOptions(options);
+      console.log(options.id);
     });
-  };
+  // Bypass client-side filtering by returning `true`. Results are already
+  // filtered by the search endpoint, so no need to do it again.
+  //const filterBy = () => true;
+  const filterBy = (option, props) =>
+    option.name.toLowerCase().indexOf(props.text.toLowerCase()) !== -1;
 
-  {
-    return (
-      <div className="ui segment">
-        <form onSubmit={this.onFormSubimit} className="ui form">
-          <div className="field">
-            <label>Image Search</label>
-            <AsyncTypeahead
-              {...this.state}
-              labelKey="original_title"
-              isLoading={this.state.isLoading}
-              onSearch={this.onHandleSearch}
-              placeholder="Enter a Movie Title..."
-              renderMenuItemChildren={(option, props) => (
-                <SearchResultMenuItem key={option.id} item={option} />
-              )}
+  return (
+    <AsyncTypeahead
+      filterBy={filterBy}
+      id="async-example"
+      labelKey="name"
+      options={options}
+      placeholder="Search for housing..."
+      renderMenuItemChildren={(option) => (
+        <>
+          <img
+            alt={option.name}
+            src={option.avatar_url}
+            style={{
+              height: "24px",
+              marginRight: "10px",
+              width: "24px",
+            }}
+          />
+          <span>{option.name}</span>
+        </>
+      )}
+    />
+  );
+};
+
+export default SearchDropDown;*/
+/*import { Typeahead } from "react-bootstrap-typeahead";
+import { useState, useEffect } from "react";
+import { API_HOUSINGS } from "../../../../constants/api";
+
+const SearchDropDown = () => {
+  const [options, setOptions] = useState([]);
+
+  useEffect(function () {
+    async function getHotels() {
+      try {
+        const response = await fetch(API_HOUSINGS);
+        const result = await response.json();
+        const options = result.map((hotel) => ({
+          avatar_url: hotel.imageone.formats.thumbnail.url,
+          id: hotel.id,
+          name: hotel.name,
+        }));
+        setOptions(options);
+      } catch (error) {}
+    }
+    getHotels();
+  }, []);
+
+  const filterByCallback = (option, props) =>
+    option.name.toLowerCase().indexOf(props.text.toLowerCase()) !== -1;
+
+  return (
+    <>
+      <Typeahead
+        filterBy={filterByCallback}
+        id="custom-filtering-example"
+        labelKey="name"
+        options={options}
+        placeholder="Search for housing..."
+        renderMenuItemChildren={(option) => (
+          <>
+            <img
+              alt={option.name}
+              src={option.avatar_url}
+              style={{
+                height: "24px",
+                marginRight: "10px",
+                width: "24px",
+              }}
             />
-          </div>
-        </form>
-      </div>
-    );
-  }
-}
+            <span>{option.name}</span>
+          </>
+        )}
+      />
+    </>
+  );
+};
 
-export default SearchDropDown();
-
-/*
-import fetch from "isomorphic-fetch";
-import React, { Fragment, useState } from "react";
+export default SearchDropDown;*/
+/* import fetch from "isomorphic-fetch";
+import React, { useState } from "react";
 import { AsyncTypeahead } from "react-bootstrap-typeahead";
-import { SEARCH_URL } from "../../../constants/api";
-//const SEARCH_URI = "https://api.github.com/search/users";
+import { API_HOUSINGS } from "../../../../constants/api";
 
 const SearchDropDown = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -77,11 +173,125 @@ const SearchDropDown = () => {
   const handleSearch = (query) => {
     setIsLoading(true);
 
-    fetch(`${SEARCH_URL}housings/:name?${query}`)
+    fetch(`${API_HOUSINGS}/?name="${query}"`)
+      .then((resp) => resp.json())
+      .then(({ items }) => {
+        const options = items.map((housing) => ({
+          avatar_url: housing.imageone.formats.thumbnail.url,
+          id: housing.id,
+          name: housing.name,
+        }));
+        setOptions(options);
+        setIsLoading(false);
+        console.log(options.id);
+      });
+  };
+  // Bypass client-side filtering by returning `true`. Results are already
+  // filtered by the search endpoint, so no need to do it again.
+  const filterBy = () => true;
+
+  return (
+    <AsyncTypeahead
+      filterBy={filterBy}
+      id="async-example"
+      isLoading={isLoading}
+      labelKey="name"
+      minLength={1}
+      onSearch={handleSearch}
+      options={options}
+      placeholder="Search for housing..."
+      renderMenuItemChildren={(option, props) => (
+        <>
+          <img
+            alt={option.name}
+            src={option.avatar_url}
+            style={{
+              height: "24px",
+              marginRight: "10px",
+              width: "24px",
+            }}
+          />
+          <span>{option.name}</span>
+        </>
+      )}
+    />
+  );
+};
+
+export default SearchDropDown;*/
+
+/*import { Typeahead } from "react-bootstrap-typeahead";
+import { useState, useEffect } from "react";
+import { API_HOUSINGS } from "../../../../constants/api";
+
+const SearchDropDown = () => {
+  const [options, setOptions] = useState([]);
+
+  useEffect(function () {
+    async function getHotels() {
+      try {
+        const response = await fetch(API_HOUSINGS);
+        const result = await response.json();
+        const options = result.map((hotel) => ({
+          avatar_url: hotel.imageone.formats.thumbnail.url,
+          id: hotel.id,
+          name: hotel.name,
+        }));
+        setOptions(options);
+      } catch (error) {}
+    }
+    getHotels();
+  }, []);
+
+  const filterByCallback = (option, props) =>
+    option.name.toLowerCase().indexOf(props.text.toLowerCase()) !== -1;
+
+  return (
+    <>
+      <Typeahead
+        filterBy={filterByCallback}
+        id="custom-filtering-example"
+        labelKey="name"
+        options={options}
+        placeholder="Search for a hotel..."
+        renderMenuItemChildren={(option) => (
+          <>
+            <img
+              alt={option.name}
+              src={option.avatar_url}
+              style={{
+                height: "24px",
+                marginRight: "10px",
+                width: "24px",
+              }}
+            />
+            <span>{option.name}</span>
+          </>
+        )}
+      />
+    </>
+  );
+};
+
+export default SearchDropDown;*/
+/*
+import fetch from "isomorphic-fetch";
+import React, { useState } from "react";
+import { AsyncTypeahead } from "react-bootstrap-typeahead";
+import { API_HOUSINGS } from "../../../../constants/api";
+
+const SearchDropDown = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [options, setOptions] = useState([]);
+
+  const handleSearch = (query) => {
+    setIsLoading(true);
+
+    fetch(API_HOUSINGS)
       .then((resp) => resp.json())
       .then(({ items }) => {
         const options = items.map((i) => ({
-          imageone: i.imageone.url,
+          avatar_url: i.imageone.formats.thumbnail.url,
           id: i.id,
           name: i.name,
         }));
@@ -105,10 +315,10 @@ const SearchDropDown = () => {
       options={options}
       placeholder="Search for a Github user..."
       renderMenuItemChildren={(option, props) => (
-        <Fragment>
+        <>
           <img
             alt={option.name}
-            src={option.imageone.url}
+            src={option.avatar_url}
             style={{
               height: "24px",
               marginRight: "10px",
@@ -116,7 +326,7 @@ const SearchDropDown = () => {
             }}
           />
           <span>{option.name}</span>
-        </Fragment>
+        </>
       )}
     />
   );
