@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
+import { Loader } from "../../../common/Loader";
 
 function TypeaheadArray() {
   const [housing, setHousing] = useState([]);
@@ -37,15 +38,19 @@ function TypeaheadArray() {
   }, [search, housing]);
 
   if (loading) {
-    return <p>Loading housing...</p>;
+    return (
+      <>
+        <Loader />
+      </>
+    );
   }
 
   return (
     <>
-      <Container>
+      <Container className="typeahead-search-wrapper">
         <Dropdown>
           <Form>
-            <Dropdown.Toggle variant="primary-color" id="dropdown-basic">
+            <Dropdown.Toggle variant="typeahead" id="dropdown-basic">
               <FormControl
                 type="text"
                 placeholder="Search"
@@ -73,7 +78,7 @@ const HousingDetails = (props) => {
   return (
     <>
       {" "}
-      <Dropdown.Item href="#">
+      <Dropdown.Item>
         <Link to={`housing/${id}`}>
           <tr>
             <th>
