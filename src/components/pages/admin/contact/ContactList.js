@@ -1,23 +1,33 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Card, Button, Modal } from "react-bootstrap";
 import { API_CONTACTS } from "../../../../constants/api";
 import ContactMessageObject from "./ContactMessageObject";
 import { Loader } from "../../../common/Loader";
 import ErrorMessage from "../../../common/ErrorMessage";
+import AuthContext from "../../../../context/AuthContext";
+
+const url = API_CONTACTS;
 
 function ContactList() {
+  const [auth, setAuth] = useContext(AuthContext);
   const [contacts, setContactList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   const handleClose = () => setLgShow(false);
   const [lgShow, setLgShow] = useState(false);
+
+  const token = auth.jwt;
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
 
   useEffect(function () {
     async function fetchData() {
       try {
-        const response = await fetch(API_CONTACTS);
+        const response = await fetch(url, config);
 
         if (response.ok) {
           const json = await response.json();
