@@ -27,67 +27,55 @@ function HousingObject({
 }) {
   return (
     <>
-      <Col className="housing-col">
-        <hr />
-        <Card className="border-0">
-          <Container>
-            <Row>
-              <Col sm="4" md="">
-                <Link to={`housing/${id}`}>
-                  <Card.Img fluid src={imageone.url} />
-                  <Card.ImgOverlay>
-                    <h4 className="hotel-type">
-                      <span>{type}</span>
-                    </h4>
-                  </Card.ImgOverlay>
-                </Link>
-              </Col>
-              <Col sm="8" md="">
-                <Row xs={1} md={2}>
-                  <Col>
-                    <Card.Body>
-                      <Link to={`housing/${id}`}>
-                        <Card.Title>{name}</Card.Title>{" "}
-                      </Link>
-                      <Card.Title>
-                        <span>NOK {price}</span>
-                      </Card.Title>
-                      <Link to={`housing/${id}`}>
-                        <Button className="sm-block" variant="primary-color">
-                          View deal
-                        </Button>
-                      </Link>
-                    </Card.Body>
-                  </Col>
-                  <Col>
-                    <Card.Body>
-                      <Card.Text>{description}</Card.Text>
-                      <ListGroup variant="flush">
-                        <ListGroup.Item>
-                          <div className="svg-icon">
-                            <Icon.Wifi color="black" size={16} />
-                          </div>
-                          Internet
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                          <div className="svg-icon">
-                            <Icon.EggFried color="black" size={16} />
-                          </div>
-                          Breakfast
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                          <div className="svg-icon">
-                            <Icon.FilePpt color="black" size={16} />
-                          </div>
-                          Parking
-                        </ListGroup.Item>
-                      </ListGroup>
-                    </Card.Body>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
+      {" "}
+      <Col className="card-col-object">
+        <Card style={{ maxWidth: "35rem" }}>
+          <Link to={`housing/${id}`}>
+            <Card.Img variant="top" src={imageone.url} />
+          </Link>
+          <Card.Body>
+            <h5 class="card-title">{name}</h5>
+            <p class="card-text">{description}</p>
+            <hr />
+            <ListGroup horizontal>
+              <ListGroup.Item>
+                {" "}
+                <div className="svg-icon">
+                  <Icon.Wifi color="teal" size={30} />
+                </div>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                {" "}
+                <div className="svg-icon">
+                  <Icon.EggFried color="teal" size={30} />
+                </div>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                {" "}
+                <div className="svg-icon">
+                  <Icon.FilePpt color="teal" size={30} />
+                </div>
+              </ListGroup.Item>
+            </ListGroup>
+            <div className="card-footer-wrapper">
+              <Row xs={1} lg={1}>
+                <Col>
+                  {" "}
+                  <h6 class="card-subtitle text-muted">
+                    <span>NOK {price}</span>
+                  </h6>{" "}
+                </Col>
+                <Col>
+                  {" "}
+                  <Link to={`housing/${id}`}>
+                    <Button className="sm-block" variant="primary-color" block>
+                      View deal
+                    </Button>
+                  </Link>{" "}
+                </Col>
+              </Row>
+            </div>
+          </Card.Body>
         </Card>
       </Col>
     </>

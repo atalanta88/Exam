@@ -5,6 +5,7 @@ import {
   Row,
   Form,
   Col,
+  CardDeck,
   Accordion,
   Card,
   Button,
@@ -53,11 +54,14 @@ function HousingList() {
 
   return (
     <>
-      <Container className="housing-container">
+      {" "}
+      <Container>
+        {" "}
         <Heading size="1" content="Find a place to stay!" />
-
+      </Container>
+      <Container className="housing-container">
         <Row xs={1} md={2}>
-          <Col xs={0} md={2}>
+          <Col xs={0} md={3}>
             {" "}
             <Form>
               <Row xs={2} md={1}>
@@ -88,37 +92,17 @@ function HousingList() {
                   </Form.Group>{" "}
                 </Col>
               </Row>
-              <Accordion className="accordion-container">
-                <Card>
-                  <Card.Header>
-                    <Accordion.Toggle
-                      as={Button}
-                      variant="primary-color"
-                      eventKey="1"
-                      block
-                    >
-                      Sort
-                    </Accordion.Toggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey="1">
-                    <Card.Body>
-                      <Form>
-                        <Form.Control as="select" custom>
-                          <option>Popular</option>
-                          <option>Price high to low</option>
-                          <option>Price low to high</option>
-                          <option>Name</option>
-                          <option>Offer</option>
-                        </Form.Control>
-                      </Form>
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-              </Accordion>
+              <Form.Control as="select" custom>
+                <option>Popular</option>
+                <option>Price high to low</option>
+                <option>Price low to high</option>
+                <option>Name</option>
+                <option>Offer</option>
+              </Form.Control>
             </Form>
           </Col>
-          <Col xs={12} md={10}>
-            <Row xs={1}>
+          <Col xs={12} md={9}>
+            <Row xs={1} md={1} lg={2}>
               {housing.map(function (housing) {
                 const {
                   id,

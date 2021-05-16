@@ -7,18 +7,32 @@ body {
   text-align: center;
 }
 
-p {
-  overflow: hidden;
+.contact-paragraph {
+  margin: 0 auto;
 }
 
+p {
+  font-family: "Open-Sans", sans-serif;
+  font-weight: 400;
+  overflow: hidden;
+  max-width: 600px !important;
+  font-size: 1.1rem;
+}
+
+input {
+  color: #000000 !important;
+}
+
+.h1,
 h1 {
-  color: #4b4b4b;
+  font-weight: 900 !important;
+  font-size: 2.2rem !important;
 }
 
 .contact-container h1 {
   color: white;
-  font-weight: bold;
-  font-size: 3rem !important;
+  font-weight: 900;
+  font-size: 4rem !important;
   padding-bottom: 1rem;
 }
 
@@ -28,18 +42,30 @@ h1 {
 }
 
 .housing-container .card-title {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.housing-container .card-text {
+  line-height: 1.5em;
+  height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .housing-container .form-label {
   font-weight: bold;
 }
 
-.housing-container .card-title span {
-  font-weight: bold;
-  font-size: 1rem;
+.housing-container .card-subtitle {
+  margin-top: 2rem;
+}
+
+.housing-container .card-subtitle span {
+  font-size: 1.3rem;
+  font-weight: 500;
   color: #313131;
+  margin-top: 2rem;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -107,22 +133,6 @@ a:hover {
   color: #ffffff;
   -webkit-text-decoration-color: orange;
           text-decoration-color: orange;
-}
-
-.hotel-type {
-  position: relative;
-  bottom: 10px;
-  right: 10px;
-  border-radius: 2px;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 1rem;
-}
-
-.hotel-type span {
-  background-color: #008a67;
-  padding: 0px 4px;
 }
 
 .form-error {
@@ -242,6 +252,11 @@ body {
   }
 }
 
+form {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
 .navbar {
   background-color: #1f1f1f !important;
 }
@@ -260,15 +275,23 @@ body {
   }
 }
 
+.btn {
+  border-radius: 1.25rem;
+}
+
 .btn-primary-color {
   color: white;
-  background: #00beaf;
+  background: #009488;
   border: transparent;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .btn-primary-color:hover {
   color: white;
-  background: #009e91;
+  background: #007c72;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .btn-primary-color:active {
@@ -313,7 +336,7 @@ body {
 
 @media only screen and (max-width: 1000px) {
   .housing-container .card-body .btn {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 }
 
@@ -380,6 +403,53 @@ body {
   padding-right: 10px;
 }
 
+.housing-container .card-img-top {
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+}
+
+/*
+
+
+
+.card-img, .card-img-bottom {
+    border-bottom-right-radius: calc(.25rem - 1px);
+    border-bottom-left-radius: calc(.25rem - 1px);
+}
+
+.card-img, .card-img-top {
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+
+.card-img, .card-img-bottom, .card-img-top {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100%;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem;
+  border-radius: calc(0.25rem - 1px);
+}
+
+                <Card.Img fluid src={imageone.url} />
+                <Card.ImgOverlay>
+                  <h4 className="hotel-type">
+                    <span>{type}</span>
+                  </h4>
+                </Card.ImgOverlay>
+
+*/
 .admin-page-wrapper {
   margin-top: 5rem;
 }
@@ -454,27 +524,65 @@ body {
   margin-top: 5rem;
 }
 
+.housing-container .card-body {
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.housing-container .card {
+  border: 1px solid #e8e9eb;
+  border-radius: 1.25rem;
+}
+
+.housing-container .card-body .card-text {
+  margin-bottom: 2rem !important;
+}
+
+.card-wrapper .col {
+  padding: 0px;
+}
+
+.card-footer-wrapper {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.card-footer-wrapper .row {
+  padding: 0px;
+}
+
+.card-footer-wrapper .col {
+  padding: 0px 15px;
+}
+
+.card-footer-wrapper .btn {
+  margin-bottom: 0px;
+}
+
+.card-col-object {
+  margin-top: 15px;
+}
+
+.housing-container .list-group-item {
+  display: block;
+  padding-right: 20px;
+}
+
 @media only screen and (max-width: 1000px) {
   .housing-container {
     margin-top: 2rem;
   }
 }
 
-.housing-container .card-body {
-  padding: 0rem;
-}
-
-.housing-container .card:hover {
-  background: #fff;
-  -webkit-box-shadow: 0px 5px 6px rgba(219, 219, 219, 0.5);
-          box-shadow: 0px 5px 6px rgba(219, 219, 219, 0.5);
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
+.card-background {
+  padding-left: 0px;
+  background: #ebf5fc;
 }
 
 .housing-enquiries {
   margin-bottom: 7rem;
   margin-top: 3rem;
+  padding: 0px 15px;
 }
 
 .housing-col {
@@ -533,10 +641,15 @@ body {
   .housing-details-container {
     margin-top: 2rem;
   }
+  .card-background {
+    padding-left: 15px;
+  }
 }
 
-.bottom-container {
-  background-color: blue;
+@media only screen and (max-width: 575px) {
+  .card-background {
+    padding-left: 15px;
+  }
 }
 
 .typeahead-search-wrapper .dropdown {

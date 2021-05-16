@@ -1,11 +1,17 @@
+.btn {
+  border-radius: 1.25rem;
+}
+
 .btn-primary-color {
   color: white;
-  background: #00beaf;
+  background: #009488;
   border: transparent;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .btn-primary-color:hover {
   color: white;
-  background: #009e91;
+  background: #007c72;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .btn-primary-color:active {
   color: white;
@@ -48,7 +54,7 @@
 
 @media only screen and (max-width: 1000px) {
   .housing-container .card-body .btn {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 }
 
