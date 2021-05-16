@@ -5,8 +5,7 @@
 }
 
 .housing-container .card-img-top {
-  border-top-left-radius: 1.25rem;
-  border-top-right-radius: 1.25rem;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 93%, 0 100%);
 }
 
 /*

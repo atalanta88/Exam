@@ -33,27 +33,28 @@ function HousingObject({
           <Link to={`housing/${id}`}>
             <Card.Img variant="top" src={imageone.url} />
           </Link>
-          <Card.Body>
+          <Card.Body className="top-card-body-wrapper">
             <h5 class="card-title">{name}</h5>
             <p class="card-text">{description}</p>
+            <h6 class="card-title">Included</h6>
             <hr />
             <ListGroup horizontal>
               <ListGroup.Item>
                 {" "}
                 <div className="svg-icon">
-                  <Icon.Wifi color="teal" size={30} />
+                  <Icon.Wifi color="grey" size={20} />
                 </div>
               </ListGroup.Item>
               <ListGroup.Item>
                 {" "}
                 <div className="svg-icon">
-                  <Icon.EggFried color="teal" size={30} />
+                  <Icon.EggFried color="grey" size={20} />
                 </div>
               </ListGroup.Item>
               <ListGroup.Item>
                 {" "}
                 <div className="svg-icon">
-                  <Icon.FilePpt color="teal" size={30} />
+                  <Icon.FilePpt color="grey" size={20} />
                 </div>
               </ListGroup.Item>
             </ListGroup>
