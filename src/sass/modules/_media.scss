@@ -8,6 +8,33 @@
   clip-path: polygon(0% 0%, 100% 0%, 100% 93%, 0 100%);
 }
 
+.card-background-image-wrapper {
+  position: relative;
+}
+
+.card-img-top {
+  display: block;
+}
+
+.card-col-object-overlay-right {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  bottom: 0%;
+  right: 5%;
+  padding: 8px 10px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.card-col-object-overlay-center {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  bottom: 0%;
+  right: 20%;
+  padding: 8px 10px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
 /*
 
 

@@ -6,7 +6,6 @@ import {
   Form,
   Col,
   CardDeck,
-  Accordion,
   Card,
   Button,
 } from "react-bootstrap";
@@ -15,6 +14,7 @@ import HousingObject from "./HousingObject";
 import Heading from "../../layout/Heading";
 import { BookLoaderComponent } from "../../common/Loader";
 import ErrorMessage from "../../common/ErrorMessage";
+import Accordion from "react-bootstrap/Accordion";
 
 /*HUSK Å FORANDRE BOOK LOADER NAVNET*/
 
@@ -62,36 +62,53 @@ function HousingList() {
       <Container className="housing-container">
         <Row xs={1} md={2}>
           <Col xs={0} md={3}>
-            {" "}
             <Form>
-              <Row xs={2} md={1}>
-                <Col>
-                  <Form.Group
-                    className="form-checkbox"
-                    controlId="formGroupCheckbox"
-                  >
-                    <Form.Label>Property types</Form.Label>
-                    <Form.Group controlId="formBasicCheckbox">
-                      <Form.Check type="checkbox" label="Hotels" />
-                      <Form.Check type="checkbox" label="Bed & Breakfast" />
-                      <Form.Check type="checkbox" label="Apartments" />
-                    </Form.Group>{" "}
-                  </Form.Group>{" "}
-                </Col>
-                <Col>
-                  <Form.Group
-                    className="form-checkbox"
-                    controlId="formGroupCheckbox"
-                  >
-                    <Form.Label>Amenities</Form.Label>
-                    <Form.Group controlId="formBasicCheckbox">
-                      <Form.Check type="checkbox" label="Wifi" />
-                      <Form.Check type="checkbox" label="Breakfast included" />
-                      <Form.Check type="checkbox" label="Parking" />
-                    </Form.Group>{" "}
-                  </Form.Group>{" "}
-                </Col>
-              </Row>
+              <Accordion defaultActiveKey="0">
+                <Card>
+                  <Accordion.Toggle as={Button} variant="primary" eventKey="0">
+                    Click me!
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="0">
+                    <Card.Body>
+                      {" "}
+                      <Row xs={2} md={1}>
+                        <Col>
+                          <Form.Group
+                            className="form-checkbox"
+                            controlId="formGroupCheckbox"
+                          >
+                            <Form.Label>Property types</Form.Label>
+                            <Form.Group controlId="formBasicCheckbox">
+                              <Form.Check type="checkbox" label="Hotels" />
+                              <Form.Check
+                                type="checkbox"
+                                label="Bed & Breakfast"
+                              />
+                              <Form.Check type="checkbox" label="Apartments" />
+                            </Form.Group>{" "}
+                          </Form.Group>{" "}
+                        </Col>
+                        <Col>
+                          <Form.Group
+                            className="form-checkbox"
+                            controlId="formGroupCheckbox"
+                          >
+                            <Form.Label>Amenities</Form.Label>
+                            <Form.Group controlId="formBasicCheckbox">
+                              <Form.Check type="checkbox" label="Wifi" />
+                              <Form.Check
+                                type="checkbox"
+                                label="Breakfast included"
+                              />
+                              <Form.Check type="checkbox" label="Parking" />
+                            </Form.Group>{" "}
+                          </Form.Group>{" "}
+                        </Col>
+                      </Row>
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>{" "}
               <Form.Control as="select" custom>
                 <option>Popular</option>
                 <option>Price high to low</option>

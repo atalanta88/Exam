@@ -2,8 +2,7 @@ body {
   font-family: "Poppins", sans-serif;
   color: #484848;
 }
-
-.contact-container {
+th .contact-container {
   text-align: center;
 }
 .contact-paragraph {
@@ -54,12 +53,11 @@ h1 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .housing-container .form-label {
-  font-weight: bold;
+  font-weight: 500;
 }
 .housing-container .card-subtitle {
-  margin-top: 2rem;
+  margin-top: 0rem;
 }
 .housing-container .card-subtitle span {
   font-size: 1.2rem;
@@ -73,8 +71,9 @@ h1 {
     max-width: 75ch;
   }
   .housing-type {
-    color: rgb(255, 136, 0);
-    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    color: violet;
+    font-weight: 600;
   }
 }
 
@@ -89,17 +88,18 @@ h1 {
 }
 
 //Links
-
 a {
   color: #484848;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
 }
 
 a:hover {
   color: #484848;
 }
 .nav-link {
-  text-transform: uppercase;
   color: rgb(160, 160, 160) !important;
+  font-size: 0.9rem;
 }
 .nav-link.active {
   color: rgb(228, 228, 228) !important;
@@ -162,7 +162,7 @@ a:hover {
 }
 
 .datepicker-wrapper .form-label {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .modal-dialog {
@@ -172,5 +172,6 @@ a:hover {
 }
 
 .typeahead-search-wrapper th {
-  font-weight: normal;
+  font-weight: 400;
+  text-transform: capitalize;
 }

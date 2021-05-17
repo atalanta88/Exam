@@ -1,27 +1,47 @@
-.btn {
-  border-radius: 0.25rem;
-}
-
 .btn-primary-color {
-  color: white;
-  background: #009488;
-  border: transparent;
-}
-.btn-primary-color:hover {
-  color: white;
-  background: #007c72;
-}
-.btn-primary-color:active {
-  color: white;
-  background: #009e91;
-  border-color: transparent;
-}
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 
-.btn-primary-color.focus,
-.btn-primary:focus {
-  color: white;
-  background: #009e91;
-  border-color: transparent;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00beaf;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken(#00beaf, 15%);
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &:before {
+      width: 100%;
+    }
+  }
 }
 
 .btn.focus,
@@ -60,10 +80,15 @@
   color: white;
   background: #00beaf;
   border: transparent;
+  border-radius: 10rem;
+  letter-spacing: 0.1rem;
+  padding: 7px 15px;
 }
 .btn-btn-submit:hover {
   color: white;
-  background: #009e91;
+  background-color: darken(#00beaf, 15%);
+  transition: all 0.3s;
+  border-radius: 10rem;
 }
 
 .btn-btn-submit svg {

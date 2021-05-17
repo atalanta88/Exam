@@ -81,6 +81,11 @@
   display: inline-block;
 }
 
+.DateRangePicker {
+  position: relative;
+  z-index: 999;
+}
+
 .housing-container .col-md-2 {
   margin-top: 15px !important;
 }
