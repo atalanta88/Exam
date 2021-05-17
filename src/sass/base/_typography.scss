@@ -2,7 +2,8 @@ body {
   font-family: "Poppins", sans-serif;
   color: #484848;
 }
-th .contact-container {
+
+.contact-container {
   text-align: center;
 }
 .contact-paragraph {
@@ -36,7 +37,7 @@ h1 {
   padding-bottom: 1rem;
 
   span {
-    color: violet;
+    color: #d97386;
     font-size: 70px;
   }
 }
@@ -72,7 +73,7 @@ h1 {
   }
   .housing-type {
     font-family: "Poppins", sans-serif;
-    color: violet;
+    color: #d97386;
     font-weight: 600;
   }
 }
@@ -120,7 +121,7 @@ a:hover {
 }
 .footer a:hover {
   color: #ffffff;
-  text-decoration-color: orange;
+  text-decoration-color: #d97386;
 }
 
 //Other

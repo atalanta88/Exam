@@ -3,7 +3,7 @@ body {
   color: #484848;
 }
 
-th .contact-container {
+.contact-container {
   text-align: center;
 }
 
@@ -37,7 +37,7 @@ h1 {
 }
 
 .contact-container h1 span {
-  color: violet;
+  color: #d97386;
   font-size: 70px;
 }
 
@@ -75,7 +75,7 @@ h1 {
 
 .housing-details-container .housing-type {
   font-family: "Poppins", sans-serif;
-  color: violet;
+  color: #d97386;
   font-weight: 600;
 }
 
@@ -128,8 +128,8 @@ a:hover {
 
 .footer a:hover {
   color: #ffffff;
-  -webkit-text-decoration-color: orange;
-          text-decoration-color: orange;
+  -webkit-text-decoration-color: #d97386;
+          text-decoration-color: #d97386;
 }
 
 .form-error {
@@ -255,6 +255,12 @@ form {
   padding-bottom: 1rem !important;
 }
 
+.custom-select:focus {
+  border-color: #c5c5c5;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+          box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
 .navbar {
   background-color: #1f1f1f !important;
 }
@@ -276,7 +282,7 @@ form {
 .btn-primary-color {
   font-family: "Roboto", sans-serif;
   display: inline-block;
-  padding: 0.75rem 1.25rem;
+  padding: 0.55rem 1.25rem;
   border-radius: 10rem;
   color: #fff;
   text-transform: uppercase;
@@ -322,6 +328,32 @@ form {
 
 .btn-primary-color:hover:before {
   width: 100%;
+}
+
+.btn-secondary-color {
+  color: white;
+  background: #009488;
+  border: transparent;
+}
+
+.btn-secondary-color:hover {
+  color: white;
+  background: #007c72;
+}
+
+.btn-secondary-color:active {
+  color: white;
+  background: #009e91;
+}
+
+.btn-secondary-color.focus,
+.btn-secondary:focus {
+  color: white;
+  background: #009e91;
+}
+
+.accordion-card-border-none {
+  border: none !important;
 }
 
 .btn.focus,
@@ -441,7 +473,7 @@ form {
 
 .card-col-object-overlay-right {
   position: absolute;
-  background-color: white;
+  background-color: #d97386;
   bottom: 0%;
   right: 5%;
   padding: 8px 10px;
@@ -452,7 +484,7 @@ form {
 
 .card-col-object-overlay-center {
   position: absolute;
-  background-color: white;
+  background-color: #d97386;
   bottom: 0%;
   right: 20%;
   padding: 8px 10px;
@@ -564,7 +596,7 @@ img {
 }
 
 .hero-wrapper-contact hr {
-  border-top: 2px solid white;
+  border-top: 2px solid #d97386;
   margin-bottom: 2rem;
   max-width: 5%;
 }

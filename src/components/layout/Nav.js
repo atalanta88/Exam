@@ -21,7 +21,7 @@ function NavbarLayout() {
 
   function logout() {
     setAuth(null);
-    history.push("/");
+    history.push("/Home");
   }
 
   return (
@@ -55,7 +55,7 @@ function NavbarLayout() {
                 {" "}
                 <LinkContainer to="/admin">
                   <Nav.Link>
-                    <Icon.PersonCheckFill color="cyan" size={30} />
+                    <Icon.PersonCheckFill color="#00beaf" size={30} />
                   </Nav.Link>
                 </LinkContainer>{" "}
                 <Button variant="primary-color" type="submit" onClick={logout}>
@@ -67,7 +67,7 @@ function NavbarLayout() {
                 <LinkContainer to="/login">
                   <Nav.Link>
                     {" "}
-                    <Icon.PersonFill color="cyan" size={30} />
+                    <Icon.PersonFill color="#00beaf" size={30} />
                   </Nav.Link>
                 </LinkContainer>
               </>

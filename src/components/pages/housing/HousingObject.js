@@ -34,11 +34,11 @@ function HousingObject({
             </Link>
             <div className="card-col-object-overlay-right">
               {" "}
-              <Icon.Wifi color="grey" size={20} />
+              <Icon.Wifi color="white" size={22} />
             </div>
             <div className="card-col-object-overlay-center">
               {" "}
-              <Icon.FilePpt color="grey" size={20} />
+              <Icon.FilePpt color="white" size={22} />
             </div>
           </div>
 
@@ -52,7 +52,7 @@ function HousingObject({
                   <h6 class="card-subtitle text-muted">
                     <div className="card-col-object">
                       {" "}
-                      <Icon.CreditCard color="violet" size={20} />
+                      <Icon.CreditCard color="#D97386" size={25} />
                     </div>{" "}
                     <span>NOK {price}</span>
                   </h6>{" "}

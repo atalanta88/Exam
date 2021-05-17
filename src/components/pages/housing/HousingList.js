@@ -54,9 +54,7 @@ function HousingList() {
 
   return (
     <>
-      {" "}
       <Container>
-        {" "}
         <Heading size="1" content="Find a place to stay!" />
       </Container>
       <Container className="housing-container">
@@ -64,9 +62,13 @@ function HousingList() {
           <Col xs={0} md={3}>
             <Form>
               <Accordion defaultActiveKey="0">
-                <Card>
-                  <Accordion.Toggle as={Button} variant="primary" eventKey="0">
-                    Click me!
+                <Card className="accordion-card-border-none">
+                  <Accordion.Toggle
+                    as={Button}
+                    variant="secondary-color"
+                    eventKey="0"
+                  >
+                    Show filter
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="0">
                     <Card.Body>
