@@ -1,22 +1,19 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {
-  Container,
-  Row,
-  Form,
-  Col,
-  CardDeck,
-  Card,
-  Button,
-} from "react-bootstrap";
+
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Accordion from "react-bootstrap/Accordion";
+
 import { API_HOUSINGS } from "../../../constants/api";
 import HousingObject from "./HousingObject";
 import Heading from "../../layout/Heading";
 import { BookLoaderComponent } from "../../common/Loader";
 import ErrorMessage from "../../common/ErrorMessage";
-import Accordion from "react-bootstrap/Accordion";
-
-/*HUSK Å FORANDRE BOOK LOADER NAVNET*/
 
 function HousingList() {
   const [housing, setHousingList] = useState([]);
@@ -61,7 +58,7 @@ function HousingList() {
         <Row xs={1} md={2}>
           <Col xs={0} md={3}>
             <Form>
-              <Accordion defaultActiveKey="0">
+              <Accordion defaultActiveKey="1">
                 <Card className="accordion-card-border-none">
                   <Accordion.Toggle
                     as={Button}
@@ -123,20 +120,8 @@ function HousingList() {
           <Col xs={12} md={9}>
             <Row xs={1} md={1} lg={2}>
               {housing.map(function (housing) {
-                const {
-                  id,
-                  name,
-                  adress,
-                  description,
-                  price,
-                  slug,
-                  type,
-                  images,
-                  imageone,
-                  imagetwo,
-                  imagethree,
-                  imagefour,
-                } = housing;
+                const { id, name, adress, description, price, type, imageone } =
+                  housing;
 
                 return (
                   <HousingObject
@@ -146,13 +131,8 @@ function HousingList() {
                     adress={adress}
                     description={description}
                     price={price}
-                    slug={slug}
                     type={type}
-                    images={images}
                     imageone={imageone}
-                    imagetwo={imagetwo}
-                    imagethree={imagethree}
-                    imagefour={imagefour}
                   />
                 );
               })}

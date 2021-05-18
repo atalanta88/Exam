@@ -8,6 +8,7 @@ import axios from "axios";
 import FormError from "../../common/FormError";
 import { BASE_URL, TOKEN_PATH } from "../../../constants/api";
 import AuthContext from "../../../context/AuthContext";
+
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -17,8 +18,8 @@ import logo from "../../../media/Capture.png";
 const url = BASE_URL + TOKEN_PATH;
 
 const schema = yup.object().shape({
-  identifier: yup.string().required("Enter your username"),
-  password: yup.string().required("Enter your password"),
+  identifier: yup.string().required("Please enter your username"),
+  password: yup.string().required("Please enter your password"),
 });
 
 export default function LoginForm() {

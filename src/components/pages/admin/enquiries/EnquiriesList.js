@@ -1,6 +1,10 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
-import { Card, Button, Modal } from "react-bootstrap";
+
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+
 import { API_ENQUIRIES } from "../../../../constants/api";
 import EnquiryMessageObject from "./EnquiryMessageObject";
 import { Loader } from "../../../common/Loader";
@@ -75,7 +79,7 @@ function EnquiriesList() {
             <Card.Header></Card.Header>
             <Card.Body className="accordion-card-body">
               {enquiries.map(function (enquiry) {
-                const { message, name, email, housingname } = enquiry;
+                const { message, name, email, housingname, id } = enquiry;
 
                 return (
                   <EnquiryMessageObject
@@ -83,6 +87,7 @@ function EnquiriesList() {
                     email={email}
                     name={name}
                     housingname={housingname}
+                    id={id}
                   />
                 );
               })}

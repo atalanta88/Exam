@@ -1,6 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import Heading from "../../layout/Heading";
+import Container from "react-bootstrap/Container";
 import ContactForm from "./ContactForm";
 
 export default function Contact() {
@@ -15,7 +14,6 @@ export default function Contact() {
             You got questions, we got answers.
           </p>
           <hr />
-
           <ContactForm />
         </Container>
       </div>

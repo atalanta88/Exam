@@ -1,10 +1,13 @@
 import React from "react";
-import { Accordion, Card, Button, Modal } from "react-bootstrap";
 import * as Icon from "react-bootstrap-icons";
+
+import Accordion from "react-bootstrap/Accordion";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 import PropTypes from "prop-types";
 
-function EnquiryObject({ email, message, name, housingname }) {
+function EnquiryObject({ email, message, name, housingname, id }) {
   return (
     <>
       <Accordion>
@@ -48,7 +51,7 @@ function EnquiryObject({ email, message, name, housingname }) {
 }
 
 EnquiryObject.propTypes = {
-  slug: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default EnquiryObject;

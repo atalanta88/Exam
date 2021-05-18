@@ -18,7 +18,7 @@
 
 .card-col-object-overlay-right {
   position: absolute;
-  background-color: #d97386;
+  background-color: rgb(255, 112, 200);
   bottom: 0%;
   right: 5%;
   padding: 8px 10px;
@@ -27,53 +27,10 @@
 }
 .card-col-object-overlay-center {
   position: absolute;
-  background-color: #d97386;
+  background-color: rgb(255, 112, 200);
   bottom: 0%;
   right: 20%;
   padding: 8px 10px;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
-
-/*
-
-
-
-.card-img, .card-img-bottom {
-    border-bottom-right-radius: calc(.25rem - 1px);
-    border-bottom-left-radius: calc(.25rem - 1px);
-}
-
-.card-img, .card-img-top {
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px);
-}
-
-.card-img, .card-img-bottom, .card-img-top {
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    width: 100%;
-}
-img {
-    vertical-align: middle;
-    border-style: none;
-}
-
-.card-img-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1.25rem;
-  border-radius: calc(0.25rem - 1px);
-}
-
-                <Card.Img fluid src={imageone.url} />
-                <Card.ImgOverlay>
-                  <h4 className="hotel-type">
-                    <span>{type}</span>
-                  </h4>
-                </Card.ImgOverlay>
-
-*/

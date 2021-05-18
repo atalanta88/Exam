@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
-import { Card, Button, Modal } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 import { API_CONTACTS } from "../../../../constants/api";
 import ContactMessageObject from "./ContactMessageObject";
 import { Loader } from "../../../common/Loader";
@@ -74,7 +76,7 @@ function ContactList() {
           <Card>
             <Card.Body className="accordion-card-body">
               {contacts.map(function (contact) {
-                const { message, firstname, lastname, email } = contact;
+                const { id, message, firstname, lastname, email } = contact;
 
                 return (
                   <ContactMessageObject
@@ -82,6 +84,7 @@ function ContactList() {
                     email={email}
                     firstname={firstname}
                     lastname={lastname}
+                    id={id}
                   />
                 );
               })}

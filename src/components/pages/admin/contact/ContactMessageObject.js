@@ -1,10 +1,12 @@
 import React from "react";
-import { Accordion, Card, Button } from "react-bootstrap";
-import * as Icon from "react-bootstrap-icons";
 
+import Accordion from "react-bootstrap/Accordion";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import * as Icon from "react-bootstrap-icons";
 import PropTypes from "prop-types";
 
-function ContactMessageObject({ email, message, firstname, lastname }) {
+function ContactMessageObject({ email, message, firstname, lastname, id }) {
   return (
     <>
       <Accordion>
@@ -48,7 +50,7 @@ function ContactMessageObject({ email, message, firstname, lastname }) {
 }
 
 ContactMessageObject.propTypes = {
-  slug: PropTypes.string.isRequired,
+  firstname: PropTypes.string.isRequired,
 };
 
 export default ContactMessageObject;

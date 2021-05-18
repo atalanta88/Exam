@@ -3,12 +3,12 @@ import React from "react";
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
-import Navbar from "react-bootstrap/Navbar";
 
+import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-
 import Button from "react-bootstrap/Button";
+
 import * as Icon from "react-bootstrap-icons";
 import logo from "../../media/Capture.png";
 

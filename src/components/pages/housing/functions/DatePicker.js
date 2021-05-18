@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import { DateRangePicker } from "react-dates";
-import { Container, Form, Col, Button, Row } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
 
 class DateRangePickerWrapper extends Component {
   constructor(props) {

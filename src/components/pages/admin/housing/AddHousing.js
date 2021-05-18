@@ -2,7 +2,14 @@ import React, { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Form, Col, Container, Modal, Card } from "react-bootstrap";
+
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
+
 import FormError from "../../../common/FormError";
 import axios from "axios";
 import AuthContext from "../../../../context/AuthContext";

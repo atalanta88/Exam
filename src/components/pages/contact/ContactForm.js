@@ -4,7 +4,14 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import useAxiosNoAuth from "../../../hooks/useAxiosNoAuth";
-import { Button, Form, Row, Col, Container, Modal } from "react-bootstrap";
+
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
 import FormError from "../../common/FormError";
 import Swal from "sweetalert2";
 import * as Icon from "react-bootstrap-icons";
@@ -25,11 +32,11 @@ const schema = yup.object().shape({
   firstname: yup
     .string()
     .required("Please enter your first name")
-    .min(2, "Your name needs to be atleast 3 characters"),
+    .min(2, "Your name needs to be atleast 2 characters"),
   lastname: yup
     .string()
     .required("Please enter your last name")
-    .min(2, "Your name needs to be atleast 4 characters"),
+    .min(2, "Your name needs to be atleast 2 characters"),
 
   email: yup
     .string()

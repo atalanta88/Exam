@@ -1,5 +1,10 @@
 import React from "react";
-import { Row, Col, Container, ListGroup, Card } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import ListGroup from "react-bootstrap/ListGroup";
+import Card from "react-bootstrap/Card";
+
 import { Link } from "react-router-dom";
 import logo from "../../media/Capture.png";
 import { SocialIcon } from "react-social-icons";
@@ -7,7 +12,7 @@ import { SocialIcon } from "react-social-icons";
 function FooterLayout() {
   return (
     <>
-      <footer class="footer">
+      <footer className="footer">
         <Container className="footer-container">
           <Row xs={1} md={3}>
             <Col>

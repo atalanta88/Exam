@@ -4,7 +4,11 @@ import { useForm } from "react-hook-form";
 import useAxiosNoAuth from "../../../../hooks/useAxiosNoAuth";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Modal, Button, Form, Container } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
+
 import FormError from "../../../common/FormError";
 import Swal from "sweetalert2";
 import * as Icon from "react-bootstrap-icons";
@@ -23,16 +27,16 @@ const Toast = Swal.mixin({
 const schema = yup.object().shape({
   name: yup
     .string()
-    .required("Name is required")
+    .required("Please enter your name")
     .min(3, "Your name needs to be atleast 3 characters"),
   email: yup
     .string()
-    .required("Please enter an email address")
+    .required("Please enter your email address")
     .email("Please enter a valid email address"),
   housingname: yup
     .string()
-    .required("The establishment is required")
-    .min(3, "The establishment name needs to be atleast 5 characters"),
+    .required("Please enter the name of the establishment")
+    .min(5, "The establishment name needs to be atleast 5 characters"),
   message: yup
     .string()
     .required("Please enter your message")

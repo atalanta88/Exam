@@ -6,3 +6,13 @@ form {
   border-color: #c5c5c5;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
+/*border-radius: 10rem;
+*/
+
+.form-control:focus {
+  border-color: #ffffff !important;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.form-control {
+  border-radius: 10rem !important;
+}

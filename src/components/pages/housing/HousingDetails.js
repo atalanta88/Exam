@@ -1,7 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Container, Carousel, Row, Col, ListGroup } from "react-bootstrap";
+
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Carousel from "react-bootstrap/Carousel";
+import ListGroup from "react-bootstrap/ListGroup";
 import * as Icon from "react-bootstrap-icons";
+
 import { BookLoaderComponent } from "../../common/Loader";
 import { useParams, useHistory } from "react-router-dom";
 import Heading from "../../layout/Heading";

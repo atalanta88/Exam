@@ -21,9 +21,9 @@ function App() {
         <Router>
           <ScrollToTop />
           <NavbarLayout />
-          <Switch>
-            <div id="container">
-              <div id="main-content">
+          <div id="container">
+            <div id="main-content">
+              <Switch>
                 <Route path="/housing" exact component={HousingList} />
                 <Route path="/housing/:id" exact component={HousingDetails} />
                 <Route path="/home">
@@ -38,9 +38,9 @@ function App() {
                 <Route path="/admin" exact>
                   <AdminPage />
                 </Route>
-              </div>
+              </Switch>
             </div>
-          </Switch>
+          </div>
           <FooterLayout />
         </Router>
       </AuthProvider>

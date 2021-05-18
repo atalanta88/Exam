@@ -1,8 +1,10 @@
-import React, { Container, Row, Col, Card, CardDeck } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import CardDeck from "react-bootstrap/CardDeck";
+import Card from "react-bootstrap/Card";
+
 import Heading from "../../layout/Heading";
 import ContactList from "./contact/ContactList";
 import EnquiriesList from "./enquiries/EnquiriesList";
-
 import AddHousing from "./housing/AddHousing";
 
 export default function AdminPage() {
