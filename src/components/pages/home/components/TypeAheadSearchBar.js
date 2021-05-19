@@ -52,7 +52,7 @@ function TypeaheadArray() {
             <Dropdown.Toggle variant="typeahead" id="dropdown-basic">
               <FormControl
                 type="text"
-                placeholder="Search"
+                placeholder="Find housing..."
                 className="mr-sm-2"
                 onChange={(e) => setSearch(e.target.value)}
               />{" "}
@@ -78,8 +78,8 @@ const HousingDetails = (props) => {
         <Image
           src={imageone.formats.thumbnail.url}
           alt={name}
-          style={{ width: "30px", height: "30px" }}
-          roundedCircle
+          style={{ width: "40px", height: "40px" }}
+          rounded
         />
         <LinkContainer to={`housing/${id}`}>
           <p>{name}</p>

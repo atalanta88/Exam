@@ -20,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #00beaf;
+    background-color: $primary;
     border-radius: 10rem;
     z-index: -2;
   }
@@ -31,7 +31,7 @@
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: darken(#00beaf, 10%);
+    background-color: darken($primary, 10%);
     transition: all 0.3s;
     border-radius: 10rem;
     z-index: -1;
@@ -46,22 +46,22 @@
 
 .btn-secondary-color {
   color: white;
-  background: #009488;
+  background: $primary;
   border: transparent;
 }
 .btn-secondary-color:hover {
   color: white;
-  background: #007c72;
+  background-color: darken($primary, 10%);
 }
 .btn-secondary-color:active {
   color: white;
-  background: #009e91;
+  background-color: darken($primary, 10%);
 }
 
 .btn-secondary-color.focus,
 .btn-secondary:focus {
   color: white;
-  background: #009e91;
+  background: $primary;
 }
 
 .accordion-card-border-none {
@@ -102,7 +102,7 @@
 
 .btn-btn-submit {
   color: white;
-  background: #00beaf;
+  background: $primary;
   border: transparent;
   border-radius: 10rem;
   letter-spacing: 0.1rem;
@@ -110,7 +110,7 @@
 }
 .btn-btn-submit:hover {
   color: white;
-  background-color: darken(#00beaf, 10%);
+  background-color: darken($primary, 10%);
   transition: all 0.3s;
   border-radius: 10rem;
 }
@@ -143,12 +143,14 @@
 .typeahead-search-wrapper .dropdown-item {
   padding: 0rem 0.75rem;
   min-width: 50vw;
+  padding-bottom: 5px;
 }
 
 .typeahead-search-wrapper .dropdown-item p {
-  padding-left: 5px;
+  padding-left: 10px;
   text-transform: capitalize;
   margin-bottom: 0px;
+  color: #424242;
 }
 
 .typeahead-search-wrapper .dropdown-menu .show {

@@ -8,23 +8,5 @@
   padding: 2rem 1rem;
   background: rgb(255, 255, 255);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  border-radius: 2px;
-}
-
-.login-container img {
-  margin-bottom: 2rem;
-  max-width: 10rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-.hero-wrapper-login {
-  background-image: url("../../media/pexels-evie-shaffer-2748757.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vh;
+  border-radius: 5px;
 }

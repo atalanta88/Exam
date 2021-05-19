@@ -6,16 +6,6 @@ body {
 .contact-container {
   text-align: center;
 }
-.contact-paragraph {
-  margin: 0 auto;
-}
-
-p {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  overflow: hidden;
-  font-size: 1rem;
-}
 
 input {
   color: #000000 !important;
@@ -31,12 +21,11 @@ h1 {
 
 .contact-container h1 {
   color: rgb(255, 255, 255);
-  font-weight: 900;
   font-size: 4rem !important;
   padding-bottom: 1rem;
 
   span {
-    color: #d97386;
+    color: $secondary;
     font-size: 70px;
   }
 }
@@ -47,18 +36,114 @@ h1 {
   font-weight: 600;
 }
 
+.housing-details-container h1 {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  color: $primary;
+}
+
+.background-wrapper-home h1 {
+  color: rgb(255, 255, 255);
+  font-size: 3.5rem !important;
+}
+
+.background-wrapper-home span {
+  color: $primary;
+}
+
+.about-us-column {
+  h2 {
+    margin-top: 0.5rem;
+  }
+}
+
+.housing-header-background {
+  background-color: $primary;
+  height: 15vh;
+  background-image: url("../../media/teal-370129_640.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.housing-header-background h1 {
+  font-size: 4rem !important;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 4rem;
+}
+@media only screen and (max-width: 550px) {
+  .housing-header-background {
+    height: 18vh;
+  }
+  .housing-header-background h1 {
+    font-size: 2.3rem !important;
+    padding-top: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .housing-header-background {
+    height: 18vh;
+  }
+  .housing-header-background h1 {
+    padding-top: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .housing-details-container h1 {
+    font-size: 2rem !important;
+  }
+  .background-wrapper-home h1 {
+    font-size: 2.5rem !important;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .housing-header-background {
+    height: 24vh;
+  }
+  .contact-container h1 {
+    font-size: 3rem !important;
+
+    span {
+      font-size: 50px;
+    }
+  }
+}
+
+//Paragraphs, inputs, labels and similar
+
+.background-wrapper-home p {
+  color: rgb(255, 255, 255);
+}
+
+.contact-paragraph {
+  margin: 0 auto;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  overflow: hidden;
+  font-size: 1rem;
+}
+
 .housing-container .card-text {
   line-height: 1.5em;
   height: 3em;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .housing-container .form-label {
   font-weight: 500;
 }
+
 .housing-container .card-subtitle {
   margin-top: 0rem;
 }
+
 .housing-container .card-subtitle span {
   font-size: 1.2rem;
   font-weight: 500;
@@ -72,7 +157,7 @@ h1 {
   }
   .housing-type {
     font-family: "Poppins", sans-serif;
-    color: #d97386;
+    color: $secondary;
     font-weight: 600;
   }
 }
@@ -81,17 +166,64 @@ h1 {
   max-width: 75ch;
 }
 
-//Paragraphs
 .contact-container p {
   color: #ffffff;
   margin-bottom: 2rem;
+}
+
+.form-error {
+  color: red;
+  font-size: 14px;
+}
+
+.footer-copyright p {
+  color: rgb(163, 163, 163);
+  font-size: 14px;
+}
+
+.about-us-column {
+  p {
+    margin-bottom: 2rem;
+  }
+}
+
+.housing-info {
+  margin-top: 1.5rem;
+  .col {
+    padding-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .about-us-column {
+    h3 {
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .about-us-column {
+    p {
+      margin-bottom: 1.2rem;
+    }
+  }
+}
+
+.modal-dialog {
+  p {
+    padding-left: 2rem;
+  }
+}
+
+.datepicker-wrapper .form-label {
+  font-weight: 500;
 }
 
 //Links
 a {
   color: #484848;
   font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
 }
 
 a:hover {
@@ -120,62 +252,5 @@ a:hover {
 }
 .footer a:hover {
   color: #ffffff;
-  text-decoration-color: #d97386;
-}
-
-//Other
-
-.form-error {
-  color: red;
-  font-size: 14px;
-}
-
-.footer-copyright p {
-  color: rgb(163, 163, 163);
-  font-size: 14px;
-}
-
-.about-us-column {
-  p {
-    margin-bottom: 2rem;
-  }
-  h3 {
-    margin-top: 0rem;
-  }
-}
-
-.housing-info {
-  margin-top: 1.5rem;
-  .col {
-    padding-right: 0px;
-  }
-}
-@media only screen and (max-width: 1000px) {
-  .about-us-column {
-    p {
-      margin-bottom: 2rem;
-    }
-    h3 {
-      margin-top: 1rem;
-    }
-  }
-}
-
-.datepicker-wrapper .form-label {
-  font-weight: 500;
-}
-
-.modal-dialog {
-  p {
-    padding-left: 2rem;
-  }
-}
-
-.dropdown-menu {
-  background-color: #ffffff;
-}
-.dropdown-menu .dropdown-item {
-  background-color: #ffffff;
-  display: flex;
-  flex-wrap: wrap;
+  text-decoration-color: $secondary;
 }

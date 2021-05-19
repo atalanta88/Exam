@@ -2,22 +2,12 @@
   padding-top: 7rem;
 }
 
-.hero-wrapper-contact {
-  background-image: url("../../media/pexels-stein-egil-liland-6463525.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-
-  height: 100vh;
-}
-
 .modal-dialog {
   margin-top: 8rem !important;
 }
 
 .hero-wrapper-contact hr {
-  border-top: 2px solid #d97386;
+  border-top: 2px solid $secondary;
   margin-bottom: 2rem;
   max-width: 5%;
 }

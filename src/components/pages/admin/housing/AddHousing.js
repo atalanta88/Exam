@@ -32,16 +32,16 @@ const schema = yup.object().shape({
   name: yup
     .string()
     .required("Enter the housing name")
-    .min(2, "Your name needs to be atleast 3 characters"),
+    .min(3, "Housing name needs to be atleast 3 characters"),
   adress: yup
     .string()
     .required("Enter the housing adress")
-    .min(2, "Your name needs to be atleast 4 characters"),
+    .min(5, "Housing adress needs to be atleast 5 characters"),
 
   type: yup
     .string()
     .required("Enter housing type")
-    .min(2, "Your name needs to be atleast 3 characters"),
+    .min(3, "Housing type needs to be atleast 3 characters"),
 
   price: yup
     .number()
@@ -140,7 +140,7 @@ export default function AddHousing() {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
-            Enquiry messages
+            Add new housing
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -154,7 +154,7 @@ export default function AddHousing() {
                   <Form.Row>
                     <Col>
                       <Form.Label>Housing name</Form.Label>
-                      <Form.Group controlId="formName">
+                      <Form.Group controlId="formHousingName">
                         <Form.Control name="name" ref={register} />
                         {errors.name && (
                           <FormError>{errors.name.message}</FormError>

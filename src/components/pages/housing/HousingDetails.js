@@ -107,7 +107,7 @@ function HousingDetails() {
           <Col className="about-us-column" xs={12} lg={4}>
             {" "}
             <div className="housing-description">
-              <Heading size="3" content="About us" />
+              <Heading size="2" content="About us" />
 
               <p className="housing-type">{housing.type}</p>
               <p>{housing.description}</p>
@@ -153,12 +153,12 @@ function HousingDetails() {
       </Container>
       <Container>
         <DatePicker />
-
         <div className="housing-enquiries">
           <Heading size="3" content="Anything on your mind?" />
           <p>
-            Find more information under Q&A. If you cant find an answer there,
-            please send a question to the establishement.
+            Find more information under <a href="#">Q&A.</a>
+            If you cant find an answer there, please send a question to the
+            establishement.
           </p>
           <AddEnquiry />
         </div>

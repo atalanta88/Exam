@@ -51,9 +51,13 @@ function HousingList() {
 
   return (
     <>
-      <Container>
-        <Heading size="1" content="Find a place to stay!" />
-      </Container>
+      <div className="housing-header-background">
+        {" "}
+        <Container>
+          <Heading size="1" content="Explore beautiful Bergen!" />
+        </Container>
+      </div>
+
       <Container className="housing-container">
         <Row xs={1} md={2}>
           <Col xs={0} md={3}>
@@ -139,6 +143,9 @@ function HousingList() {
             </Row>
           </Col>
         </Row>
+      </Container>
+      <Container>
+        <hr />
       </Container>
     </>
   );

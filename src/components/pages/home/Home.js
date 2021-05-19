@@ -22,11 +22,12 @@ export default function HomePage() {
               With us you can find any you can find any place, anywhere,
               anytime!
             </p>
-            <p>
-              <LinkContainer to="/housing">
-                <Button variant="primary-color">Book stay</Button>
-              </LinkContainer>
-            </p>
+            <hr />
+            <LinkContainer to="/housing">
+              <Button variant="primary-color" size="lg">
+                Book stay
+              </Button>
+            </LinkContainer>
           </Container>
         </Jumbotron>
         <Container>

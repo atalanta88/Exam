@@ -7,17 +7,6 @@ body {
   text-align: center;
 }
 
-.contact-paragraph {
-  margin: 0 auto;
-}
-
-p {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  overflow: hidden;
-  font-size: 1rem;
-}
-
 input {
   color: #000000 !important;
 }
@@ -30,13 +19,12 @@ h1 {
 
 .contact-container h1 {
   color: white;
-  font-weight: 900;
   font-size: 4rem !important;
   padding-bottom: 1rem;
 }
 
 .contact-container h1 span {
-  color: #d97386;
+  color: #dd1bd0;
   font-size: 70px;
 }
 
@@ -44,6 +32,96 @@ h1 {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
+}
+
+.housing-details-container h1 {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  color: #00beaf;
+}
+
+.background-wrapper-home h1 {
+  color: white;
+  font-size: 3.5rem !important;
+}
+
+.background-wrapper-home span {
+  color: #00beaf;
+}
+
+.about-us-column h2 {
+  margin-top: 0.5rem;
+}
+
+.housing-header-background {
+  background-color: #00beaf;
+  height: 15vh;
+  background-image: url("../../media/teal-370129_640.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.housing-header-background h1 {
+  font-size: 4rem !important;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 4rem;
+}
+
+@media only screen and (max-width: 550px) {
+  .housing-header-background {
+    height: 18vh;
+  }
+  .housing-header-background h1 {
+    font-size: 2.3rem !important;
+    padding-top: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .housing-header-background {
+    height: 18vh;
+  }
+  .housing-header-background h1 {
+    padding-top: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .housing-details-container h1 {
+    font-size: 2rem !important;
+  }
+  .background-wrapper-home h1 {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .housing-header-background {
+    height: 24vh;
+  }
+  .contact-container h1 {
+    font-size: 3rem !important;
+  }
+  .contact-container h1 span {
+    font-size: 50px;
+  }
+}
+
+.background-wrapper-home p {
+  color: white;
+}
+
+.contact-paragraph {
+  margin: 0 auto;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  overflow: hidden;
+  font-size: 1rem;
 }
 
 .housing-container .card-text {
@@ -74,7 +152,7 @@ h1 {
 
 .housing-details-container .housing-type {
   font-family: "Poppins", sans-serif;
-  color: #d97386;
+  color: #dd1bd0;
   font-weight: 600;
 }
 
@@ -87,10 +165,51 @@ h1 {
   margin-bottom: 2rem;
 }
 
+.form-error {
+  color: red;
+  font-size: 14px;
+}
+
+.footer-copyright p {
+  color: #a3a3a3;
+  font-size: 14px;
+}
+
+.about-us-column p {
+  margin-bottom: 2rem;
+}
+
+.housing-info {
+  margin-top: 1.5rem;
+}
+
+.housing-info .col {
+  padding-right: 0px;
+}
+
+@media only screen and (max-width: 500px) {
+  .about-us-column h3 {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .about-us-column p {
+    margin-bottom: 1.2rem;
+  }
+}
+
+.modal-dialog p {
+  padding-left: 2rem;
+}
+
+.datepicker-wrapper .form-label {
+  font-weight: 500;
+}
+
 a {
   color: #484848;
   font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
 }
 
 a:hover {
@@ -127,64 +246,8 @@ a:hover {
 
 .footer a:hover {
   color: #ffffff;
-  -webkit-text-decoration-color: #d97386;
-          text-decoration-color: #d97386;
-}
-
-.form-error {
-  color: red;
-  font-size: 14px;
-}
-
-.footer-copyright p {
-  color: #a3a3a3;
-  font-size: 14px;
-}
-
-.about-us-column p {
-  margin-bottom: 2rem;
-}
-
-.about-us-column h3 {
-  margin-top: 0rem;
-}
-
-.housing-info {
-  margin-top: 1.5rem;
-}
-
-.housing-info .col {
-  padding-right: 0px;
-}
-
-@media only screen and (max-width: 1000px) {
-  .about-us-column p {
-    margin-bottom: 2rem;
-  }
-  .about-us-column h3 {
-    margin-top: 1rem;
-  }
-}
-
-.datepicker-wrapper .form-label {
-  font-weight: 500;
-}
-
-.modal-dialog p {
-  padding-left: 2rem;
-}
-
-.dropdown-menu {
-  background-color: #ffffff;
-}
-
-.dropdown-menu .dropdown-item {
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-text-decoration-color: #dd1bd0;
+          text-decoration-color: #dd1bd0;
 }
 
 html,
@@ -268,8 +331,6 @@ form {
           box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-/*border-radius: 10rem;
-*/
 .form-control:focus {
   border-color: #ffffff !important;
   -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -351,24 +412,24 @@ form {
 
 .btn-secondary-color {
   color: white;
-  background: #009488;
+  background: #00beaf;
   border: transparent;
 }
 
 .btn-secondary-color:hover {
   color: white;
-  background: #007c72;
+  background-color: #008b80;
 }
 
 .btn-secondary-color:active {
   color: white;
-  background: #009e91;
+  background-color: #008b80;
 }
 
 .btn-secondary-color.focus,
 .btn-secondary:focus {
   color: white;
-  background: #009e91;
+  background: #00beaf;
 }
 
 .accordion-card-border-none {
@@ -454,12 +515,14 @@ form {
 .typeahead-search-wrapper .dropdown-item {
   padding: 0rem 0.75rem;
   min-width: 50vw;
+  padding-bottom: 5px;
 }
 
 .typeahead-search-wrapper .dropdown-item p {
-  padding-left: 5px;
+  padding-left: 10px;
   text-transform: capitalize;
   margin-bottom: 0px;
+  color: #424242;
 }
 
 .typeahead-search-wrapper .dropdown-menu .show {
@@ -477,6 +540,25 @@ form {
       -ms-flex-align: center;
           align-items: center;
   margin: 0 auto;
+}
+
+.background-wrapper-home {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../../media/pexels-nextvoyage.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../media/pexels-nextvoyage.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.hero-wrapper-contact {
+  background-image: url("../../media/pexels-stein-egil-liland-6463525.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
 }
 
 .svg-icon {
@@ -500,7 +582,7 @@ form {
 
 .card-col-object-overlay-right {
   position: absolute;
-  background-color: #ff70c8;
+  background-color: #dd1bd0;
   bottom: 0%;
   right: 5%;
   padding: 8px 10px;
@@ -511,13 +593,40 @@ form {
 
 .card-col-object-overlay-center {
   position: absolute;
-  background-color: #ff70c8;
+  background-color: #dd1bd0;
   bottom: 0%;
   right: 20%;
   padding: 8px 10px;
   border-radius: 50%;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
           box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.login-container img {
+  margin-bottom: 2rem;
+  max-width: 10rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.hero-wrapper-login {
+  background-image: url("../../media/pexels-evie-shaffer-2748757.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 300px) {
+  .card-col-object-overlay-right {
+    padding: 5px 7px;
+  }
+  .card-col-object-overlay-center {
+    padding: 5px 7px;
+  }
 }
 
 .admin-page-wrapper {
@@ -567,21 +676,12 @@ form {
   padding-top: 7rem;
 }
 
-.hero-wrapper-contact {
-  background-image: url("../../media/pexels-stein-egil-liland-6463525.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vh;
-}
-
 .modal-dialog {
   margin-top: 8rem !important;
 }
 
 .hero-wrapper-contact hr {
-  border-top: 2px solid #d97386;
+  border-top: 2px solid #dd1bd0;
   margin-bottom: 2rem;
   max-width: 5%;
 }
@@ -590,44 +690,21 @@ form {
   padding: 0.1rem 0.25rem;
 }
 
-.background-wrapper-home {
-  background-image: url("../../media/pexels-nextvoyage.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vh;
-}
-
 .background-wrapper-home .jumbotron {
   padding-top: 10rem;
   text-align: center;
   background-color: rgba(255, 255, 255, 0);
 }
 
-.background-wrapper-home h1 {
-  color: #444444;
-}
-
-.background-wrapper-home p {
-  color: #414141;
-}
-
-.background-wrapper-home span {
-  color: #ff70c8;
-}
-
 .text-container-home {
   max-width: 600px;
-  padding: 30px 10px;
-  background: rgba(255, 255, 255, 0.45);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(12.5px);
-  -webkit-backdrop-filter: blur(12.5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
   z-index: -1;
+}
+
+.background-wrapper-home hr {
+  border-top: 2px solid #dd1bd0;
+  margin-bottom: 2rem;
+  max-width: 5%;
 }
 
 @media only screen and (max-width: 500px) {
@@ -637,6 +714,19 @@ form {
   .background-wrapper-home {
     height: 90vh;
   }
+}
+
+.dropdown-menu {
+  background-color: #ffffff;
+}
+
+.dropdown-menu .dropdown-item {
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .housing-container {
@@ -785,24 +875,6 @@ form {
   background: white;
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  border-radius: 2px;
-}
-
-.login-container img {
-  margin-bottom: 2rem;
-  max-width: 10rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-.hero-wrapper-login {
-  background-image: url("../../media/pexels-evie-shaffer-2748757.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vh;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=style.css.map */

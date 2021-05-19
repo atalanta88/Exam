@@ -1,3 +1,24 @@
+//Home page
+.background-wrapper-home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../media/pexels-nextvoyage.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+//Contact page
+.hero-wrapper-contact {
+  background-image: url("../../media/pexels-stein-egil-liland-6463525.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
 .svg-icon {
   position: relative;
   display: inline;
@@ -18,7 +39,7 @@
 
 .card-col-object-overlay-right {
   position: absolute;
-  background-color: rgb(255, 112, 200);
+  background-color: $secondary;
   bottom: 0%;
   right: 5%;
   padding: 8px 10px;
@@ -27,10 +48,38 @@
 }
 .card-col-object-overlay-center {
   position: absolute;
-  background-color: rgb(255, 112, 200);
+  background-color: $secondary;
   bottom: 0%;
   right: 20%;
   padding: 8px 10px;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+//Login page
+.login-container img {
+  margin-bottom: 2rem;
+  max-width: 10rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.hero-wrapper-login {
+  background-image: url("../../media/pexels-evie-shaffer-2748757.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 300px) {
+  .card-col-object-overlay-right {
+    padding: 5px 7px;
+  }
+  .card-col-object-overlay-center {
+    padding: 5px 7px;
+  }
 }

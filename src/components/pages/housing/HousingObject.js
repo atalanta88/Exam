@@ -38,7 +38,7 @@ function HousingObject({ id, name, adress, description, price, imageone }) {
                   <h6 className="card-subtitle text-muted">
                     <div className="card-col-object">
                       {" "}
-                      <Icon.CreditCard color="rgb(255, 112, 200)" size={25} />
+                      <Icon.CreditCard color="#dd1bd0" size={25} />
                     </div>{" "}
                     <span>NOK {price}</span>
                   </h6>{" "}
