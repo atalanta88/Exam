@@ -13,6 +13,7 @@ import * as Icon from "react-bootstrap-icons";
 import logo from "../../media/holidaze.png";
 
 import { LinkContainer } from "react-router-bootstrap";
+import { Link } from "react-router-dom";
 
 function NavbarLayout() {
   const [auth, setAuth] = useContext(AuthContext);
@@ -28,7 +29,7 @@ function NavbarLayout() {
     <>
       <Navbar className="fixed-bottom-nav" bg="dark" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="/home">
+          <Navbar.Brand as={Link} to="/home">
             <img
               alt=""
               src={logo}
@@ -36,7 +37,7 @@ function NavbarLayout() {
               height="30"
               className="d-inline-block align-top"
             />{" "}
-          </Navbar.Brand>{" "}
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
