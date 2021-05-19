@@ -77,7 +77,7 @@
 
 .housing-header-background {
   background-color: $primary;
-  height: 15vh;
+  height: 17vh;
   background-image: url("../../media/teal-370129_640-1.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -102,5 +102,9 @@
   }
   .hero-wrapper-login {
     height: 140vh;
+  }
+
+  .housing-header-background {
+    height: 26vh;
   }
 }
