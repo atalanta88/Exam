@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 function ContactMessageObject({ email, message, firstname, lastname, id }) {
   return (
     <>
-      <Accordion>
+      <Accordion key={id}>
         <Card border="light" className="inner-accordion-card">
           <Accordion.Toggle as={Card.Header} eventKey="0">
             <Card.Header

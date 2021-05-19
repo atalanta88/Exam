@@ -5,7 +5,6 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { API_CONTACTS } from "../../../../constants/api";
 import ContactMessageObject from "./ContactMessageObject";
-import { Loader } from "../../../common/Loader";
 import ErrorMessage from "../../../common/ErrorMessage";
 import AuthContext from "../../../../context/AuthContext";
 
@@ -14,7 +13,6 @@ const url = API_CONTACTS;
 function ContactList() {
   const [auth, setAuth] = useContext(AuthContext);
   const [contacts, setContactList] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const handleClose = () => setLgShow(false);
   const [lgShow, setLgShow] = useState(false);
@@ -40,16 +38,10 @@ function ContactList() {
         }
       } catch (error) {
         setError(error.toString());
-      } finally {
-        setLoading(false);
       }
     }
     fetchData();
   }, []);
-
-  if (loading) {
-    return <Loader />;
-  }
 
   if (error) {
     return <ErrorMessage message={`Error: ${error}`} />;
@@ -62,6 +54,7 @@ function ContactList() {
       </Button>
       <Modal
         size="lg"
+        animation={false}
         show={lgShow}
         onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
@@ -80,6 +73,7 @@ function ContactList() {
 
                 return (
                   <ContactMessageObject
+                    key={id}
                     message={message}
                     email={email}
                     firstname={firstname}

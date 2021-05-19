@@ -40,12 +40,6 @@
   padding-right: 20px;
 }
 
-@media only screen and (max-width: 1000px) {
-  .housing-container {
-    margin-top: 2rem;
-  }
-}
-//housing cards sjekk om det er aktivt
 .card-background {
   padding-left: 0px;
   background: #ebf5fc;
@@ -124,5 +118,11 @@
 @media only screen and (max-width: 575px) {
   .card-background {
     padding-left: 15px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .housing-container {
+    margin-top: 2rem;
   }
 }

@@ -1,7 +1,7 @@
 //Home page
 .background-wrapper-home {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../media/pexels-nextvoyage.jpg");
+    url("../../media/pexels-nextvoyage-1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -75,11 +75,32 @@
   height: 100vh;
 }
 
+.housing-header-background {
+  background-color: $primary;
+  height: 15vh;
+  background-image: url("../../media/teal-370129_640-1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @media only screen and (max-width: 300px) {
   .card-col-object-overlay-right {
     padding: 5px 7px;
   }
   .card-col-object-overlay-center {
     padding: 5px 7px;
+  }
+  //Home page
+  .background-wrapper-home {
+    height: 140vh;
+  }
+
+  //Contact page
+  .hero-wrapper-contact {
+    height: 140vh;
+  }
+  .hero-wrapper-login {
+    height: 140vh;
   }
 }

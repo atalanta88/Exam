@@ -19,12 +19,12 @@ function TypeaheadArray() {
     setLoading(true);
     axios
       .get(API_HOUSINGS)
-      .then((res) => {
-        setHousing(res.data);
+      .then((response) => {
+        setHousing(response.data);
         setLoading(false);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        console.log(error);
       });
   }, []);
 
@@ -54,7 +54,7 @@ function TypeaheadArray() {
                 type="text"
                 placeholder="Find housing..."
                 className="mr-sm-2"
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={(event) => setSearch(event.target.value)}
               />{" "}
             </Dropdown.Toggle>
             <Dropdown.Menu>

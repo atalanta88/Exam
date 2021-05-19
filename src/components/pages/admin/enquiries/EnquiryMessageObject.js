@@ -52,6 +52,10 @@ function EnquiryObject({ email, message, name, housingname, id }) {
 
 EnquiryObject.propTypes = {
   name: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  housingname: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+  email: PropTypes.any.isRequired,
 };
 
 export default EnquiryObject;

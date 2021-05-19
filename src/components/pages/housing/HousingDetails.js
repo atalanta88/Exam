@@ -156,7 +156,7 @@ function HousingDetails() {
         <div className="housing-enquiries">
           <Heading size="3" content="Anything on your mind?" />
           <p>
-            Find more information under <a href="#">Q&A.</a>
+            Find more information under <a href="#">Q&amp;A.</a>
             If you cant find an answer there, please send a question to the
             establishement.
           </p>

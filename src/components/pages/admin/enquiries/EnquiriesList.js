@@ -7,7 +7,6 @@ import Card from "react-bootstrap/Card";
 
 import { API_ENQUIRIES } from "../../../../constants/api";
 import EnquiryMessageObject from "./EnquiryMessageObject";
-import { Loader } from "../../../common/Loader";
 import ErrorMessage from "../../../common/ErrorMessage";
 import AuthContext from "../../../../context/AuthContext";
 
@@ -16,7 +15,6 @@ const url = API_ENQUIRIES;
 function EnquiriesList() {
   const [auth, setAuth] = useContext(AuthContext);
   const [enquiries, setEnquiryList] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const handleClose = () => setLgShow(false);
   const [lgShow, setLgShow] = useState(false);
@@ -42,16 +40,10 @@ function EnquiriesList() {
         }
       } catch (error) {
         setError(error.toString());
-      } finally {
-        setLoading(false);
       }
     }
     fetchData();
   }, []);
-
-  if (loading) {
-    return <Loader />;
-  }
 
   if (error) {
     return <ErrorMessage message={`Error: ${error}`} />;
@@ -64,6 +56,7 @@ function EnquiriesList() {
       </Button>
       <Modal
         size="lg"
+        animation={false}
         show={lgShow}
         onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
@@ -83,6 +76,7 @@ function EnquiriesList() {
 
                 return (
                   <EnquiryMessageObject
+                    key={id}
                     message={message}
                     email={email}
                     name={name}

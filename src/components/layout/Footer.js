@@ -5,7 +5,6 @@ import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
 import Card from "react-bootstrap/Card";
 
-import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../media/holidaze.png";
 import { SocialIcon } from "react-social-icons";
@@ -39,15 +38,15 @@ function FooterLayout() {
               <Card className="text-center footer-card ">
                 <Card.Body className="footer-card footer-card-information">
                   <ListGroup>
-                    <Link as={Link} to="/home">
+                    <Link to="/home">
                       <ListGroup.Item>Term & conditions</ListGroup.Item>
                     </Link>
 
-                    <Link as={Link} to="/home">
+                    <Link to="/home">
                       <ListGroup.Item>About</ListGroup.Item>
                     </Link>
 
-                    <Link as={Link} to="/home">
+                    <Link to="/home">
                       <ListGroup.Item>Privacy policy</ListGroup.Item>
                     </Link>
                   </ListGroup>
@@ -80,12 +79,9 @@ function FooterLayout() {
           <Row>
             <Col></Col>
             <Col className="footer-image-column">
-              <LinkContainer to="/home">
-                <Link>
-                  {" "}
-                  <Card.Img src={logo} />
-                </Link>
-              </LinkContainer>
+              <Link to="/Housing">
+                <Card.Img src={logo} />
+              </Link>{" "}
             </Col>
             <Col></Col>
           </Row>

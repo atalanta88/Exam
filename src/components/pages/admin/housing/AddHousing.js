@@ -134,6 +134,7 @@ export default function AddHousing() {
       </Button>
       <Modal
         size="lg"
+        animation={false}
         show={lgShow}
         onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"

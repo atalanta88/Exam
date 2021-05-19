@@ -2,6 +2,7 @@ import React from "react";
 
 import PropTypes from "prop-types";
 import { LinkContainer } from "react-router-bootstrap";
+
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
@@ -61,7 +62,12 @@ function HousingObject({ id, name, adress, description, price, imageone }) {
 }
 
 HousingObject.propTypes = {
-  slug: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  adress: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  imageone: PropTypes.any.isRequired,
 };
 
 export default HousingObject;

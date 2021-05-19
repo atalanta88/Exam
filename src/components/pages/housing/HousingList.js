@@ -144,9 +144,6 @@ function HousingList() {
           </Col>
         </Row>
       </Container>
-      <Container>
-        <hr />
-      </Container>
     </>
   );
 }

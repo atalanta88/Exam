@@ -6,22 +6,12 @@
 
 .text-container-home {
   max-width: 600px;
-  z-index: -1;
 }
 
 .background-wrapper-home hr {
   border-top: 2px solid $secondary;
   margin-bottom: 2rem;
   max-width: 5%;
-}
-
-@media only screen and (max-width: 500px) {
-  .background-wrapper-home .jumbotron {
-    padding-top: 1rem;
-  }
-  .background-wrapper-home {
-    height: 90vh;
-  }
 }
 
 .dropdown-menu {
@@ -31,4 +21,11 @@
   background-color: #ffffff;
   display: flex;
   flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 500px) {
+  .background-wrapper-home .jumbotron {
+    padding-top: 1rem;
+    margin-bottom: 0rem;
+  }
 }

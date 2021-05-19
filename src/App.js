@@ -24,8 +24,9 @@ function App() {
     <>
       <AuthProvider>
         <Router>
-          <Redirect from="/" to="/home" />
-
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
           <ScrollToTop />
           <NavbarLayout />
           <div id="container">

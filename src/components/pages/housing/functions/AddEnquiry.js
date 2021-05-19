@@ -2,8 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useAxiosNoAuth from "../../../../hooks/useAxiosNoAuth";
+
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -86,7 +88,7 @@ export default function AddEnquiry() {
       <Button variant="primary-color" onClick={handleShow}>
         Send us a message
       </Button>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>Enquiry</Modal.Title>
         </Modal.Header>

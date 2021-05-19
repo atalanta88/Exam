@@ -93,7 +93,7 @@ export default function ContactForm() {
       <Button variant="primary-color" size="lg" onClick={handleShow}>
         Contact us
       </Button>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>
             {" "}
