@@ -10,7 +10,7 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 
 import * as Icon from "react-bootstrap-icons";
-import logo from "../../media/Capture.png";
+import logo from "../../media/holidaze.png";
 
 import { LinkContainer } from "react-router-bootstrap";
 

@@ -6,7 +6,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Card from "react-bootstrap/Card";
 
 import { Link } from "react-router-dom";
-import logo from "../../media/Capture.png";
+import logo from "../../media/holidaze.png";
 import { SocialIcon } from "react-social-icons";
 
 function FooterLayout() {
