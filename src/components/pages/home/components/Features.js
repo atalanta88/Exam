@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
 
 import * as Icon from "react-bootstrap-icons";
 import Heading from "../../../../components/layout/Heading";
@@ -35,7 +34,7 @@ export default function Features() {
               <Icon.Tags color="#484848" size={50} />
               <Heading size="3" content="Lowest Price Guarantee" />
               <p>
-                With us you can make sure your living the best for the best
+                With us you can make sure you're living the best for the best
                 price.
               </p>
             </Col>

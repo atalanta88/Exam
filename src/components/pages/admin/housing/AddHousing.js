@@ -156,7 +156,7 @@ export default function AddHousing() {
                     <Col>
                       <Form.Label>Housing name</Form.Label>
                       <Form.Group controlId="formHousingName">
-                        <Form.Control name="name" ref={register} />
+                        <Form.Control name="name" ref={register} autoFocus />
                         {errors.name && (
                           <FormError>{errors.name.message}</FormError>
                         )}

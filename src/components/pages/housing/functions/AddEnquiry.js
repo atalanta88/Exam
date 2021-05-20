@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useAxiosNoAuth from "../../../../hooks/useAxiosNoAuth";
@@ -44,6 +44,13 @@ const schema = yup.object().shape({
     .required("Please enter your message")
     .min(10, "Your message needs to be atleast 10 characters"),
 });
+
+const MyComponent = () => (
+  <label>
+    Title
+    <input type="text" defaultValue="Untitled" autoFocus />
+  </label>
+);
 
 export default function AddEnquiry() {
   const [submitting, setSubmitting] = useState(false);
@@ -99,7 +106,7 @@ export default function AddEnquiry() {
               {serverError && <FormError>{serverError}</FormError>}
               <Form.Group controlId="formName">
                 <Form.Label>Name</Form.Label>
-                <Form.Control name="name" ref={register} />
+                <Form.Control name="name" ref={register} autoFocus />
                 {errors.name && <FormError>{errors.name.message}</FormError>}
               </Form.Group>
               <Form.Group controlId="formBasicEmail">

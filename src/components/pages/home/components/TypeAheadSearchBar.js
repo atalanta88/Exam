@@ -55,6 +55,7 @@ function TypeaheadArray() {
                 placeholder="Find housing..."
                 className="mr-sm-2"
                 onChange={(event) => setSearch(event.target.value)}
+                autoFocus
               />{" "}
             </Dropdown.Toggle>
             <Dropdown.Menu>
