@@ -1,5 +1,6 @@
 .housing-container {
   margin-top: 5rem;
+  margin-bottom: 4rem;
 }
 .housing-container .card-body {
   padding-bottom: 0px;
@@ -12,6 +13,15 @@
 
 .housing-container .card-body .card-text {
   margin-bottom: 2rem !important;
+}
+
+.housing-container .list-group-item {
+  display: block;
+  padding-right: 20px;
+}
+
+.housing-container .col-md-2 {
+  margin-top: 15px !important;
 }
 
 .card-wrapper .col {
@@ -33,11 +43,6 @@
 
 .card-col-object {
   margin-top: 15px;
-}
-
-.housing-container .list-group-item {
-  display: block;
-  padding-right: 20px;
 }
 
 .card-background {
@@ -80,10 +85,6 @@
   z-index: 999;
 }
 
-.housing-container .col-md-2 {
-  margin-top: 15px !important;
-}
-
 .housing-details-container {
   margin-top: 5rem;
 }
@@ -114,15 +115,16 @@
   .card-background {
     padding-left: 15px;
   }
+
+  .housing-enquiries {
+    margin-bottom: 15rem;
+  }
+  .housing-container {
+    margin-top: 2rem;
+  }
 }
 @media only screen and (max-width: 575px) {
   .card-background {
     padding-left: 15px;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .housing-container {
-    margin-top: 2rem;
   }
 }

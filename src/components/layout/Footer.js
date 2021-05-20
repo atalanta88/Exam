@@ -79,7 +79,7 @@ function FooterLayout() {
           <Row>
             <Col></Col>
             <Col className="footer-image-column">
-              <Link to="/Housing">
+              <Link to="/Home">
                 <Card.Img src={logo} />
               </Link>{" "}
             </Col>

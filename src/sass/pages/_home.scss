@@ -23,6 +23,13 @@
   flex-wrap: wrap;
 }
 
+.background-wrapper-features hr {
+  border: solid 1px $secondary;
+  width: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 @media only screen and (max-width: 500px) {
   .background-wrapper-home .jumbotron {
     padding-top: 1rem;
