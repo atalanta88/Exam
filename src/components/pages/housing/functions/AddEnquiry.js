@@ -114,7 +114,7 @@ export default function AddEnquiry() {
                 <Form.Control name="email" ref={register} />
                 {errors.email && <FormError>{errors.email.message}</FormError>}
               </Form.Group>
-              <Form.Group controlId="formName">
+              <Form.Group controlId="formHousingName">
                 <Form.Label>Establishment</Form.Label>
                 <Form.Control name="housingname" ref={register} />
 

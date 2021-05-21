@@ -92,7 +92,11 @@
 .housing-header-background {
   background-color: $primary;
   height: 17vh;
-  background-image: url("../../media/teal-370129_640-1.jpg");
+  background-image: linear-gradient(
+      rgba(99, 99, 99, 0.418),
+      rgba(87, 87, 87, 0.63)
+    ),
+    url("../../media/teal-370129_640-1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -119,6 +123,11 @@
   }
 
   .housing-header-background {
-    height: 26vh;
+    height: 20vh;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .housing-header-background {
+    height: 27vh;
   }
 }

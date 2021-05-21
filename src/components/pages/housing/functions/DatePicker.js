@@ -53,7 +53,7 @@ class DateRangePickerWrapper extends Component {
                     </Form.Group>
                   </Col>
                   <Col md={2}>
-                    <Form.Group controlId="exampleForm.SelectCustom">
+                    <Form.Group controlId="exampleForm.SelectCustomAdults">
                       <Form.Label>Adults</Form.Label>
                       <Form.Control as="select" custom>
                         <option>1</option>
@@ -66,7 +66,7 @@ class DateRangePickerWrapper extends Component {
                   </Col>
                   <Col md={2}>
                     {" "}
-                    <Form.Group controlId="exampleForm.SelectCustom">
+                    <Form.Group controlId="exampleForm.SelectCustomChildren">
                       <Form.Label>Children</Form.Label>
                       <Form.Control as="select" custom>
                         <option>1</option>

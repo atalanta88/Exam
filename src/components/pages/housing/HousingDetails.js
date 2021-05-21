@@ -66,6 +66,7 @@ function HousingDetails() {
     <>
       <Container className="housing-details-container">
         <Heading size="1" content={housing.name} />
+        <Heading size="6" content={housing.adress} />
 
         <Row xs={1} lg={2}>
           <Col className="carousel-column" xs={12} lg={8}>
@@ -75,7 +76,7 @@ function HousingDetails() {
                 <img
                   className="d-block w-100"
                   src={housing.imageone.url}
-                  alt="First slide"
+                  alt={housing.imageone.name}
                 />
               </Carousel.Item>
 
@@ -83,7 +84,7 @@ function HousingDetails() {
                 <img
                   className="d-block w-100"
                   src={housing.imagetwo.url}
-                  alt="Second slide"
+                  alt={housing.imagetwo.name}
                 />
               </Carousel.Item>
 
@@ -91,7 +92,7 @@ function HousingDetails() {
                 <img
                   className="d-block w-100"
                   src={housing.imagethree.url}
-                  alt="Third slide"
+                  alt={housing.imagethree.name}
                 />
               </Carousel.Item>
 
@@ -99,7 +100,7 @@ function HousingDetails() {
                 <img
                   className="d-block w-100"
                   src={housing.imagefour.url}
-                  alt="Fourth slide"
+                  alt={housing.imagefour.name}
                 />
               </Carousel.Item>
             </Carousel>
@@ -110,6 +111,7 @@ function HousingDetails() {
               <Heading size="2" content="About us" />
 
               <p className="housing-type">{housing.type}</p>
+
               <p>{housing.description}</p>
             </div>
             <div className="housing-info">

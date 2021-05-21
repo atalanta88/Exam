@@ -81,7 +81,7 @@ function HousingList() {
                             controlId="formGroupCheckbox"
                           >
                             <Form.Label>Property types</Form.Label>
-                            <Form.Group controlId="formBasicCheckbox">
+                            <Form.Group controlId="formBasicCheckboxPropertyTypes">
                               <Form.Check type="checkbox" label="Hotels" />
                               <Form.Check
                                 type="checkbox"
@@ -97,7 +97,7 @@ function HousingList() {
                             controlId="formGroupCheckbox"
                           >
                             <Form.Label>Amenities</Form.Label>
-                            <Form.Group controlId="formBasicCheckbox">
+                            <Form.Group controlId="formBasicCheckboxAmeneties">
                               <Form.Check type="checkbox" label="Wifi" />
                               <Form.Check
                                 type="checkbox"
