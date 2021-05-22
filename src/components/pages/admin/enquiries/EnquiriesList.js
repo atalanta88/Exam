@@ -20,7 +20,7 @@ function EnquiriesList() {
   const [lgShow, setLgShow] = useState(false);
 
   const token = auth.jwt;
-  const config = {
+  const authorizer = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -29,7 +29,7 @@ function EnquiriesList() {
   useEffect(function () {
     async function fetchData() {
       try {
-        const response = await fetch(url, config);
+        const response = await fetch(url, authorizer);
 
         if (response.ok) {
           const json = await response.json();

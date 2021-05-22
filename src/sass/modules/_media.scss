@@ -53,7 +53,7 @@
 
 .card-col-object-overlay-right {
   position: absolute;
-  background-color: $secondary;
+  background-color: $primary;
   bottom: 0%;
   right: 5%;
   padding: 8px 10px;
@@ -62,9 +62,9 @@
 }
 .card-col-object-overlay-center {
   position: absolute;
-  background-color: $secondary;
+  background-color: $primary;
   bottom: 0%;
-  right: 20%;
+  right: 19%;
   padding: 8px 10px;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;

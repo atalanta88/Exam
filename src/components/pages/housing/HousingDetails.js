@@ -109,10 +109,11 @@ function HousingDetails() {
             {" "}
             <div className="housing-description">
               <Heading size="2" content="About us" />
-
               <p className="housing-type">{housing.type}</p>
-
               <p>{housing.description}</p>
+              <h5 className="card-text-price">
+                NOK <span>{housing.price}</span>
+              </h5>{" "}
             </div>
             <div className="housing-info">
               <Row xs={2}>
@@ -120,13 +121,13 @@ function HousingDetails() {
                   <ListGroup variant="flush">
                     <ListGroup.Item>
                       <div className="svg-icon">
-                        <Icon.Wifi color="black" size={16} />
+                        <Icon.Wifi color="#00beaf" size={23} />
                       </div>
                       Free internet
                     </ListGroup.Item>
                     <ListGroup.Item>
                       <div className="svg-icon">
-                        <Icon.EggFried color="black" size={16} />
+                        <Icon.EggFried color="#00beaf" size={23} />
                       </div>
                       Breakfast included
                     </ListGroup.Item>
@@ -136,13 +137,13 @@ function HousingDetails() {
                   <ListGroup variant="flush">
                     <ListGroup.Item>
                       <div className="svg-icon">
-                        <Icon.CheckCircle color="black" size={16} />
+                        <Icon.CheckCircle color="#00beaf" size={23} />
                       </div>
                       Roomservice
                     </ListGroup.Item>
                     <ListGroup.Item>
                       <div className="svg-icon">
-                        <Icon.FilePpt color="black" size={16} />
+                        <Icon.FilePpt color="#00beaf" size={23} />
                       </div>
                       Free parking
                     </ListGroup.Item>

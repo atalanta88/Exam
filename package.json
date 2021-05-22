@@ -20,7 +20,6 @@
     "react-router-bootstrap": "^0.25.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "react-select": "^4.3.0",
     "react-social-icons": "^5.3.0",
     "sass-loader": "^11.0.1",
     "strapi-provider-upload-aws-s3": "^3.6.1",
