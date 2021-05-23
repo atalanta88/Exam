@@ -1,21 +1,21 @@
 //Home page
 .background-wrapper-home {
   background-image: url("../../media/pexels-nextvoyage-12.jpg");
-  background-repeat: no-repeat;
   background-attachment: fixed;
   -o-background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
 }
 
 .background-wrapper-features {
   background-image: url("../../media/pexels-karolina-grabowska-41948491.jpg");
-  background-repeat: no-repeat;
   background-attachment: fixed;
   -o-background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
+  background-repeat: no-repeat;
   padding: 100px 10px;
   text-align: center;
 }
