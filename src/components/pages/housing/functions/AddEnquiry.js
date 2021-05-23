@@ -45,13 +45,6 @@ const schema = yup.object().shape({
     .min(10, "Your message needs to be atleast 10 characters"),
 });
 
-const MyComponent = () => (
-  <label>
-    Title
-    <input type="text" defaultValue="Untitled" autoFocus />
-  </label>
-);
-
 export default function AddEnquiry() {
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState(null);
@@ -106,7 +99,7 @@ export default function AddEnquiry() {
               {serverError && <FormError>{serverError}</FormError>}
               <Form.Group controlId="formName">
                 <Form.Label>Name</Form.Label>
-                <Form.Control name="name" ref={register} autoFocus />
+                <Form.Control name="name" ref={register} />
                 {errors.name && <FormError>{errors.name.message}</FormError>}
               </Form.Group>
               <Form.Group controlId="formBasicEmail">

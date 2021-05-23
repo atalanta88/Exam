@@ -225,8 +225,9 @@ p {
 }
 
 //Links
+
 a {
-  color: #484848;
+  color: $primary;
   font-family: "Roboto", sans-serif;
 }
 
@@ -246,12 +247,11 @@ a:hover {
 }
 
 .footer .list-group-item {
-  text-transform: uppercase;
   color: white;
   font-size: 0.85rem;
 }
 .footer a {
-  text-decoration: underline 3px rgba(255, 255, 255, 0);
+  text-decoration: underline 2px rgba(255, 255, 255, 0);
   transition: text-decoration-color 300ms;
 }
 .footer a:hover {

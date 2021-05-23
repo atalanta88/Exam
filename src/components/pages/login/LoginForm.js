@@ -67,11 +67,7 @@ export default function LoginForm() {
             <fieldset disabled={submitting}>
               <Form.Label>Username</Form.Label>
               <Form.Group controlId="formBasicUsername">
-                <Form.Control
-                  name="identifier"
-                  ref={register}
-                  autoFocus
-                ></Form.Control>
+                <Form.Control name="identifier" ref={register}></Form.Control>
                 {errors.identifier && (
                   <FormError>{errors.identifier.message}</FormError>
                 )}

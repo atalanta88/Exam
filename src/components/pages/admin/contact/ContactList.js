@@ -41,6 +41,7 @@ function ContactList() {
       }
     }
     fetchData();
+    setInterval(fetchData, 9000);
   }, []);
 
   if (error) {
@@ -69,7 +70,8 @@ function ContactList() {
           <Card>
             <Card.Body className="accordion-card-body">
               {contacts.map(function (contact) {
-                const { id, message, firstname, lastname, email } = contact;
+                const { id, message, firstname, lastname, email, created_at } =
+                  contact;
 
                 return (
                   <ContactMessageObject
@@ -79,6 +81,7 @@ function ContactList() {
                     firstname={firstname}
                     lastname={lastname}
                     id={id}
+                    created_at={created_at}
                   />
                 );
               })}

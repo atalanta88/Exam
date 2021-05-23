@@ -108,7 +108,7 @@ export default function ContactForm() {
                 <Col>
                   <Form.Label>First name</Form.Label>
                   <Form.Group controlId="formFirstName">
-                    <Form.Control name="firstname" ref={register} autoFocus />
+                    <Form.Control name="firstname" ref={register} />
                     {errors.firstname && (
                       <FormError>{errors.firstname.message}</FormError>
                     )}

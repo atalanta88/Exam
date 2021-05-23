@@ -43,6 +43,7 @@ function EnquiriesList() {
       }
     }
     fetchData();
+    setInterval(fetchData, 9000);
   }, []);
 
   if (error) {
@@ -72,7 +73,8 @@ function EnquiriesList() {
             <Card.Header></Card.Header>
             <Card.Body className="accordion-card-body">
               {enquiries.map(function (enquiry) {
-                const { message, name, email, housingname, id } = enquiry;
+                const { message, name, email, housingname, id, created_at } =
+                  enquiry;
 
                 return (
                   <EnquiryMessageObject
@@ -82,6 +84,7 @@ function EnquiriesList() {
                     name={name}
                     housingname={housingname}
                     id={id}
+                    created_at={created_at}
                   />
                 );
               })}

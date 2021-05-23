@@ -56,6 +56,13 @@
   padding: 0px 15px;
 }
 
+.map-container iframe {
+  border: none;
+  width: 100%;
+  height: auto;
+  max-width: 595px;
+}
+
 .housing-col {
   margin-bottom: 1rem;
   padding-bottom: 1rem;

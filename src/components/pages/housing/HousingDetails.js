@@ -15,6 +15,7 @@ import DatePicker from "./functions/DatePicker";
 import ErrorMessage from "../../common/ErrorMessage";
 import { API_HOUSING_DETAILS } from "../../../constants/api";
 import AddEnquiry from "./functions/AddEnquiry";
+import Map from "../../../components/pages/housing/functions/Map";
 
 function HousingDetails() {
   const [housing, setHousingObject] = useState(null);
@@ -154,8 +155,13 @@ function HousingDetails() {
           </Col>
         </Row>
       </Container>
+
       <Container>
         <DatePicker />
+
+        <Container className="map-container">
+          <Map />
+        </Container>
         <div className="housing-enquiries">
           <Heading size="3" content="Anything on your mind?" />
           <p>

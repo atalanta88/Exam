@@ -15,7 +15,8 @@
     padding-left: 1rem;
   }
   .card-header:hover {
-    background-color: rgba(224, 224, 224, 0.082);
+    background-color: #00beae3f;
+    cursor: pointer;
   }
   .card-body {
     padding: 0rem;
@@ -34,5 +35,11 @@
   .admin-page-wrapper {
     margin-top: 2rem;
     margin-bottom: 15rem;
+  }
+}
+
+.modal-dialog {
+  .card-header {
+    font-size: 15px;
   }
 }

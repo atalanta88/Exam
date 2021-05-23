@@ -3,14 +3,18 @@ form {
   padding-bottom: 1rem !important;
 }
 .custom-select:focus {
-  border-color: #c5c5c5;
+  border-color: #484848;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .form-control:focus {
-  border-color: #ffffff !important;
+  border-color: #4d4d4d !important;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .form-control {
   border-radius: 10rem !important;
+}
+
+.modal-content {
+  background-color: rgb(247, 247, 247);
 }
