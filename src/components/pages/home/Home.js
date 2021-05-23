@@ -15,10 +15,7 @@ export default function HomePage() {
             <h1>
               <span>Find</span> a place to stay with <span>Holidaze</span>.
             </h1>
-            <p>
-              With us you can find any you can find any place, anywhere,
-              anytime!
-            </p>
+            <p>With us you can find any place, anywhere, anytime!</p>
             <hr />
             <LinkContainer to="/housing">
               <Button variant="primary-color" size="lg">
